@@ -8,7 +8,6 @@ This repo provides guides and references for creating custom scripts, actors, an
 
 | File | Description |
 |------|-------------|
-| [QuickStart.md](QuickStart.md) | How to create your first modpack and write your first script |
 | [Hooks.md](Hooks.md) | All available events you can listen to |
 | [Functions.md](Functions.md) | All global Lua functions available to modders |
 | [Reflection.md](Reflection.md) | Game classes, their variables, and callable functions |
@@ -17,14 +16,16 @@ This repo provides guides and references for creating custom scripts, actors, an
 
 ## Quick Overview
 
-Perfect Heist 2 mods are written in **Lua** and organized into **Modpacks**. A modpack is a folder containing scripts and assets that add new gameplay, actors, and classes to the game.
+Perfect Heist 2 mods are written in **Lua** and organized into **Modpacks**. A modpack is a folder containing scripts and assets that add new gameplay, actors, and classes to the game. Modpacks can be uploaded to the Steam Workshop and added to your game session through the `Host Game` menu or through the `[ModpackOverride] ModpackList = AbsoluteModpackPath1, AbsoluteModpackPath2` server config setting. Modpacks can also be included in player-created custom maps, ensuring they always run with the map. All scripts are loaded when the team selection begins, and are destroyed after the Round-End UI.
 
 ### Modpack Folder Structure
 
 ```
 MyModpack/
 ├── ServerScripts/        # Scripts that run game logic (round events, rules)
+│   ├── MyScript.lua      # Event-Driven Logic that runs during the round
 ├── ActorScripts/         # Scripts for custom interactable actors (BP_LuaActor)
+│   ├── MyActor.lua       # Actor that can be placed on custom maps, and spawned through other scripts
 ├── CustomClassScripts/   # Scripts + JSON for custom player classes
 │   ├── MyClass.lua       # Ability logic
 │   └── MyClass.json      # Class display info (name, icon, cooldown, etc.)
