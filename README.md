@@ -42,11 +42,11 @@ MyModpack/
 
 ### 1. Create a Modpack
 
-In the in-game **Mod Editor**, click **Create New Modpack** and give it a name. This creates the folder structure above in your `Saved/Modpacks/` directory.
+In the in-game **Level Editor**, locate the Modpack Window in the bottom left and click **Modpacks -> New** and give it a name. This creates the folder structure above in your `Saved/Modpacks/` directory.
 
 ### 2. Create a Script
 
-Choose a category and create a new script. The game generates boilerplate code for you. Click **Open in Editor** to edit the `.lua` file in your preferred text editor (Notepad, VS Code, etc.).
+Choose a category and create a new script. The game generates boilerplate code for you. Click **Edit File** icon to edit the `.lua` file in your preferred text editor (Notepad, VS Code, etc.).
 
 ### 3. The Event System
 
