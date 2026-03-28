@@ -129,7 +129,11 @@ LogMessage("Loaded MyActor.lua")
 
 -- Initialize when the actor spawns
 ListenToEvent("ActorSpawned", function(targetActor)
+	-- ListenToEvent listenes to ALL events with that name, so we need to make it's the one this script handles
     if targetActor.LuaFileName == "MyActor.lua" then
+		-- Calling SetReplicatedVar(Name, Value) on the server will propagate this value to all clients.
+		-- Server and Clients can get this value with local value = GetReplicatedVar(Name)
+		-- SetLocalVar(Name, Value) and GetLocalVar(Name) should be used for clients or when the server value doesn't need to be replicated
         targetActor:SetReplicatedVar("UsesLeft", "3")
     end
 end)
@@ -139,6 +143,9 @@ ListenToEvent("GetInteractName_OnClient", function(targetActor, playerActor)
     if targetActor.LuaFileName == "MyActor.lua" then
         local uses = tonumber(targetActor:GetReplicatedVar("UsesLeft"))
         if uses and uses > 0 then
+			-- This defines the InteractionString and bCanInteract values ONLY FOR THE CLIENT that executed this event by looking at the Actor
+			-- Since every client figures this out for themselves, you can allow for different interactions or block interaction completely
+			-- depending on the team, class, or other variables of the player who is trying to interact with it
             targetActor.InteractionString = "Use (" .. uses .. " left)"
             targetActor.bCanInteract = true
         else
@@ -151,11 +158,13 @@ end)
 -- Client: How long the interaction takes (seconds)
 ListenToEvent("GetInteractionTimer_OnClient", function(targetActor, playerActor)
     if targetActor.LuaFileName == "MyActor.lua" then
+		-- Like InteractionString and bCanInteract, this sets the interaction duration in seconds ONLY FOR THE CLIENT that executed this event by looking at the Actor
         targetActor.InteractionTimer = 2.0
     end
 end)
 
 -- Server: Handle the interaction
+-- InteractSV is called by the client when he finished his InteractionTimer and bCanInteract was true for him
 ListenToEvent("InteractSV", function(targetActor, playerActor)
     if targetActor.LuaFileName == "MyActor.lua" then
         local uses = tonumber(targetActor:GetReplicatedVar("UsesLeft"))
