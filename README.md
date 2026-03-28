@@ -165,6 +165,7 @@ end)
 
 -- Server: Handle the interaction
 -- InteractSV is called by the client when he finished his InteractionTimer and bCanInteract was true for him
+-- This Event is called by the client, but will never run for him. He just sends it to the server when he calls it, and the server is responsible for handling the interaction
 ListenToEvent("InteractSV", function(targetActor, playerActor)
     if targetActor.LuaFileName == "MyActor.lua" then
         local uses = tonumber(targetActor:GetReplicatedVar("UsesLeft"))
