@@ -205,6 +205,8 @@ end)
 ListenToEvent("AbilitySV", function(playerActor)
     if playerActor.CustomClassString == "Assassin" then
         playerActor.Mesh:SetVisibility(false)
+
+        -- Timers require an Actor to run on, like the GameState or, in this case, the playerActor that called AbilitySV
         SetTimer(5.0, "AssassinUncloak", playerActor)
     end
 end)
