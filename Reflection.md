@@ -357,7 +357,7 @@ A variable that is marked with `(Replicated)` will automatically propagate its v
 | PlayerHUD | Object |
 | robber? | Bool (Replicated) |
 | HP | Float (Replicated) |
-| ClassID | uint8 (Replicated) |
+| ClassID | uint8 (Replicated) | RobberClasses: 1=Insider, 2=Heavy, 3=Tech, 4=Demo, 5=Ninja, 6=Sniper, 7=Agent, 8=Doctor, 9=Distractor, 10=Scout, 11=Engineer, 12=Madman, 13=Geek, 14=Poison, 15=Mafia Boss, 16=Mechanic, 17=Crypto, 18=Arms Dealer, 19=Pickpocket, 20=FED Chairman, 21=Vault Cracker, 22=Joker, 23=Hitman, 24=Micro, 25=Gym Buddy, 26=Master Thief, 27=Actor, 28=Albert Einstein, 29=Karl Marx, 30=Al Capone, 31=Artist, 32=Deaddrop. --- CopClasses: 1=Officer, 2=Spy, 3=Swat, 4=FBI, 5=Riot Control, 6=Detective, 7=Combat Medic, 8=Sergeant, 9=Cyber Police, 10=Hornet, 11=Developer, 12=Manager, 13=Sheriff, 14=Firefighter, 15=Reinforcer, 16=Inventor, 17=FED Agent, 18=Vigil, 19=Traffic Cop, 20=FED Chairman, 21=Backup, 22=Bodyguard, 23=Pilot, 24=Janitor, 25=Canine, 26=Marie Curie, 27=Queen Elizabeth, 28=Julius Caesar, 29=Surge, 30=Swarm (Drones), 31=Swarm.
 | MeshMatSv | Object (Replicated) |
 | RemainingInteractTimer | Float |
 | InteractObjWithTimer | Object |
