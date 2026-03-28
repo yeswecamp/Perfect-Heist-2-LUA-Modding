@@ -459,3 +459,11 @@ LogMessage("Actor: " .. GetActorName(targetActor))
 ```
 
 Check the logs at: `%APPDATA%/Local/PerfectHeist2/Saved/Logs/PerfectHeist2.log`.
+
+Or use on-screen HUD messages:
+
+```lua
+ShowUIText("DebugLog", "Actor: " .. GetActorName(targetActor), 0.5, 0.1, 3.0)
+ShowUIText("DebugLog", "Health: " .. tostring(player.HP), 0.5, 0.15, 3.0)
+ShowUIText("DebugLog", "Steam Name: " .. tostring(player.PlayersName), 0.5, 0.2, 3.0)
+```
