@@ -1,6 +1,6 @@
 # Reflection API Reference
 
-This document lists all Blueprint-accessible variables and functions on game classes. This is completely auto-generated so there might be some weird functions or quirky variables in there that don't belong, but it's a lot better than having to guess everything.
+This document lists all Blueprint-accessible variables and functions on game classes. This is completely auto-generated so there might be some weird functions or quirky variables in there that don't belong, but it's a lot better than having to guess everything. The game was also not meant to be moddable or shared with multiple developers, so all naming conventions have been violated.
 
 Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `playerActor:SomeFunction()`.
 
