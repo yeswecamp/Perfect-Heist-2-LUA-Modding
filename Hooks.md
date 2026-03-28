@@ -433,7 +433,7 @@ end)
 
 ### AllMessage
 
-Fires when a chat message is received. This event can run on servers, or on clients if specified with `ListenToEvent("AllMessage_OnClient",`.
+Fires when a all (not team chat!) chat message is received. This event can run on servers, or on clients if specified with `ListenToEvent("AllMessage_OnClient",`.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
