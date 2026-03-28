@@ -4,6 +4,232 @@ This document lists all Blueprint-accessible variables and functions on game cla
 
 Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `playerActor:SomeFunction()`
 
+## HeistGS
+**Inheritance:** `HeistGS → HeistGameState_CPP → GameStateBase → Info → Actor`
+
+### Variables
+| Name | Type |
+|------|------|
+| DefaultSceneRoot | Object |
+| hackedPCs | Int |
+| roundLive? | Bool (Replicated) |
+| TeamSelecTimer | uint8 (Replicated) |
+| ClassSelecTimer | uint8 (Replicated) |
+| savedMoney | Int (Replicated) |
+| requiredSavedMoney | Int (Replicated) |
+| copRespawns | Int (Replicated) |
+| RoundTimer | Int (Replicated) |
+| RoundTimerSV | FTimerHandle |
+| noSprinting? | Bool (Replicated) |
+| copsInfRespawns? | Bool (Replicated) |
+| useSprintingStamina? | Bool (Replicated) |
+| useOvertime? | Bool (Replicated) |
+| currentlyOT? | Bool (Replicated) |
+| otRoundtime | Float |
+| OvertimeTimerSV | FTimerHandle |
+| ignoreTeamLimits? | Bool (Replicated) |
+| copPercentage | Float (Replicated) |
+| copCarRifles | Int (Replicated) |
+| allowTP? | Bool (Replicated) |
+| cryptoPCs | Int |
+| remainingRobberRespawns | Int (Replicated) |
+| onlyFishyKills | Bool (Replicated) |
+| chairmanbattle | Bool (Replicated) |
+| aliveVIPs | Int (Replicated) |
+| robbersHaveHitman | Bool (Replicated) |
+| allowSpectators? | Bool (Replicated) |
+| allowTeamDmg? | Bool (Replicated) |
+| SteamWorkshopID | FSteamUGCItemId |
+| extraSMs | Object |
+| MapStartTime | FDateTime |
+| CustomMapFilePath | String |
+| loadingMap? | Bool |
+| meshRows | TMap |
+| LeDataC | TMap |
+| directionalVC? | Bool (Replicated) |
+| respawnTimeCops | Int (Replicated) |
+| respawnTimeRobs | Int (Replicated) |
+| sortedRobSpawns | Array |
+| customMapDeletedActs | Array |
+| customMapDeletedActsString | String |
+| allowedClassGroups | Array (Replicated) |
+| aliveCrowns | Int (Replicated) |
+| onDedicatedServer? | Bool (Replicated) |
+| dediServerCustomMaps | Array (Replicated) |
+| unranked? | Bool (Replicated) |
+| serverFPS | Int (Replicated) |
+| customTextureCache | TMap |
+| PickPhaseType | TEnumAsByte<PickPhaseType> (Replicated) |
+| bannedRobs | Array (Replicated) |
+| bannedCops | Array (Replicated) |
+| inBanPhase? | Bool (Replicated) |
+| inClassSelec? | Bool (Replicated) |
+| onEmptyMap? | Bool |
+| foundCustomMapSublevel? | Bool |
+| loadedSublevels | Array |
+| loadingSublevel | Bool |
+| serverOwnerID | String (Replicated) |
+| fullServerSettings | Array (Replicated) |
+| snowy? | Bool |
+| LuaTickTimer | FTimerHandle |
+| customClasses | Array (Replicated) |
+| customClassesMap | TMap |
+| allClassesMap | TMap |
+| RuntimeAudioImporter | Object |
+| soundFilesToLoad | Array |
+| serverNeedsToReloadLuaAssets | Bool |
+| LuaWidgets | TMap |
+| LuaTextures | TMap |
+| LuaMeshFilePaths | TMap |
+| currentMapLoadLine | String |
+
+### Functions
+| Name | Parameters | Returns |
+|------|------------|---------|
+| RestartCl | none | bool |
+| RestartSV | CallFunc_GetGameInstance_ReturnValue: UGameInstance*, K2Node_DynamicCast_AsHeist_GI: UHeistGI_C*, K2Node_DynamicCast_bSuccess: bool | bool |
+| getRobberSpawns | CallFunc_sortRobberSpawns_out: TArray, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Greater_IntInt_ReturnValue: bool | TArray |
+| PlayModSound | SoundPath: FString, Location: FVector, Volume: float | void |
+| LoadLuaSounds | soundFIles: TArray | void |
+| HandleLUA_SV | none | void |
+| LuaTeamTimer | none | void |
+| LuaHandleRoundWon | robbersWon?: bool, WonReason: TEnumAsByte<RoundWonEnum> | void |
+| LuaClassSelectionStart | none | void |
+| LuaRoundStart | none | void |
+| LuaClassTick | none | void |
+| LuaRoundTick | none | void |
+| LuaTeamSelectionStarted | none | void |
+| ResetLuaALL | none | void |
+| LoadLuaAssets | paths: TArray | void |
+| ShowModUIText | Identifier: FString, DisplayText: FString, X: float, Y: float, DisplayTime: float | void |
+| RemoveAllLuaWidgets | none | void |
+| LoadLuaMeshes | sourceFiles: TArray | void |
+| LoadLuaTextures | sourceFiles: TArray | void |
+| SpawnModLuaActor | LuaFileName: FString, Location: FVector, Rotation: FRotator, Scale: FVector, Tag: FString | void |
+| TeamMessage | Message: FString, TeamID: uint8, char: APlayerChar_C* | void |
+| AllMessage | String: FString, TeamID: uint8, char: APlayerChar_C* | void |
+| StartRoundTimerSV | none | void |
+| StartSetRoundTimer | none | void |
+| SetRoundTimer | none | void |
+| RoundTimerEnded | none | void |
+| UpdateGiValues | none | void |
+| OvertimeTimeout | none | void |
+| UpdateVIPs | none | void |
+| SpawnMapSV | FullFilePath: FString | void |
+| LoadMapFromFolder | FullFilePath: FString | void |
+| AddLoadingScreenAll | none | void |
+| UndeleteActor | actor: AActor* | void |
+| EinsteinTimeDelayer | none | void |
+| UpdateCrowns | none | void |
+| ClearCustomTextureCache | none | void |
+| LoadSublevel | LevelName: FName, reason: FString | void |
+
+---
+
+## HeistGM
+**Inheritance:** `HeistGM → GameModeBase → Info → Actor`
+
+### Variables
+| Name | Type |
+|------|------|
+| DefaultSceneRoot | Object |
+| Inwaiting? | Bool |
+| TeammakingTimer | FTimerHandle |
+| inTeamMaking? | Bool |
+| inSelection? | Bool |
+| SelecTimer | FTimerHandle |
+| SpawnX | Float |
+| SpawnY | Float |
+| CopSpawnPoint | Object |
+| RobSpawnPoints | Array |
+| RoundLive? | Bool |
+| dontDoRoundStartMenus | Bool |
+| deleteClasses | Array |
+| Name | String |
+| Password | String |
+| InsiderSpawnPoint | Object |
+| AgentSpawnPoint | Object |
+| spawnOffset | FVector |
+| MapDisplayName | String |
+| spottedRobberItems | Array |
+| bannedIDs | Array |
+| diedThisRounds | Array |
+| nextRoundMaxMoney | Int |
+| serverOwner | FBPUniqueNetId |
+| noTeamDmg? | Bool |
+| spawnPointHelper | Object |
+| spawnedRobberMoneyBags | Int |
+| ServerOwnerString | String |
+| horseSpawn | Object |
+| copspawns | Array |
+| TargetMap | String |
+| TargetMapSteamID | FSteamUGCItemId |
+| needsMapSwitch | Bool |
+| workshopFolderPath | String |
+| workshopMapNameToID | TMap |
+| isMapSwitching? | Bool |
+| inBanPhase | Bool |
+| bannedRobs | Array |
+| bannedCops | Array |
+| classOrderForBanPhase | Array |
+| pickPhaseTypes | Array |
+| pickPhaseItr | Int |
+| LuaTickTimer | FTimerHandle |
+
+### Functions
+| Name | Parameters | Returns |
+|------|------------|---------|
+| LoginWhileTeamSelection | Target: AController*, CallFunc_K2_GetPawn_ReturnValue: APawn*, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool | void |
+| WaitingForPlayers | none | void |
+| RestartHeistGame | none | void |
+| StartWaitingTick | none | void |
+| TeamMakingFinished | none | void |
+| DeleteStuff | none | void |
+| TellPlayersTeammakingStarts | none | void |
+| Post_TeamSelection | none | void |
+| RestartStuff | none | void |
+| EndSelection | none | void |
+| TellPlayersSelectionEnded | none | void |
+| CheckReadys | none | void |
+| StartCheckReadyTick | none | void |
+| GetSpawnPoints | none | void |
+| RespawnPlayers | none | void |
+| RespawnPlayer | Target: APlayerChar_C*, randomSpawn?: bool | void |
+| Timer | none | void |
+| SpawnExtraBombBags | none | void |
+| PostCharSelecStuff | none | void |
+| SetPlayerWeps | none | void |
+| RoundWon_GM | robbersWon?: bool, wonReason: TEnumAsByte<RoundWonEnum> | void |
+| UpdateSession | none | void |
+| CreateSession | none | void |
+| StartUpdateSession | none | void |
+| StartFpsTimer | none | void |
+| PrintFPS | none | void |
+| K2_OnLogout | ExitingController: AController* | void |
+| SpawnAnimals | none | void |
+| K2_PostLogin | NewPlayer: APlayerController* | void |
+| KickPlayer | player: APlayerChar_C*, noban?: bool, steamIdToBan: FBPUniqueNetId | void |
+| SpawnDrillBags | none | void |
+| SpawnArmsDealerMoney | none | void |
+| SpawnChairmanEvent | none | void |
+| SpawnVipCheck | none | void |
+| SpawnExtraClothesBags | none | void |
+| SetMaxPlayers | none | void |
+| SpawnMasterthiefDiamonds | none | void |
+| ExecuteMapSwitch | none | void |
+| RoundstartSpawnProtection | none | void |
+| SpawnActorFans | none | void |
+| SpawnQueenCrowns | none | void |
+| SpawnRumBags | none | void |
+| DS_GetInstalledMaps | none | void |
+| DisplayServerMOTD | none | void |
+| UpdateBannedClasses | none | void |
+| TeamMakingTimerFinished | none | void |
+| TemporarilyBanSteamID | steamID: FBPUniqueNetId | void |
+
+---
+
+
 ## Destroyable_Base
 **Inheritance:** `Destroyable_Base → Actor`
 
