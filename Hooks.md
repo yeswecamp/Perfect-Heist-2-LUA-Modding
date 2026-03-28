@@ -399,6 +399,67 @@ end)
 
 ---
 
+### PlayerInteractedSV
+
+Fires on the **server** when a player interacts ("E") with any actor in the world (not just BP_LuaActors).
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| targetActor | Actor | The actor that was interacted with |
+| playerActor | Actor | The player who interacted |
+```lua
+ListenToEvent("PlayerInteractedSV", function(targetActor, playerActor)
+    local className = GetActorClassName(targetActor)
+    LogMessage(GetActorName(playerActor) .. " interacted with " .. className)
+end)
+```
+
+### PlayerAltInteractedSV
+
+Fires on the **server** when a player uses the alternate ("F") interaction on any actor in the world.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| targetActor | Actor | The actor that was alt-interacted with |
+| playerActor | Actor | The player who alt-interacted |
+```lua
+ListenToEvent("PlayerAltInteractedSV", function(targetActor, playerActor)
+    local className = GetActorClassName(targetActor)
+    LogMessage(GetActorName(playerActor) .. " alt-interacted with " .. className)
+end)
+```
+
+---
+
+### AllMessage
+
+Fires when a chat message is received. This event can run on servers, or on clients if specified with `ListenToEvent("AllMessage_OnClient",`.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| message | String | The chat message text |
+| teamID | Int | The team ID of the sender |
+| playerActor | Actor | The player who sent the message |
+```lua
+ListenToEvent("AllMessage", function(message, teamID, playerActor)
+    LogMessage("Message from " .. GetActorName(playerActor) .. ": " .. message)
+
+    -- Custom chat commands
+    if message == "!heal" then
+        playerActor.Health = 100
+    end
+end)
+```
+
+To send a message from Lua:
+```lua
+local gs = GetGameState()
+local player = GetPlayerPawn()
+gs:AllMessage("Hello from Lua!", 0, player)
+```
+
+---
+
 ## Custom Timer Events
 
 Timer events are created by the modder using `SetTimer`. The event name is whatever string you pass.
