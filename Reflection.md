@@ -110,7 +110,7 @@ A variable that is marked with `(Replicated)` will automatically propagate its v
 | LoadLuaTextures | sourceFiles: TArray | void |
 | SpawnModLuaActor | LuaFileName: FString, Location: FVector, Rotation: FRotator, Scale: FVector, Tag: FString | void |
 | TeamMessage | Message: FString, TeamID: uint8, char: APlayerChar_C* | void |
-| AllMessage | String: FString, TeamID: uint8, char: APlayerChar_C* | void |
+| AllMessage | String: FString, TeamID: uint8 (0=FromServer, 1=FromRobber, 2=FromCop), char: APlayerChar_C* | void |
 | StartRoundTimerSV | none | void |
 | StartSetRoundTimer | none | void |
 | SetRoundTimer | none | void |
