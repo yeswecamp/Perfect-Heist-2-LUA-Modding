@@ -151,6 +151,22 @@ end
 
 ---
 
+### AddActorTag(actor, tag)
+
+Adds a tag to an actor. Does nothing if the tag already exists.
+```lua
+AddActorTag(targetActor, "Healed")
+```
+
+### RemoveActorTag(actor, tag)
+
+Removes a tag from an actor.
+```lua
+RemoveActorTag(targetActor, "Healed")
+```
+
+---
+
 ## Game Framework
 
 ### GetGameState()
