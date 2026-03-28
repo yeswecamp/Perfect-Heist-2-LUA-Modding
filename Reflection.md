@@ -2,7 +2,10 @@
 
 This document lists all Blueprint-accessible variables and functions on game classes. This is completely auto-generated so there might be some weird functions or quirky variables in there that don't belong, but it's a lot better than having to guess everything.
 
-Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `playerActor:SomeFunction()`
+Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `playerActor:SomeFunction()`.
+
+A variable that is marked with `(Replicated)` will automatically propagate its value from the server to all clients, but only if called on the server. Changing their value on a client isn't recommended.
+
 
 ## HeistGS
 **Inheritance:** `HeistGS → HeistGameState_CPP → GameStateBase → Info → Actor`
