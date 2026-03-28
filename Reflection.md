@@ -8,7 +8,7 @@ A variable that is marked with `(Replicated)` will automatically propagate its v
 
 
 ## HeistGS
-**Inheritance:** `HeistGS → HeistGameState_CPP → GameStateBase → Info → Actor`
+**Inheritance:** `HeistGS → HeistGameState_CPP → Actor`
 
 ### Variables
 | Name | Type |
