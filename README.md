@@ -409,14 +409,14 @@ end
 local doors = GetAllActorsOfClass("BP_VaultDoor")
 
 -- By tag
--- Tags can be added to Lua Objects in the level editor, or modifed by LUA scripts at runtime using:
+-- Tags can be added to Lua Objects in the level editor, or modified by LUA scripts at runtime using:
 -- AddActorTag(targetActor, "AssassinTarget") and RemoveActorTag(targetActor, "AssassinTarget")
 local targets = GetAllActorsWithTag("AssassinTarget")
 local target = GetActorWithTag("AssassinTarget")
 
 -- Check if an actor has a specific tag
-if ActorHasTag(targetActor, "Interactable") then
-    LogMessage("This actor is interactable!")
+if ActorHasTag(targetActor, "AssassinTarget") then
+    LogMessage("This actor is an AssassinTarget!")
 end
 
 -- All player characters
