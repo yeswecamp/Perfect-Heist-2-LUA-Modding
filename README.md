@@ -30,6 +30,10 @@ MyModpack/
 │   ├── MyClass.lua       # Ability logic
 │   └── MyClass.json      # Class display info (name, icon, cooldown, etc.)
 ├── Assets/               # Sound files (.wav, .mp3), textures (.png), meshes (.fbx)
+│   ├── AbilityIcon.png   # Icons referenced by custom classes
+│   └── Woosh.mp3         # Audio files (.mp3 or .wav) referenced by LUA scripts in this modpack
+│   ├── CrateMesh.fbx     # .fbx files referenced by ActorScripts - try to keep size as small as possible
+│   ├── CrateTexture.png  # .png textures for the custom .fbx meshes - try to keep size as small as possible
 ├── modinfo.json          # Steam Workshop metadata
 ├── name.txt              # Display name of the modpack
 ├── description.txt       # Modpack description
