@@ -193,16 +193,18 @@ List of Clothing Rows: `Customer_Hoodie_Red, Customer_Jacket_Green, Customer_Hoo
     "ClothingRowName": "Robber_Suit_Black",
     "AbilityName": "Cloak",
     "AbilityDescription": "Turn invisible for 5 seconds.",
-    "AbilityIcon": "AssassinAbility",
+    "AbilityIcon": "AssassinAbility.png",
     "AbilityCooldown": 30.0,
     "PassiveName": "Silent Steps",
     "PassiveDescription": "Footsteps make no sound.",
-    "PassiveIcon": "SilentStepsIcon",
+    "PassiveIcon": "SilentStepsIcon.png",
     "PrimaryWeapon": 1,
-    "SecondaryWeapon": 0,
+    "SecondaryWeapon": 2,
     "ClassCategory": 0
 }
 ```
+
+`AssassinAbility.png` and `SilentStepsIcon.png` need to exist in the Modpacks /Assets/ folder.
 
 **Assassin.lua:**
 ```lua
