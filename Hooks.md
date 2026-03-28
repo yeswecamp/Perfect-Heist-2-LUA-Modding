@@ -438,7 +438,7 @@ Fires when a all (not team chat!) chat message is received. This event can run o
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | message | String | The chat message text |
-| teamID | Int | The team ID of the sender |
+| teamID | Int | The team ID of the sender (0=FromServer, 1=FromRobber, 2=FromCop) |
 | playerActor | Actor | The player who sent the message |
 ```lua
 ListenToEvent("AllMessage", function(message, teamID, playerActor)
