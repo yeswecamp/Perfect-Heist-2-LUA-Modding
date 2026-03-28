@@ -16,7 +16,9 @@ This repo provides guides and references for creating custom scripts, actors, an
 
 ## Quick Overview
 
-Perfect Heist 2 mods are written in **Lua** and organized into **Modpacks**. A modpack is a folder containing scripts and assets that add new gameplay, actors, and classes to the game. Modpacks can be uploaded to the Steam Workshop and added to your game session through the `Host Game` menu or through the `[ModpackOverride] ModpackList = AbsoluteModpackPath1, AbsoluteModpackPath2` server config setting. Modpacks can also be included in player-created custom maps, ensuring they always run with the map. All scripts are loaded when the team selection begins, and are destroyed after the Round-End UI.
+Perfect Heist 2 mods are written in **Lua** and organized into **Modpacks**. A modpack is a folder containing scripts and assets that add new gameplay, actors, and classes to the game. 
+
+Modpacks can be uploaded to the Steam Workshop and added to your game session through the `Host Game` menu or through the `[ModpackOverride] ModpackList = AbsoluteModpackPath1, AbsoluteModpackPath2` server config setting. Modpacks can also be included in player-created custom maps, ensuring they always run with the map. All scripts are loaded when the team selection begins, and are destroyed after the Round-End UI.
 
 ### Modpack Folder Structure
 
@@ -120,7 +122,7 @@ end)
 
 ### Actor Scripts
 
-Scripts associated with a **BP_LuaActor** — a customizable in-world actor. Each BP_LuaActor has a `LuaFileName` property that links it to its script. Actor scripts define spawning behavior, interactions, and visual setup.
+Scripts associated with a **BP_LuaActor** - a customizable in-world actor. Each BP_LuaActor has a `LuaFileName` property that links it to its script. Actor scripts define spawning behavior, interactions, and visual setup.
 
 ```lua
 LogMessage("Loaded MyActor.lua")
