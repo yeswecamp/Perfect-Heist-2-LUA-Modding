@@ -1,0 +1,423 @@
+# Hooks Reference
+
+All events that can be listened to with `ListenToEvent`. Each server event also has a `_OnClient` version that fires on clients automatically.
+
+---
+
+## Round Flow Events
+
+### TeamSelectionStarted
+
+Fires when the team selection phase begins.
+
+```lua
+ListenToEvent("TeamSelectionStarted", function()
+    LogMessage("Pick your team!")
+end)
+```
+
+### TeamSelectionTick
+
+Fires every tick during the team selection phase.
+
+```lua
+ListenToEvent("TeamSelectionTick", function()
+    -- Runs every frame during team selection
+end)
+```
+
+### ClassSelectionStarted
+
+Fires when the class selection phase begins.
+
+```lua
+ListenToEvent("ClassSelectionStarted", function()
+    LogMessage("Pick your class!")
+end)
+```
+
+### ClassSelectionTick
+
+Fires every tick during the class selection phase.
+
+```lua
+ListenToEvent("ClassSelectionTick", function()
+    -- Runs every frame during class selection
+end)
+```
+
+### RoundStarted
+
+Fires when the gameplay round begins.
+
+```lua
+ListenToEvent("RoundStarted", function()
+    LogMessage("Round started!")
+    local players = GetPlayerChars()
+    LogMessage("Player count: " .. #players)
+end)
+```
+
+### RoundTick
+
+Fires every tick during the active round.
+
+```lua
+ListenToEvent("RoundTick", function()
+    -- Runs every frame during the round
+    -- Use sparingly to avoid performance issues!
+end)
+```
+
+### RoundRestarted
+
+Fires when the round is restarted.
+
+```lua
+ListenToEvent("RoundRestarted", function()
+    LogMessage("Round restarted!")
+end)
+```
+
+---
+
+## Round Finished Events
+
+### RoundFinished
+
+Fires when the round ends, regardless of reason.
+
+```lua
+ListenToEvent("RoundFinished", function()
+    LogMessage("Round is over!")
+end)
+```
+
+### RoundFinished_RobberWin
+
+Fires when robbers win the round.
+
+```lua
+ListenToEvent("RoundFinished_RobberWin", function()
+    LogMessage("Robbers win!")
+end)
+```
+
+### RoundFinished_CopWin
+
+Fires when cops win the round.
+
+```lua
+ListenToEvent("RoundFinished_CopWin", function()
+    LogMessage("Cops win!")
+end)
+```
+
+### RoundFinished_RobsStoleEnough
+
+Fires when robbers win by stealing enough loot.
+
+```lua
+ListenToEvent("RoundFinished_RobsStoleEnough", function()
+    LogMessage("Robbers stole enough to win!")
+end)
+```
+
+### RoundFinished_CopsDied
+
+Fires when robbers win because all cops died.
+
+```lua
+ListenToEvent("RoundFinished_CopsDied", function()
+    LogMessage("All cops are down!")
+end)
+```
+
+### RoundFinished_RobsDied
+
+Fires when cops win because all robbers died.
+
+```lua
+ListenToEvent("RoundFinished_RobsDied", function()
+    LogMessage("All robbers are down!")
+end)
+```
+
+### RoundFinished_CopsAllFired
+
+Fires when robbers win because all cops got fired.
+
+```lua
+ListenToEvent("RoundFinished_CopsAllFired", function()
+    LogMessage("All cops got fired!")
+end)
+```
+
+### RoundFinished_TimerOver
+
+Fires when cops win because the round timer expired.
+
+```lua
+ListenToEvent("RoundFinished_TimerOver", function()
+    LogMessage("Time's up!")
+end)
+```
+
+---
+
+## Player Events
+
+### AbilityKeyPressed
+
+Fires on the **client** when a player presses the ability key. Use the `_OnClient` version.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| playerActor | Actor | The player who pressed the ability key |
+
+```lua
+ListenToEvent("AbilityKeyPressed_OnClient", function(playerActor)
+    if playerActor.CustomClassString == "Assassin" then
+        playerActor:StartAbilityCooldown(30.0)
+        playerActor:AbilitySV()
+        PlaySound(playerActor, "Woosh.wav", 0.8)
+    end
+end)
+```
+
+### AbilitySV
+
+Fires on the **server** when a player's ability is activated via the `AbilitySV()` RPC.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| playerActor | Actor | The player using the ability |
+
+```lua
+ListenToEvent("AbilitySV", function(playerActor)
+    if playerActor.CustomClassString == "Assassin" then
+        playerActor.Mesh:SetVisibility(false)
+        SetTimer(5.0, "AssassinUncloak", playerActor)
+    end
+end)
+```
+
+### AbilityALL
+
+Fires on **all machines** (server and clients) when a player's ability is activated.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| playerActor | Actor | The player using the ability |
+
+```lua
+ListenToEvent("AbilityALL", function(playerActor)
+    if playerActor.CustomClassString == "Assassin" then
+        PlaySound(playerActor, "CloakSound.wav", 1.0)
+    end
+end)
+```
+
+---
+
+## Damage Events
+
+### PreReceiveDamage
+
+Fires on the **server** right before damage is applied to an actor. Modders can increase the target's HP before damage is subtracted to help them survive.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| targetActor | Actor | The actor about to receive damage |
+| sourceActor | Actor | The actor dealing the damage |
+| damage | Float | The amount of damage about to be dealt |
+| damageType | Int | The type of damage: 0=Bullet, 1=Explosion, 2=Melee Attack, 3=Fall Damage, 4=Fired, 5=Fire, 6=Poison, 7=HeliRotors, 8=Revived, 9=FiredRespawn, 10=Spikes, 11=Reflection|
+| canBeLethal | Bool | Whether this damage can kill the target |
+
+```lua
+ListenToEvent("PreReceiveDamage", function(targetActor, sourceActor, damage, damageType, canBeLethal)
+    -- Give Assassin extra HP to absorb damage
+    if targetActor.CustomClassString == "Assassin" then
+        targetActor.Health = targetActor.Health + 20
+        LogMessage("Assassin pre-healed 20 HP!")
+    end
+end)
+```
+
+---
+
+## BP_LuaActor Events
+
+### ActorSpawned
+
+Fires on the **server** when a BP_LuaActor spawns in the world.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| targetActor | Actor | The BP_LuaActor that just spawned |
+
+```lua
+ListenToEvent("ActorSpawned", function(targetActor)
+    if targetActor.LuaFileName == "HealthStation.lua" then
+        targetActor:SetReplicatedVar("UsesLeft", "3")
+        AddMeshComponent(targetActor, "Base", "Station.fbx", "Station.png")
+    end
+end)
+```
+
+### GetInteractName
+
+Fires on the **client** when a player looks at an interactable BP_LuaActor. Use the `_OnClient` version. You **must** set `InteractionString` and `bCanInteract` on the target actor.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| targetActor | Actor | The BP_LuaActor being looked at |
+| playerActor | Actor | The player looking at it |
+
+| Must Set | Type | Description |
+|----------|------|-------------|
+| targetActor.InteractionString | String | The text shown to the player |
+| targetActor.bCanInteract | Bool | Whether the player can interact |
+
+```lua
+ListenToEvent("GetInteractName_OnClient", function(targetActor, playerActor)
+    if targetActor.LuaFileName == "HealthStation.lua" then
+        local uses = tonumber(targetActor:GetReplicatedVar("UsesLeft"))
+        if uses and uses > 0 then
+            targetActor.InteractionString = "Heal (" .. uses .. " left)"
+            targetActor.bCanInteract = true
+        else
+            targetActor.InteractionString = "Empty"
+            targetActor.bCanInteract = false
+        end
+    end
+end)
+```
+
+### GetInteractionTimer
+
+Fires on the **client** to determine how long an interaction takes. Use the `_OnClient` version. You **must** set `InteractionTimer` on the target actor.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| targetActor | Actor | The BP_LuaActor being interacted with |
+| playerActor | Actor | The player interacting |
+
+| Must Set | Type | Description |
+|----------|------|-------------|
+| targetActor.InteractionTimer | Float | Seconds the interaction takes (0 = instant) |
+
+```lua
+ListenToEvent("GetInteractionTimer_OnClient", function(targetActor, playerActor)
+    if targetActor.LuaFileName == "HealthStation.lua" then
+        targetActor.InteractionTimer = 2.0
+    end
+end)
+```
+
+### InteractSV
+
+Fires on the **server** when a player completes an interaction with a BP_LuaActor.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| targetActor | Actor | The BP_LuaActor being interacted with |
+| playerActor | Actor | The player who interacted |
+
+```lua
+ListenToEvent("InteractSV", function(targetActor, playerActor)
+    if targetActor.LuaFileName == "HealthStation.lua" then
+        local uses = tonumber(targetActor:GetReplicatedVar("UsesLeft"))
+        if uses and uses > 0 then
+            targetActor:SetReplicatedVar("UsesLeft", tostring(uses - 1))
+            LogMessage(GetActorName(playerActor) .. " healed!")
+        end
+    end
+end)
+```
+
+---
+
+## Logic Channel Events
+
+### LogicChannelChanged
+
+Fires on the **server** when a logic channel changes state (e.g. a button activates channel 5).
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| channelID | Int | The logic channel that changed |
+| newState | Bool | The new state (`true` = on, `false` = off) |
+
+```lua
+ListenToEvent("LogicChannelChanged", function(channelID, newState)
+    if channelID == 5 and newState == true then
+        LogMessage("Channel 5 activated!")
+        local doors = GetAllActorsWithTag("SecretDoor")
+        for i, door in ipairs(doors) do
+            door:OpenDoor()
+        end
+    end
+end)
+```
+
+---
+
+## World Events
+
+### AnyActorSpawned
+
+Fires on the **server** when any gameplay-relevant actor spawns in the world (Blueprint actors and PlayerChars).
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| spawnedActor | Actor | The actor that just spawned |
+
+```lua
+ListenToEvent("AnyActorSpawned", function(spawnedActor)
+    local className = GetActorClassName(spawnedActor)
+    LogMessage("Spawned: " .. className)
+end)
+```
+
+### AnyActorDestroyed
+
+Fires on the **server** when any gameplay-relevant actor is destroyed.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| destroyedActor | Actor | The actor being destroyed |
+
+> **Note:** The actor is about to be garbage collected. You can read properties and log, but don't store references to it.
+
+```lua
+ListenToEvent("AnyActorDestroyed", function(destroyedActor)
+    local className = GetActorClassName(destroyedActor)
+    LogMessage("Destroyed: " .. className)
+end)
+```
+
+---
+
+## Custom Timer Events
+
+Timer events are created by the modder using `SetTimer`. The event name is whatever string you pass.
+
+```lua
+SetTimer(5.0, "MyCustomEvent", someActor)
+
+ListenToEvent("MyCustomEvent", function(actor)
+    LogMessage("Timer fired!")
+end)
+```
+
+---
+
+## Notes
+
+- **Server events** fire without any suffix: `"RoundStarted"`, `"InteractSV"`, `"AbilitySV"`
+- **Client events** have `_OnClient` appended automatically: `"GetInteractName_OnClient"`, `"AbilityKeyPressed_OnClient"`
+- On **listen servers** and **standalone**, both server and `_OnClient` versions fire automatically
+- On **dedicated servers**, only server events fire. Clients only receive `_OnClient` events
+- You don't need to manually manage `_OnClient` — the system handles routing based on where the code runs
+- **Tick events** (`RoundTick`, `TeamSelectionTick`, `ClassSelectionTick`) fire every frame — use them sparingly to avoid performance issues
