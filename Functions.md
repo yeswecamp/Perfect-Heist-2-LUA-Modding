@@ -438,3 +438,70 @@ Extracts the raw UObject from a wrapped actor. You generally don't need this unl
 ```lua
 local raw = Unwrap(wrappedActor)
 ```
+
+--- 
+
+## Physics Queries
+
+### SphereOverlap(location, radius)
+
+Returns a table of all actors overlapping a sphere at the given location.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| location | Table | Center point `{X=0, Y=0, Z=0}` |
+| radius | Float | Radius of the sphere in units |
+```lua
+local nearby = SphereOverlap({X=100, Y=200, Z=0}, 500)
+for i, actor in ipairs(nearby) do
+    LogMessage("Nearby: " .. GetActorName(actor))
+end
+```
+
+### BoxOverlap(location, extentX, extentY, extentZ)
+
+Returns a table of all actors overlapping a box at the given location.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| location | Table | Center point `{X=0, Y=0, Z=0}` |
+| extentX | Float | Half-size of the box on X axis |
+| extentY | Float | Half-size of the box on Y axis |
+| extentZ | Float | Half-size of the box on Z axis |
+```lua
+local inBox = BoxOverlap({X=0, Y=0, Z=100}, 200, 200, 100)
+for i, actor in ipairs(inBox) do
+    LogMessage("In box: " .. GetActorName(actor))
+end
+```
+
+### LineMultiTrace(startLocation, endLocation)
+
+Traces a line between two points and returns all actors hit.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| startLocation | Table | Start point `{X=0, Y=0, Z=0}` |
+| endLocation | Table | End point `{X=1000, Y=0, Z=0}` |
+```lua
+local hits = LineMultiTrace({X=0, Y=0, Z=100}, {X=1000, Y=0, Z=100})
+for i, actor in ipairs(hits) do
+    LogMessage("Hit: " .. GetActorName(actor))
+end
+```
+
+### SphereMultiTrace(startLocation, endLocation, radius)
+
+Traces a sphere (thick line) between two points and returns all actors hit.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| startLocation | Table | Start point `{X=0, Y=0, Z=0}` |
+| endLocation | Table | End point `{X=1000, Y=0, Z=0}` |
+| radius | Float | Radius of the sphere trace |
+```lua
+local swept = SphereMultiTrace({X=0, Y=0, Z=100}, {X=1000, Y=0, Z=100}, 50)
+for i, actor in ipairs(swept) do
+    LogMessage("Swept hit: " .. GetActorName(actor))
+end
+```
