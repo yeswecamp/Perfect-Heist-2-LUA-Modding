@@ -36,9 +36,8 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool, blockbulletdmg?: bool | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, dmg: float, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_2: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_3: bool, CallFunc_GetDisplayName_ReturnValue: FString, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Conv_FloatToString_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_HasAuthority_ReturnValue: bool, CallFunc_GetDisplayName_ReturnValue_1: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString, CallFunc_Concat_StrStr_ReturnValue_2: FString, CallFunc_Concat_StrStr_ReturnValue_3: FString, CallFunc_Multiply_FloatFloat_ReturnValue: float, CallFunc_GetTransform_ReturnValue: FTransform, CallFunc_TransformLocation_ReturnValue: FVector, K2Node_DynamicCast_AsFEDHologram: AFEDHologram_C*, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_GetTransform_ReturnValue_1: FTransform, CallFunc_VSize_ReturnValue: float, CallFunc_InverseTransformLocation_ReturnValue: FVector, CallFunc_LessEqual_FloatFloat_ReturnValue_1: bool, CallFunc_Multiply_FloatFloat_ReturnValue_1: float, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_SelectFloat_ReturnValue: float, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_GreaterEqual_FloatFloat_ReturnValue: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_Subtract_FloatFloat_ReturnValue: float | void |
+| CanBePenetrated? | inputDmg: float | float |
+| bulletsCanDmg? | helper: bool, blockbulletdmg?: bool | bool |
 | destroyedCl | none | void |
 | DmgHook | none | void |
 
@@ -220,74 +219,20 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| getPaintingValue | easel: ACanvasEasel_C*, preventPaint: bool, paintingName: FText, paintingDescr: FText, value: int32, traceOffset: FVector, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_isClass_is: bool, CallFunc_Greater_IntInt_ReturnValue: bool | void |
-| GetRadiation | loc: FVector, power: float | void |
-| isSus | isSus?: bool, isSusEasy?: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_GetGameTimeSinceCreation_ReturnValue: float, CallFunc_SelectInt_ReturnValue: int32, CallFunc_Greater_FloatFloat_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_isDisguised__ReturnValue: FText, CallFunc_isDisguised__disguised_: bool, CallFunc_isDisguised__movement_: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_NotEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_BooleanOR_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_BooleanOR_ReturnValue_2: bool, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_BooleanAND_ReturnValue_3: bool, CallFunc_BooleanAND_ReturnValue_4: bool, CallFunc_BooleanAND_ReturnValue_5: bool | void |
-| Taser | secs: float, true: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_Subtract_IntInt_ReturnValue: int32, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_Add_IntInt_ReturnValue: int32, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_Subtract_IntInt_ReturnValue_1: int32, CallFunc_Greater_IntInt_ReturnValue_1: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_2: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_3: bool, CallFunc_Greater_IntInt_ReturnValue_2: bool, CallFunc_Add_IntInt_ReturnValue_1: int32, CallFunc_Not_PreBool_ReturnValue_2: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_4: bool, CallFunc_Not_PreBool_ReturnValue_3: bool, Temp_int_Variable: int32, CallFunc_BooleanAND_ReturnValue_5: bool, CallFunc_BooleanAND_ReturnValue_6: bool, Temp_int_Variable_1: int32, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_7: bool, CallFunc_BooleanAND_ReturnValue_8: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_SelectFloat_ReturnValue: float, CallFunc_SelectFloat_ReturnValue_1: float | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_2: bool, CallFunc_BooleanAND_ReturnValue_3: bool, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_4: bool, CallFunc_Not_PreBool_ReturnValue_2: bool, CallFunc_BooleanAND_ReturnValue_5: bool, CallFunc_Greater_IntInt_ReturnValue_2: bool, CallFunc_Not_PreBool_ReturnValue_3: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_6: bool, CallFunc_Not_PreBool_ReturnValue_4: bool, CallFunc_BooleanAND_ReturnValue_7: bool, CallFunc_BooleanAND_ReturnValue_8: bool, CallFunc_BooleanAND_ReturnValue_9: bool, CallFunc_Add_IntInt_ReturnValue: int32, K2Node_MakeStruct_FormatArgumentData: FFormatArgumentData, K2Node_MakeArray_Array: TArray, CallFunc_Format_ReturnValue: FText | void |
-| RestartCl | true?: bool | void |
-| RestartSV | true?: bool | void |
-| ToggleThermal | on?: bool, true: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, prevVestHP: float, playerkiller: APlayerChar_C*, NegatedDmg: float, TrueDmg: float, CallFunc_NotEqual_ByteByte_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_NotEqual_ByteByte_ReturnValue_1: bool, CallFunc_NotEqual_ByteByte_ReturnValue_2: bool, CallFunc_NotEqual_ByteByte_ReturnValue_3: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_2: bool, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_3: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_4: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_5: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_6: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_7: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_8: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_9: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_10: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_11: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_12: bool, CallFunc_BooleanOR_ReturnValue_1: bool, CallFunc_GetEnumeratorUserFriendlyName_ReturnValue: FString, CallFunc_EqualEqual_ByteByte_ReturnValue_13: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_14: bool, CallFunc_Conv_VectorToString_ReturnValue: FString, K2Node_DynamicCast_AsPlayer_AI_Rob: APlayerAI_Rob_C*, K2Node_DynamicCast_bSuccess: bool, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess_1: bool, K2Node_DynamicCast_AsPlayer_Char_1: APlayerChar_C*, K2Node_DynamicCast_bSuccess_2: bool, K2Node_DynamicCast_AsPolice_Dog: APolice_Dog_C*, K2Node_DynamicCast_bSuccess_3: bool, K2Node_DynamicCast_AsHorse_Char: AHorseChar_C*, K2Node_DynamicCast_bSuccess_4: bool, K2Node_DynamicCast_AsPlayer_Char_2: APlayerChar_C*, K2Node_DynamicCast_bSuccess_5: bool, CallFunc_GetController_ReturnValue: AController*, CallFunc_GetController_ReturnValue_1: AController*, K2Node_DynamicCast_AsHeist_PC: AHeistPC_C*, K2Node_DynamicCast_bSuccess_6: bool, K2Node_DynamicCast_AsHeist_PC_1: AHeistPC_C*, K2Node_DynamicCast_bSuccess_7: bool, CallFunc_Add_IntInt_ReturnValue: int32, K2Node_DynamicCast_AsHorse_Char_1: AHorseChar_C*, K2Node_DynamicCast_bSuccess_8: bool, K2Node_DynamicCast_AsRemote_Turret: ARemoteTurret_C*, K2Node_DynamicCast_bSuccess_9: bool, CallFunc_GetOwner_ReturnValue: AActor*, K2Node_DynamicCast_AsPlayer_Char_3: APlayerChar_C*, K2Node_DynamicCast_bSuccess_10: bool, CallFunc_Subtract_IntInt_ReturnValue: int32, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_Add_IntInt_ReturnValue_1: int32, K2Node_DynamicCast_AsPlayer_Char_4: APlayerChar_C*, K2Node_DynamicCast_bSuccess_11: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_15: bool, CallFunc_Subtract_IntInt_ReturnValue_1: int32, CallFunc_Greater_IntInt_ReturnValue_1: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_16: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_17: bool, CallFunc_Add_IntInt_ReturnValue_2: int32, CallFunc_Add_IntInt_ReturnValue_3: int32, K2Node_DynamicCast_AsPlayer_Char_5: APlayerChar_C*, K2Node_DynamicCast_bSuccess_12: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_GetController_ReturnValue_2: AController*, CallFunc_BooleanAND_ReturnValue_3: bool, K2Node_DynamicCast_AsHeist_PC_2: AHeistPC_C*, K2Node_DynamicCast_bSuccess_13: bool, CallFunc_BooleanAND_ReturnValue_4: bool, CallFunc_BooleanAND_ReturnValue_5: bool, K2Node_DynamicCast_AsPolice_Dog_1: APolice_Dog_C*, K2Node_DynamicCast_bSuccess_14: bool, K2Node_DynamicCast_AsPlayer_Char_6: APlayerChar_C*, K2Node_DynamicCast_bSuccess_15: bool, CallFunc_GetDisplayName_ReturnValue: FString, CallFunc_BooleanAND_ReturnValue_6: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_BooleanOR_ReturnValue_2: bool, K2Node_DynamicCast_AsPlayer_AI: APlayerAI_C*, K2Node_DynamicCast_bSuccess_16: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, K2Node_DynamicCast_AsPlayer_Char_7: APlayerChar_C*, K2Node_DynamicCast_bSuccess_17: bool, K2Node_DynamicCast_AsPlayer_Char_8: APlayerChar_C*, K2Node_DynamicCast_bSuccess_18: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_18: bool, CallFunc_Not_PreBool_ReturnValue_2: bool, CallFunc_Conv_FloatToString_ReturnValue: FString, CallFunc_BooleanAND_ReturnValue_7: bool, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString, CallFunc_Multiply_FloatFloat_ReturnValue: float, CallFunc_Concat_StrStr_ReturnValue_2: FString, CallFunc_Concat_StrStr_ReturnValue_3: FString, Temp_int_Variable: int32, Temp_int_Variable_1: int32, Temp_int_Variable_2: int32, Temp_int_Variable_3: int32, Temp_int_Variable_4: int32, CallFunc_GreaterEqual_IntInt_ReturnValue: bool, Temp_int_Variable_5: int32, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_GreaterEqual_IntInt_ReturnValue_1: bool, CallFunc_HasAuthority_ReturnValue: bool, CallFunc_K2_GetActorRotation_ReturnValue: FRotator, CallFunc_K2_GetActorLocation_ReturnValue_1: FVector, CallFunc_K2_GetActorLocation_ReturnValue_2: FVector, CallFunc_FindLookAtRotation_ReturnValue: FRotator, CallFunc_Multiply_FloatFloat_ReturnValue_1: float, CallFunc_BreakRotator_Roll: float, CallFunc_BreakRotator_Pitch: float, CallFunc_BreakRotator_Yaw: float, CallFunc_Multiply_FloatFloat_ReturnValue_2: float, CallFunc_MakeRotator_ReturnValue: FRotator, CallFunc_Multiply_FloatFloat_ReturnValue_3: float, CallFunc_EqualEqual_RotatorRotator_ReturnValue: bool, CallFunc_Multiply_FloatFloat_ReturnValue_4: float, CallFunc_Conv_BoolToString_ReturnValue: FString, CallFunc_Divide_FloatFloat_ReturnValue: float, CallFunc_IsValid_ReturnValue: bool, CallFunc_EqualEqual_FloatFloat_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_19: bool, CallFunc_BooleanAND_ReturnValue_8: bool, K2Node_DynamicCast_AsPlayer_Char_9: APlayerChar_C*, K2Node_DynamicCast_bSuccess_19: bool, CallFunc_GetController_ReturnValue_3: AController*, CallFunc_BooleanAND_ReturnValue_9: bool, K2Node_DynamicCast_AsHeist_PC_3: AHeistPC_C*, K2Node_DynamicCast_bSuccess_20: bool, CallFunc_BooleanAND_ReturnValue_10: bool, CallFunc_Multiply_FloatFloat_ReturnValue_5: float, CallFunc_Divide_FloatFloat_ReturnValue_1: float, CallFunc_Add_IntInt_ReturnValue_4: int32, CallFunc_RandomFloatInRange_ReturnValue: float, CallFunc_RandomFloatInRange_ReturnValue_1: float, CallFunc_MakeRotator_ReturnValue_1: FRotator, CallFunc_K2_GetActorLocation_ReturnValue_3: FVector, CallFunc_FindLookAtRotation_ReturnValue_1: FRotator, CallFunc_Divide_FloatFloat_ReturnValue_2: float, CallFunc_MakeTransform_ReturnValue: FTransform, CallFunc_ComposeRotators_ReturnValue: FRotator, CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue: AActor*, CallFunc_FinishSpawningActor_ReturnValue: ABulletReflection_C*, CallFunc_FTrunc_ReturnValue: int32, CallFunc_EqualEqual_ByteByte_ReturnValue_20: bool, CallFunc_Subtract_IntInt_ReturnValue_2: int32, CallFunc_Not_PreBool_ReturnValue_3: bool, CallFunc_Multiply_IntFloat_ReturnValue: float, CallFunc_GreaterEqual_FloatFloat_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_21: bool, CallFunc_BooleanAND_ReturnValue_11: bool, CallFunc_BooleanAND_ReturnValue_12: bool, CallFunc_EqualEqual_FloatFloat_ReturnValue_1: bool, CallFunc_Multiply_FloatFloat_ReturnValue_6: float, CallFunc_GetObjectClass_ReturnValue: UClass*, CallFunc_EqualEqual_ClassClass_ReturnValue: bool, CallFunc_GetOwner_ReturnValue_1: AActor*, CallFunc_Not_PreBool_ReturnValue_4: bool, K2Node_DynamicCast_AsPlayer_Char_10: APlayerChar_C*, K2Node_DynamicCast_bSuccess_21: bool, K2Node_DynamicCast_AsPlayer_Char_11: APlayerChar_C*, K2Node_DynamicCast_bSuccess_22: bool, CallFunc_Multiply_FloatFloat_ReturnValue_7: float, Temp_int_Variable_6: int32, CallFunc_Not_PreBool_ReturnValue_5: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_22: bool, CallFunc_GetActorForwardVector_ReturnValue: FVector, CallFunc_K2_GetActorLocation_ReturnValue_4: FVector, CallFunc_SelectFloat_ReturnValue: float, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_Normal_ReturnValue: FVector, CallFunc_Dot_VectorVector_ReturnValue: float, CallFunc_Greater_FloatFloat_ReturnValue: bool, CallFunc_Multiply_FloatFloat_ReturnValue_8: float, CallFunc_EqualEqual_ByteByte_ReturnValue_23: bool, CallFunc_BooleanAND_ReturnValue_13: bool, CallFunc_BooleanAND_ReturnValue_14: bool, CallFunc_GetGameMode_ReturnValue: AGameModeBase*, CallFunc_SelectFloat_ReturnValue_1: float, K2Node_DynamicCast_AsHeist_GM: AHeistGM_C*, K2Node_DynamicCast_bSuccess_23: bool, CallFunc_GetGameMode_ReturnValue_1: AGameModeBase*, CallFunc_K2_GetActorLocation_ReturnValue_5: FVector, K2Node_DynamicCast_AsHeist_GM_1: AHeistGM_C*, K2Node_DynamicCast_bSuccess_24: bool, CallFunc_K2_GetRandomReachablePointInRadius_RandomLocation: FVector, CallFunc_K2_GetRandomReachablePointInRadius_ReturnValue: bool, CallFunc_Add_VectorVector_ReturnValue: FVector, CallFunc_K2_GetActorLocation_ReturnValue_6: FVector, CallFunc_MakeTransform_ReturnValue_1: FTransform, CallFunc_K2_GetRandomReachablePointInRadius_RandomLocation_1: FVector, CallFunc_K2_GetRandomReachablePointInRadius_ReturnValue_1: bool, CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_1: AActor*, CallFunc_Add_VectorVector_ReturnValue_1: FVector, CallFunc_FinishSpawningActor_ReturnValue_1: APlayerAI_Cop_C*, CallFunc_MakeTransform_ReturnValue_2: FTransform, CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_2: AActor*, CallFunc_EqualEqual_ByteByte_ReturnValue_24: bool, CallFunc_FinishSpawningActor_ReturnValue_2: APlayerAI_Cop_C*, CallFunc_IsValid_ReturnValue_1: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_25: bool, CallFunc_GetDistanceTo_ReturnValue: float, CallFunc_Less_FloatFloat_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_26: bool, CallFunc_BooleanAND_ReturnValue_15: bool, CallFunc_Not_PreBool_ReturnValue_6: bool, CallFunc_SelectFloat_ReturnValue_2: float, CallFunc_SelectRotator_ReturnValue: FRotator, CallFunc_getCurrentMaskInfo_fasterInteract: bool, CallFunc_getCurrentMaskInfo_hpReg: bool, CallFunc_getCurrentMaskInfo_fasterSprintMoney: bool, CallFunc_getCurrentMaskInfo_reduceHpTick: bool, CallFunc_getCurrentMaskInfo_interestMoneybag: bool, CallFunc_getCurrentMaskInfo_reduceFallDmg: bool, CallFunc_getCurrentMaskInfo_reduceExplDmg: bool, CallFunc_getCurrentMaskInfo_fasterBags: bool, CallFunc_getCurrentMaskInfo_newbomb: bool, CallFunc_getCurrentMaskInfo_canttakeoff: bool, CallFunc_getCurrentMaskInfo_cdr: float, CallFunc_getCurrentMaskInfo_doubleJump_: bool, CallFunc_getCurrentMaskInfo_invisForCCTV_: bool, CallFunc_getCurrentMaskInfo_gainAmmo_: bool, CallFunc_getCurrentMaskInfo_canRide_: bool, CallFunc_getCurrentMaskInfo_slowFall_: bool, CallFunc_getCurrentMaskInfo_FoodOnMoneyPickup_: bool, CallFunc_getCurrentMaskInfo_fasterBodyCarry: bool, CallFunc_getCurrentMaskInfo_spawnMoney_: bool, CallFunc_getCurrentMaskInfo_noPoisonDmg_: bool, CallFunc_getCurrentMaskInfo_chargeJump: bool, CallFunc_BooleanAND_ReturnValue_16: bool, CallFunc_SelectFloat_ReturnValue_3: float, CallFunc_GetGameMode_ReturnValue_2: AGameModeBase*, CallFunc_GetGameMode_ReturnValue_3: AGameModeBase*, K2Node_DynamicCast_AsHeist_GM_2: AHeistGM_C*, K2Node_DynamicCast_bSuccess_25: bool, K2Node_DynamicCast_AsHeist_GM_3: AHeistGM_C*, K2Node_DynamicCast_bSuccess_26: bool, Temp_int_Variable_7: int32, K2Node_DynamicCast_AsPlayer_Char_12: APlayerChar_C*, K2Node_DynamicCast_bSuccess_27: bool, CallFunc_Map_Find_Value: int32, CallFunc_Map_Find_ReturnValue: bool, CallFunc_Map_Find_Value_1: float, CallFunc_Map_Find_ReturnValue_1: bool, K2Node_DynamicCast_AsPlayer_Char_13: APlayerChar_C*, K2Node_DynamicCast_bSuccess_28: bool, CallFunc_Map_Find_Value_2: int32, CallFunc_Map_Find_ReturnValue_2: bool, CallFunc_Map_Find_Value_3: float, CallFunc_Map_Find_ReturnValue_3: bool, CallFunc_NotEqual_ByteByte_ReturnValue_4: bool, K2Node_DynamicCast_AsPlayer_Char_14: APlayerChar_C*, K2Node_DynamicCast_bSuccess_29: bool, CallFunc_Map_Find_Value_4: int32, CallFunc_Map_Find_ReturnValue_4: bool, CallFunc_Map_Find_Value_5: float, CallFunc_Map_Find_ReturnValue_5: bool, K2Node_DynamicCast_AsPlayer_Char_15: APlayerChar_C*, K2Node_DynamicCast_bSuccess_30: bool, CallFunc_Map_Find_Value_6: int32, CallFunc_Map_Find_ReturnValue_6: bool, CallFunc_Map_Find_Value_7: float, CallFunc_Map_Find_ReturnValue_7: bool, CallFunc_GetOwner_ReturnValue_2: AActor*, K2Node_DynamicCast_AsPlayer_Char_16: APlayerChar_C*, K2Node_DynamicCast_bSuccess_31: bool, K2Node_DynamicCast_AsPlayer_Char_17: APlayerChar_C*, K2Node_DynamicCast_bSuccess_32: bool, CallFunc_K2_GetActorLocation_ReturnValue_7: FVector, CallFunc_GetGameState_ReturnValue: AGameStateBase*, K2Node_DynamicCast_AsHeist_GS: AHeistGS_C*, K2Node_DynamicCast_bSuccess_33: bool, CallFunc_GetGameState_ReturnValue_1: AGameStateBase*, K2Node_DynamicCast_AsHeist_GS_1: AHeistGS_C*, K2Node_DynamicCast_bSuccess_34: bool, CallFunc_Subtract_IntInt_ReturnValue_3: int32, CallFunc_Greater_IntInt_ReturnValue_2: bool, CallFunc_BooleanOR_ReturnValue_3: bool, CallFunc_GetGameMode_ReturnValue_4: AGameModeBase*, CallFunc_GetGameInstance_ReturnValue: UGameInstance*, K2Node_DynamicCast_AsHeist_GM_4: AHeistGM_C*, K2Node_DynamicCast_bSuccess_35: bool, K2Node_DynamicCast_AsHeist_GI: UHeistGI_C*, K2Node_DynamicCast_bSuccess_36: bool, CallFunc_BooleanAND_ReturnValue_17: bool, CallFunc_BooleanAND_ReturnValue_18: bool, CallFunc_Add_IntInt_ReturnValue_5: int32, CallFunc_BooleanAND_ReturnValue_19: bool, CallFunc_getAlivePlayersFromTeams_CopsAlive: TArray, CallFunc_getAlivePlayersFromTeams_CopsNum: int32, CallFunc_getAlivePlayersFromTeams_RobsAlive: TArray, CallFunc_getAlivePlayersFromTeams_RobsNum: int32, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_Multiply_FloatFloat_ReturnValue_9: float, CallFunc_Multiply_FloatFloat_ReturnValue_10: float, CallFunc_SelectFloat_ReturnValue_4: float, CallFunc_GetGameMode_ReturnValue_5: AGameModeBase*, CallFunc_getAlivePlayersFromTeams_CopsAlive_1: TArray, CallFunc_getAlivePlayersFromTeams_CopsNum_1: int32, CallFunc_getAlivePlayersFromTeams_RobsAlive_1: TArray, CallFunc_getAlivePlayersFromTeams_RobsNum_1: int32, K2Node_DynamicCast_AsHeist_GM_5: AHeistGM_C*, K2Node_DynamicCast_bSuccess_37: bool, CallFunc_LessEqual_IntInt_ReturnValue_1: bool, CallFunc_GetGameState_ReturnValue_2: AGameStateBase*, K2Node_DynamicCast_AsHeist_GS_2: AHeistGS_C*, K2Node_DynamicCast_bSuccess_38: bool, CallFunc_NotEqual_BoolBool_ReturnValue: bool, CallFunc_Subtract_IntInt_ReturnValue_4: int32, CallFunc_Greater_IntInt_ReturnValue_3: bool, Temp_int_Variable_8: int32, CallFunc_Divide_FloatFloat_ReturnValue_3: float, CallFunc_Not_PreBool_ReturnValue_7: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_27: bool, CallFunc_BooleanAND_ReturnValue_20: bool, CallFunc_K2_GetActorLocation_ReturnValue_8: FVector, CallFunc_BooleanAND_ReturnValue_21: bool, CallFunc_FindLookAtRotation_ReturnValue_2: FRotator, CallFunc_BreakRotator_Roll_1: float, CallFunc_BreakRotator_Pitch_1: float, CallFunc_BreakRotator_Yaw_1: float, CallFunc_MakeRotator_ReturnValue_2: FRotator, CallFunc_GreaterEqual_FloatFloat_ReturnValue_1: bool, CallFunc_EqualEqual_RotatorRotator_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_22: bool, CallFunc_BooleanAND_ReturnValue_23: bool, CallFunc_BooleanAND_ReturnValue_24: bool, CallFunc_SelectFloat_ReturnValue_5: float, CallFunc_BooleanAND_ReturnValue_25: bool, CallFunc_SelectFloat_ReturnValue_6: float, CallFunc_getCurrentMaskInfo_fasterInteract_1: bool, CallFunc_getCurrentMaskInfo_hpReg_1: bool, CallFunc_getCurrentMaskInfo_fasterSprintMoney_1: bool, CallFunc_getCurrentMaskInfo_reduceHpTick_1: bool, CallFunc_getCurrentMaskInfo_interestMoneybag_1: bool, CallFunc_getCurrentMaskInfo_reduceFallDmg_1: bool, CallFunc_getCurrentMaskInfo_reduceExplDmg_1: bool, CallFunc_getCurrentMaskInfo_fasterBags_1: bool, CallFunc_getCurrentMaskInfo_newbomb_1: bool, CallFunc_getCurrentMaskInfo_canttakeoff_1: bool, CallFunc_getCurrentMaskInfo_cdr_1: float, CallFunc_getCurrentMaskInfo_doubleJump__1: bool, CallFunc_getCurrentMaskInfo_invisForCCTV__1: bool, CallFunc_getCurrentMaskInfo_gainAmmo__1: bool, CallFunc_getCurrentMaskInfo_canRide__1: bool, CallFunc_getCurrentMaskInfo_slowFall__1: bool, CallFunc_getCurrentMaskInfo_FoodOnMoneyPickup__1: bool, CallFunc_getCurrentMaskInfo_fasterBodyCarry_1: bool, CallFunc_getCurrentMaskInfo_spawnMoney__1: bool, CallFunc_getCurrentMaskInfo_noPoisonDmg__1: bool, CallFunc_getCurrentMaskInfo_chargeJump_1: bool, CallFunc_BooleanAND_ReturnValue_26: bool, CallFunc_BooleanAND_ReturnValue_27: bool, CallFunc_BooleanAND_ReturnValue_28: bool, CallFunc_BooleanAND_ReturnValue_29: bool, CallFunc_SelectFloat_ReturnValue_7: float, CallFunc_SelectFloat_ReturnValue_8: float, CallFunc_EqualEqual_ByteByte_ReturnValue_28: bool, CallFunc_BooleanAND_ReturnValue_30: bool, CallFunc_BooleanAND_ReturnValue_31: bool, CallFunc_BooleanAND_ReturnValue_32: bool, CallFunc_SelectFloat_ReturnValue_9: float, CallFunc_EqualEqual_ByteByte_ReturnValue_29: bool, CallFunc_Not_PreBool_ReturnValue_8: bool, CallFunc_BooleanAND_ReturnValue_33: bool, CallFunc_SelectFloat_ReturnValue_10: float, CallFunc_EqualEqual_ByteByte_ReturnValue_30: bool, CallFunc_Not_PreBool_ReturnValue_9: bool, CallFunc_BooleanAND_ReturnValue_34: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_31: bool, CallFunc_Not_PreBool_ReturnValue_10: bool, CallFunc_BooleanAND_ReturnValue_35: bool, CallFunc_IsValid_ReturnValue_2: bool, CallFunc_BooleanAND_ReturnValue_36: bool, CallFunc_SelectFloat_ReturnValue_11: float, CallFunc_GetController_ReturnValue_4: AController*, K2Node_DynamicCast_AsHeist_PC_4: AHeistPC_C*, K2Node_DynamicCast_bSuccess_39: bool, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_GetGameState_ReturnValue_3: AGameStateBase*, K2Node_DynamicCast_AsHeist_GS_3: AHeistGS_C*, K2Node_DynamicCast_bSuccess_40: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_32: bool, CallFunc_Add_IntInt_ReturnValue_6: int32, CallFunc_Greater_FloatFloat_ReturnValue_1: bool, CallFunc_Greater_FloatFloat_ReturnValue_2: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_33: bool, CallFunc_BooleanAND_ReturnValue_37: bool, CallFunc_Subtract_FloatFloat_ReturnValue: float, CallFunc_BooleanAND_ReturnValue_38: bool, CallFunc_FMax_ReturnValue: float, CallFunc_GreaterEqual_FloatFloat_ReturnValue_2: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_34: bool, CallFunc_BooleanAND_ReturnValue_39: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_35: bool, CallFunc_BooleanAND_ReturnValue_40: bool, CallFunc_SelectFloat_ReturnValue_12: float, CallFunc_BooleanAND_ReturnValue_41: bool, CallFunc_SelectFloat_ReturnValue_13: float, CallFunc_BooleanAND_ReturnValue_42: bool, CallFunc_BooleanOR_ReturnValue_4: bool, CallFunc_BooleanAND_ReturnValue_43: bool, CallFunc_BooleanAND_ReturnValue_44: bool, CallFunc_BooleanAND_ReturnValue_45: bool, CallFunc_SelectFloat_ReturnValue_14: float, CallFunc_Subtract_FloatFloat_ReturnValue_1: float, CallFunc_Greater_FloatFloat_ReturnValue_3: bool, CallFunc_UtcNow_ReturnValue: FDateTime, K2Node_MakeStruct_DeathInfo: FDeathInfo__pf1458230002, K2Node_MakeStruct_DeathInfo_1: FDeathInfo__pf1458230002, CallFunc_UtcNow_ReturnValue_1: FDateTime, K2Node_MakeStruct_DeathInfo_2: FDeathInfo__pf1458230002, CallFunc_GetGameMode_ReturnValue_6: AGameModeBase*, CallFunc_getAlivePlayersFromTeams_CopsAlive_2: TArray, CallFunc_getAlivePlayersFromTeams_CopsNum_2: int32, CallFunc_getAlivePlayersFromTeams_RobsAlive_2: TArray, CallFunc_getAlivePlayersFromTeams_RobsNum_2: int32, K2Node_DynamicCast_AsHeist_GM_6: AHeistGM_C*, K2Node_DynamicCast_bSuccess_41: bool, CallFunc_Conv_IntToString_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_4: FString, CallFunc_LessEqual_IntInt_ReturnValue_2: bool, CallFunc_GetGameState_ReturnValue_4: AGameStateBase*, K2Node_DynamicCast_AsHeist_GS_4: AHeistGS_C*, K2Node_DynamicCast_bSuccess_42: bool, CallFunc_Subtract_IntInt_ReturnValue_5: int32, CallFunc_Greater_IntInt_ReturnValue_4: bool, CallFunc_BooleanOR_ReturnValue_5: bool, Temp_int_Variable_9: int32, CallFunc_Subtract_FloatFloat_ReturnValue_2: float, CallFunc_FClamp_ReturnValue: float, CallFunc_Not_PreBool_ReturnValue_11: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_36: bool, CallFunc_BooleanAND_ReturnValue_46: bool, CallFunc_Not_PreBool_ReturnValue_12: bool, CallFunc_SelectFloat_ReturnValue_15: float, CallFunc_EqualEqual_ByteByte_ReturnValue_37: bool, CallFunc_BooleanAND_ReturnValue_47: bool, CallFunc_Not_PreBool_ReturnValue_13: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_38: bool, CallFunc_BooleanAND_ReturnValue_48: bool, CallFunc_Not_PreBool_ReturnValue_14: bool, CallFunc_Subtract_FloatFloat_ReturnValue_3: float, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_LessEqual_FloatFloat_ReturnValue_1: bool, CallFunc_Conv_VectorToString_ReturnValue_1: FString, CallFunc_BooleanAND_ReturnValue_49: bool, CallFunc_Subtract_VectorVector_ReturnValue_1: FVector, CallFunc_SelectFloat_ReturnValue_16: float, CallFunc_VSize_ReturnValue: float, CallFunc_Conv_FloatToString_ReturnValue_1: FString, CallFunc_LessEqual_FloatFloat_ReturnValue_2: bool, CallFunc_BooleanAND_ReturnValue_50: bool, CallFunc_Conv_BoolToString_ReturnValue_1: FString, CallFunc_BooleanAND_ReturnValue_51: bool, CallFunc_Concat_StrStr_ReturnValue_5: FString, CallFunc_SelectFloat_ReturnValue_17: float, CallFunc_Concat_StrStr_ReturnValue_6: FString, CallFunc_Concat_StrStr_ReturnValue_7: FString, CallFunc_Not_PreBool_ReturnValue_15: bool, CallFunc_Concat_StrStr_ReturnValue_8: FString, CallFunc_BooleanAND_ReturnValue_52: bool, CallFunc_Concat_StrStr_ReturnValue_9: FString, CallFunc_SelectFloat_ReturnValue_18: float, CallFunc_Concat_StrStr_ReturnValue_10: FString, CallFunc_Concat_StrStr_ReturnValue_11: FString, CallFunc_Concat_StrStr_ReturnValue_12: FString, CallFunc_Concat_StrStr_ReturnValue_13: FString | void |
-| GetLocalVar | Key: FString, Value: FString, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_int_Array_Index_Variable: int32, CallFunc_Array_Get_Item: FF_SavedVar__pf523916617, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_EqualEqual_StrStr_ReturnValue: bool | void |
-| SetLocalVar | Key: FString, Value: FString, K2Node_MakeStruct_F_SavedVar: FF_SavedVar__pf523916617, K2Node_MakeStruct_F_SavedVar_1: FF_SavedVar__pf523916617, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_int_Array_Index_Variable: int32, CallFunc_Array_Get_Item: FF_SavedVar__pf523916617, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_EqualEqual_StrStr_ReturnValue: bool, CallFunc_Array_Add_ReturnValue: int32 | void |
-| GetReplicatedVar | Key: FString, Value: FString, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_int_Array_Index_Variable: int32, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Array_Get_Item: FF_SavedVar__pf523916617, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_EqualEqual_StrStr_ReturnValue: bool | void |
-| SetReplicatedVar | Key: FString, Value: FString, K2Node_MakeStruct_F_SavedVar: FF_SavedVar__pf523916617, K2Node_MakeStruct_F_SavedVar_1: FF_SavedVar__pf523916617, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_int_Array_Index_Variable: int32, CallFunc_Array_Add_ReturnValue: int32, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Array_Get_Item: FF_SavedVar__pf523916617, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_EqualEqual_StrStr_ReturnValue: bool | void |
-| handleOnRepClass | Temp_bool_Variable: bool, Temp_object_Variable: UStaticMesh*, CallFunc_SelectFloat_ReturnValue: float, CallFunc_IsLocallyControlled_ReturnValue: bool, CallFunc_GetMyMovementComponent_ReturnValue: UMyCharacterMovementComponent*, CallFunc_GetClassSprintSpeed_Speed: float, CallFunc_FindClassRow_row: FClassesStruct__pf1489439355, CallFunc_FindClassRow_rowName: FName, CallFunc_K2_AttachToComponent_ReturnValue: bool, K2Node_Select_Default: UStaticMesh*, CallFunc_SetStaticMesh_ReturnValue: bool | void |
-| OnRep_CustomClassString | none | void |
-| UpdateJumpVelocity | CallFunc_getCurrentMultiPurposeZone_noPunch: bool, CallFunc_getCurrentMultiPurposeZone_noActiveAbility: bool, CallFunc_getCurrentMultiPurposeZone_jumpModi: float, CallFunc_getCurrentMultiPurposeZone_sprintModi: float, CallFunc_getCurrentMultiPurposeZone_noFallDmg: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_SelectFloat_ReturnValue: float, CallFunc_Multiply_FloatFloat_ReturnValue: float | void |
-| usingStamina | stamina?: bool, reason: FText, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_GetGameState_ReturnValue: AGameStateBase*, CallFunc_BooleanAND_ReturnValue_1: bool, K2Node_DynamicCast_AsHeist_GS: AHeistGS_C*, K2Node_DynamicCast_bSuccess: bool | void |
+| GetRadiation | loc: FVector | float |
+| Taser | secs: float | bool |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C*, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_SelectFloat_ReturnValue: float, CallFunc_SelectFloat_ReturnValue_1: float | bool |
+| RestartCl | none | bool |
+| RestartSV | none | bool |
+| ToggleThermal | on?: bool | bool |
+| CanBePenetrated? | inputDmg: float | float |
+| bulletsCanDmg? | helper: bool | bool |
 | SetClass | classID: uint8 | void |
-| SetRobber | robber: bool, r: int32, CallFunc_RandomIntegerInRange_ReturnValue: int32, CallFunc_RandomInteger_ReturnValue: int32, CallFunc_Add_IntInt_ReturnValue: int32, CallFunc_Add_IntInt_ReturnValue_1: int32, CallFunc_Percent_IntInt_ReturnValue: int32, CallFunc_EqualEqual_IntInt_ReturnValue: bool, CallFunc_EqualEqual_IntInt_ReturnValue_1: bool, CallFunc_SelectInt_ReturnValue: int32, CallFunc_SelectInt_ReturnValue_1: int32, CallFunc_Multiply_IntInt_ReturnValue: int32, CallFunc_Multiply_IntInt_ReturnValue_1: int32, CallFunc_Add_IntInt_ReturnValue_2: int32, CallFunc_Add_IntInt_ReturnValue_3: int32 | void |
-| isRobber | robber: bool, CallFunc_Percent_IntInt_ReturnValue: int32, CallFunc_Subtract_IntInt_ReturnValue: int32, CallFunc_Divide_IntInt_ReturnValue: int32, CallFunc_Percent_IntInt_ReturnValue_1: int32, CallFunc_EqualEqual_IntInt_ReturnValue: bool | void |
-| isClass | robber: bool, classID: uint8, is: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_EqualEqual_BoolBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| getCurrentMaskID | ID: int32, CallFunc_Conv_IntToString_ReturnValue: FString, CallFunc_Conv_StringToName_ReturnValue: FName, CallFunc_GetDataTableRowFromName_OutRow: FMaskStruct__pf1458230002, CallFunc_GetDataTableRowFromName_ReturnValue: bool | void |
-| OnRep_spawnprotect? | none | void |
-| OnRep_spectator? | none | void |
-| updatePlayersVC | CallFunc_GetPlayerController_ReturnValue: APlayerController*, CallFunc_GetPlayerPawn_ReturnValue: APawn*, K2Node_DynamicCast_AsHeist_PC: AHeistPC_C*, K2Node_DynamicCast_bSuccess: bool, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_shouldPlayerBeMutedVC_muted: bool, CallFunc_shouldPlayerBeMutedVC_soundAtt: USoundAttenuation*, CallFunc_shouldPlayerBeMutedVC_reason: FString, CallFunc_shouldPlayerBeMutedVC_mutePings: bool, CallFunc_GetDisplayName_ReturnValue: FString, CallFunc_Conv_BoolToString_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString, CallFunc_Concat_StrStr_ReturnValue_2: FString, CallFunc_Concat_StrStr_ReturnValue_3: FString, CallFunc_IsValid_ReturnValue_1: bool, CallFunc_Concat_StrStr_ReturnValue_4: FString, CallFunc_Concat_StrStr_ReturnValue_5: FString, CallFunc_Concat_StrStr_ReturnValue_6: FString, K2Node_MakeStruct_VoiceSettings: FVoiceSettings, CallFunc_Concat_StrStr_ReturnValue_7: FString, CallFunc_Concat_StrStr_ReturnValue_8: FString | void |
-| shouldPlayerBeMutedVC | player: APlayerChar_C*, muted: bool, soundAtt: USoundAttenuation*, reason: FString, mutePings: bool, CallFunc_EqualEqual_BoolBool_ReturnValue: bool, CallFunc_EqualEqual_BoolBool_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_GetGameInstance_ReturnValue: UGameInstance*, K2Node_DynamicCast_AsHeist_GI: UHeistGI_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_GetGameState_ReturnValue: AGameStateBase*, K2Node_DynamicCast_AsHeist_GS: AHeistGS_C*, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_GetPlayerController_ReturnValue: APlayerController*, K2Node_DynamicCast_AsHeist_PC: AHeistPC_C*, K2Node_DynamicCast_bSuccess_2: bool, CallFunc_Array_Contains_ReturnValue: bool | void |
-| updateAllVoiceChatMutes | Temp_int_Loop_Counter_Variable: int32, Temp_int_Array_Index_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, CallFunc_GetAllActorsOfClass_OutActors: TArray, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Array_Get_Item: APlayerChar_C*, CallFunc_Less_IntInt_ReturnValue: bool | void |
-| sameTeam? | other: APlayerChar_C*, same: bool, CallFunc_EqualEqual_BoolBool_ReturnValue: bool, CallFunc_EqualEqual_BoolBool_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| OnRep_talking? | CallFunc_Create_ReturnValue: UPlayerTalkingPart_C*, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_bool_True_if_break_was_hit_Variable: bool, CallFunc_Not_PreBool_ReturnValue: bool, Temp_int_Array_Index_Variable: int32, CallFunc_GetPlayerController_ReturnValue: APlayerController*, CallFunc_GetPlayerController_ReturnValue_1: APlayerController*, K2Node_DynamicCast_AsHeist_PC: AHeistPC_C*, K2Node_DynamicCast_bSuccess: bool, K2Node_DynamicCast_AsHeist_PC_1: AHeistPC_C*, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_EqualEqual_BoolBool_ReturnValue: bool, CallFunc_AddChild_ReturnValue: UPanelSlot*, CallFunc_EqualEqual_BoolBool_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_GetAllWidgetsOfClass_FoundWidgets: TArray, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Array_Get_Item: UPlayerTalkingPart_C*, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool | void |
-| isClass? | rob?: bool, id: uint8, is?: bool, CallFunc_EqualEqual_BoolBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| getRandomCustomerDisguise | SkeletalMesh: USkeletalMesh*, Material: UMaterial*, CallFunc_RandomIntegerInRange_ReturnValue: int32, CallFunc_Conv_IntToString_ReturnValue: FString, CallFunc_Conv_StringToName_ReturnValue: FName, CallFunc_GetDataTableRowFromName_OutRow: FClothingStruct__pf1458230002, CallFunc_GetDataTableRowFromName_ReturnValue: bool | void |
-| OnRep_vestHP | CallFunc_IsLocallyControlled_ReturnValue: bool, CallFunc_Greater_FloatFloat_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| Handle Player Hidden | forceHidden?: bool, CallFunc_getCurrentMaskInfo_fasterInteract: bool, CallFunc_getCurrentMaskInfo_hpReg: bool, CallFunc_getCurrentMaskInfo_fasterSprintMoney: bool, CallFunc_getCurrentMaskInfo_reduceHpTick: bool, CallFunc_getCurrentMaskInfo_interestMoneybag: bool, CallFunc_getCurrentMaskInfo_reduceFallDmg: bool, CallFunc_getCurrentMaskInfo_reduceExplDmg: bool, CallFunc_getCurrentMaskInfo_fasterBags: bool, CallFunc_getCurrentMaskInfo_newbomb: bool, CallFunc_getCurrentMaskInfo_canttakeoff: bool, CallFunc_getCurrentMaskInfo_cdr: float, CallFunc_getCurrentMaskInfo_doubleJump_: bool, CallFunc_getCurrentMaskInfo_invisForCCTV_: bool, CallFunc_getCurrentMaskInfo_gainAmmo_: bool, CallFunc_getCurrentMaskInfo_canRide_: bool, CallFunc_getCurrentMaskInfo_slowFall_: bool, CallFunc_getCurrentMaskInfo_FoodOnMoneyPickup_: bool, CallFunc_getCurrentMaskInfo_fasterBodyCarry: bool, CallFunc_getCurrentMaskInfo_spawnMoney_: bool, CallFunc_getCurrentMaskInfo_noPoisonDmg_: bool, CallFunc_getCurrentMaskInfo_chargeJump: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_GetPlayerController_ReturnValue: APlayerController*, CallFunc_BooleanOR_ReturnValue_1: bool, CallFunc_GetViewTarget_ReturnValue: AActor*, CallFunc_BooleanOR_ReturnValue_2: bool, K2Node_DynamicCast_AsCCTV: ACCTV_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_NotEqual_BoolBool_ReturnValue: bool, CallFunc_BooleanOR_ReturnValue_3: bool, CallFunc_BooleanOR_ReturnValue_4: bool, CallFunc_BooleanOR_ReturnValue_5: bool, CallFunc_NotEqual_BoolBool_ReturnValue_1: bool | void |
-| damagedPlayer | dmgedPlayer: APlayerChar_C*, dmg: float, Temp_int_Variable: int32, CallFunc_FTrunc_ReturnValue: int32, CallFunc_isClass__is_: bool, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_Add_IntInt_ReturnValue: int32, CallFunc_Clamp_ReturnValue: int32, CallFunc_Map_Find_Value: float, CallFunc_Map_Find_ReturnValue: bool, CallFunc_Map_Find_Value_1: int32, CallFunc_Map_Find_ReturnValue_1: bool, CallFunc_Add_IntInt_ReturnValue_1: int32, CallFunc_Add_FloatFloat_ReturnValue: float | void |
-| handleBackShieldVis | CallFunc_Not_PreBool_ReturnValue: bool, K2Node_DynamicCast_AsRiot_Shield_Col: ARiotShieldCol_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_IsLocallyControlled_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_2: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_BooleanAND_ReturnValue_3: bool, CallFunc_BooleanAND_ReturnValue_4: bool, CallFunc_BooleanAND_ReturnValue_5: bool | void |
-| OnRep_painted? | CallFunc_GetPlayerController_ReturnValue: APlayerController*, K2Node_DynamicCast_AsHeist_PC: AHeistPC_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_IsLocalController_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| getCurrentMaskInfo | ignoreMaskOn?: bool, fasterInteract: bool, hpReg: bool, fasterSprintMoney: bool, reduceHpTick: bool, interestMoneybag: bool, reduceFallDmg: bool, reduceExplDmg: bool, fasterBags: bool, newbomb: bool, canttakeoff: bool, cdr: float, doubleJump?: bool, invisForCCTV?: bool, gainAmmo?: bool, canRide?: bool, slowFall?: bool, FoodOnMoneyPickup?: bool, fasterBodyCarry: bool, spawnMoney?: bool, noPoisonDmg?: bool, chargeJump: bool, CallFunc_Conv_IntToString_ReturnValue: FString, CallFunc_Conv_StringToName_ReturnValue: FName, CallFunc_GetDataTableRowFromName_OutRow: FMaskStruct__pf1458230002, CallFunc_GetDataTableRowFromName_ReturnValue: bool, CallFunc_EqualEqual_IntInt_ReturnValue: bool, CallFunc_EqualEqual_IntInt_ReturnValue_1: bool, CallFunc_EqualEqual_IntInt_ReturnValue_2: bool, CallFunc_EqualEqual_IntInt_ReturnValue_3: bool, CallFunc_EqualEqual_IntInt_ReturnValue_4: bool, CallFunc_EqualEqual_IntInt_ReturnValue_5: bool, CallFunc_EqualEqual_IntInt_ReturnValue_6: bool, CallFunc_EqualEqual_IntInt_ReturnValue_7: bool, CallFunc_EqualEqual_IntInt_ReturnValue_8: bool, CallFunc_EqualEqual_IntInt_ReturnValue_9: bool, CallFunc_SelectFloat_ReturnValue: float, CallFunc_EqualEqual_IntInt_ReturnValue_10: bool, CallFunc_EqualEqual_IntInt_ReturnValue_11: bool, CallFunc_EqualEqual_IntInt_ReturnValue_12: bool, CallFunc_EqualEqual_IntInt_ReturnValue_13: bool, CallFunc_EqualEqual_IntInt_ReturnValue_14: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_EqualEqual_IntInt_ReturnValue_15: bool, CallFunc_EqualEqual_IntInt_ReturnValue_16: bool | void |
-| OnRep_maskOn? | CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_getCurrentMaskInfo_fasterInteract: bool, CallFunc_getCurrentMaskInfo_hpReg: bool, CallFunc_getCurrentMaskInfo_fasterSprintMoney: bool, CallFunc_getCurrentMaskInfo_reduceHpTick: bool, CallFunc_getCurrentMaskInfo_interestMoneybag: bool, CallFunc_getCurrentMaskInfo_reduceFallDmg: bool, CallFunc_getCurrentMaskInfo_reduceExplDmg: bool, CallFunc_getCurrentMaskInfo_fasterBags: bool, CallFunc_getCurrentMaskInfo_newbomb: bool, CallFunc_getCurrentMaskInfo_canttakeoff: bool, CallFunc_getCurrentMaskInfo_cdr: float, CallFunc_getCurrentMaskInfo_doubleJump_: bool, CallFunc_getCurrentMaskInfo_invisForCCTV_: bool, CallFunc_getCurrentMaskInfo_gainAmmo_: bool, CallFunc_getCurrentMaskInfo_canRide_: bool, CallFunc_getCurrentMaskInfo_slowFall_: bool, CallFunc_getCurrentMaskInfo_FoodOnMoneyPickup_: bool, CallFunc_getCurrentMaskInfo_fasterBodyCarry: bool, CallFunc_getCurrentMaskInfo_spawnMoney_: bool, CallFunc_getCurrentMaskInfo_noPoisonDmg_: bool, CallFunc_getCurrentMaskInfo_chargeJump: bool, CallFunc_SelectFloat_ReturnValue: float, CallFunc_SelectFloat_ReturnValue_1: float, CallFunc_GetClassSprintSpeed_Speed: float, K2Node_DynamicCast_AsMy_Character_Movement_Component: UMyCharacterMovementComponent*, K2Node_DynamicCast_bSuccess: bool, CallFunc_IsLocallyControlled_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool | void |
-| OnRep_selectedMask | CallFunc_Conv_IntToString_ReturnValue: FString, CallFunc_Conv_StringToName_ReturnValue: FName, CallFunc_GetDataTableRowFromName_OutRow: FMaskStruct__pf1458230002, CallFunc_GetDataTableRowFromName_ReturnValue: bool, CallFunc_Conv_VectorToString_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_SetStaticMesh_ReturnValue: bool | void |
-| OnRep_tasered? | none | void |
-| OnRep_roped? | none | void |
-| OnRep_hidden? | CallFunc_Conv_BoolToString_ReturnValue: FString, CallFunc_Conv_BoolToString_ReturnValue_1: FString, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_SelectFloat_ReturnValue: float, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Conv_BoolToString_ReturnValue_2: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString, CallFunc_Concat_StrStr_ReturnValue_2: FString, CallFunc_Concat_StrStr_ReturnValue_3: FString, CallFunc_Concat_StrStr_ReturnValue_4: FString, CallFunc_Concat_StrStr_ReturnValue_5: FString | void |
-| MaybeUpdateHudChar | CallFunc_GetAllActorsOfClass_OutActors: TArray, CallFunc_GetAllActorsOfClass_OutActors_1: TArray, CallFunc_Array_Get_Item: AHUD_Character_C*, CallFunc_Array_Get_Item_1: ASCC_HUD_C*, CallFunc_IsLocallyControlled_ReturnValue: bool, CallFunc_GetGameInstance_ReturnValue: UGameInstance*, K2Node_DynamicCast_AsHeist_GI: UHeistGI_C*, K2Node_DynamicCast_bSuccess: bool | void |
-| CanJumpInternal | Temp_object_Variable: TArray, CallFunc_GetOverlappingActors_OverlappingActors: TArray, CallFunc_Array_Length_ReturnValue: int32, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_getCurrentMaskInfo_fasterInteract: bool, CallFunc_getCurrentMaskInfo_hpReg: bool, CallFunc_getCurrentMaskInfo_fasterSprintMoney: bool, CallFunc_getCurrentMaskInfo_reduceHpTick: bool, CallFunc_getCurrentMaskInfo_interestMoneybag: bool, CallFunc_getCurrentMaskInfo_reduceFallDmg: bool, CallFunc_getCurrentMaskInfo_reduceExplDmg: bool, CallFunc_getCurrentMaskInfo_fasterBags: bool, CallFunc_getCurrentMaskInfo_newbomb: bool, CallFunc_getCurrentMaskInfo_canttakeoff: bool, CallFunc_getCurrentMaskInfo_cdr: float, CallFunc_getCurrentMaskInfo_doubleJump_: bool, CallFunc_getCurrentMaskInfo_invisForCCTV_: bool, CallFunc_getCurrentMaskInfo_gainAmmo_: bool, CallFunc_getCurrentMaskInfo_canRide_: bool, CallFunc_getCurrentMaskInfo_slowFall_: bool, CallFunc_getCurrentMaskInfo_FoodOnMoneyPickup_: bool, CallFunc_getCurrentMaskInfo_fasterBodyCarry: bool, CallFunc_getCurrentMaskInfo_spawnMoney_: bool, CallFunc_getCurrentMaskInfo_noPoisonDmg_: bool, CallFunc_getCurrentMaskInfo_chargeJump: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_GetActorForwardVector_ReturnValue: FVector, CallFunc_Multiply_VectorInt_ReturnValue: FVector, CallFunc_Add_VectorVector_ReturnValue: FVector, CallFunc_LineTraceSingle_OutHit: FHitResult, CallFunc_LineTraceSingle_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_IsFalling_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_3: bool | bool |
-| OnRep_DeathInfo | CallFunc_EqualEqual_DateTimeDateTime_ReturnValue: bool | void |
-| HandleGotShotSV | CallFunc_IsValid_ReturnValue: bool, CallFunc_IsValid_ReturnValue_1: bool, CallFunc_GetController_ReturnValue: AController*, K2Node_DynamicCast_AsHeist_PC: AHeistPC_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_GetController_ReturnValue_1: AController*, K2Node_DynamicCast_AsHeist_PC_1: AHeistPC_C*, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_IsValid_ReturnValue_2: bool, CallFunc_GetController_ReturnValue_2: AController*, K2Node_DynamicCast_AsHeist_PC_2: AHeistPC_C*, K2Node_DynamicCast_bSuccess_2: bool, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_EqualEqual_ObjectObject_ReturnValue_1: bool, CallFunc_EqualEqual_ObjectObject_ReturnValue_2: bool | void |
-| HandleGotShot | DmgSource: AActor*, dontSlow: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_GetGameTimeSinceCreation_ReturnValue: float, CallFunc_GetPlayerPawn_ReturnValue: APawn*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_K2_GetActorLocation_ReturnValue_1: FVector, CallFunc_Create_ReturnValue: UHitIndicatorWidget_C*, CallFunc_IsValid_ReturnValue_1: bool | void |
-| GetClassSprintSpeed | classID: uint8, rob?: bool, Speed: float, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_getCurrentMultiPurposeZone_noPunch: bool, CallFunc_getCurrentMultiPurposeZone_noActiveAbility: bool, CallFunc_getCurrentMultiPurposeZone_jumpModi: float, CallFunc_getCurrentMultiPurposeZone_sprintModi: float, CallFunc_getCurrentMultiPurposeZone_noFallDmg: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_TextIsEmpty_ReturnValue: bool, CallFunc_SelectFloat_ReturnValue: float, CallFunc_Not_PreBool_ReturnValue_2: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_2: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_3: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_SelectFloat_ReturnValue_1: float, CallFunc_IsValid_ReturnValue: bool, CallFunc_BooleanOR_ReturnValue_1: bool, CallFunc_Greater_IntInt_ReturnValue_1: bool, CallFunc_BooleanOR_ReturnValue_2: bool, CallFunc_BooleanOR_ReturnValue_3: bool, CallFunc_getCurrentMaskInfo_fasterInteract: bool, CallFunc_getCurrentMaskInfo_hpReg: bool, CallFunc_getCurrentMaskInfo_fasterSprintMoney: bool, CallFunc_getCurrentMaskInfo_reduceHpTick: bool, CallFunc_getCurrentMaskInfo_interestMoneybag: bool, CallFunc_getCurrentMaskInfo_reduceFallDmg: bool, CallFunc_getCurrentMaskInfo_reduceExplDmg: bool, CallFunc_getCurrentMaskInfo_fasterBags: bool, CallFunc_getCurrentMaskInfo_newbomb: bool, CallFunc_getCurrentMaskInfo_canttakeoff: bool, CallFunc_getCurrentMaskInfo_cdr: float, CallFunc_getCurrentMaskInfo_doubleJump_: bool, CallFunc_getCurrentMaskInfo_invisForCCTV_: bool, CallFunc_getCurrentMaskInfo_gainAmmo_: bool, CallFunc_getCurrentMaskInfo_canRide_: bool, CallFunc_getCurrentMaskInfo_slowFall_: bool, CallFunc_getCurrentMaskInfo_FoodOnMoneyPickup_: bool, CallFunc_getCurrentMaskInfo_fasterBodyCarry: bool, CallFunc_getCurrentMaskInfo_spawnMoney_: bool, CallFunc_getCurrentMaskInfo_noPoisonDmg_: bool, CallFunc_getCurrentMaskInfo_chargeJump: bool, CallFunc_BooleanAND_ReturnValue_3: bool, CallFunc_BooleanAND_ReturnValue_4: bool, CallFunc_BooleanAND_ReturnValue_5: bool, CallFunc_SelectFloat_ReturnValue_2: float, CallFunc_SelectFloat_ReturnValue_3: float, CallFunc_SelectFloat_ReturnValue_4: float, CallFunc_SelectFloat_ReturnValue_5: float, CallFunc_Multiply_FloatFloat_ReturnValue: float | void |
-| getAllValidSpectatingTargets | possibleSpecTargets: TArray, possibleTargets: TArray, Temp_int_Array_Index_Variable: int32, Temp_int_Array_Index_Variable_1: int32, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_int_Array_Index_Variable_2: int32, Temp_int_Loop_Counter_Variable_1: int32, CallFunc_Add_IntInt_ReturnValue_1: int32, Temp_int_Loop_Counter_Variable_2: int32, Temp_int_Loop_Counter_Variable_3: int32, CallFunc_Add_IntInt_ReturnValue_2: int32, CallFunc_Add_IntInt_ReturnValue_3: int32, Temp_int_Array_Index_Variable_3: int32, Temp_int_Array_Index_Variable_4: int32, Temp_int_Loop_Counter_Variable_4: int32, CallFunc_Add_IntInt_ReturnValue_4: int32, Temp_int_Array_Index_Variable_5: int32, Temp_int_Loop_Counter_Variable_5: int32, CallFunc_Add_IntInt_ReturnValue_5: int32, Temp_int_Loop_Counter_Variable_6: int32, CallFunc_Add_IntInt_ReturnValue_6: int32, Temp_int_Array_Index_Variable_6: int32, Temp_int_Loop_Counter_Variable_7: int32, CallFunc_Add_IntInt_ReturnValue_7: int32, Temp_int_Array_Index_Variable_7: int32, Temp_int_Loop_Counter_Variable_8: int32, CallFunc_Add_IntInt_ReturnValue_8: int32, Temp_bool_True_if_break_was_hit_Variable: bool, CallFunc_Not_PreBool_ReturnValue: bool, Temp_int_Array_Index_Variable_8: int32, Temp_int_Loop_Counter_Variable_9: int32, CallFunc_Add_IntInt_ReturnValue_9: int32, Temp_bool_True_if_break_was_hit_Variable_1: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, Temp_int_Array_Index_Variable_9: int32, CallFunc_Not_PreBool_ReturnValue_2: bool, CallFunc_Not_PreBool_ReturnValue_3: bool, CallFunc_Not_PreBool_ReturnValue_4: bool, CallFunc_Not_PreBool_ReturnValue_5: bool, CallFunc_GetAllActorsOfClass_OutActors: TArray, CallFunc_Array_Get_Item: AHorseChar_C*, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_Array_Add_ReturnValue: int32, CallFunc_GetAllActorsOfClass_OutActors_1: TArray, CallFunc_Array_Get_Item_1: APaperPlane_C*, CallFunc_Array_Length_ReturnValue_1: int32, CallFunc_Array_Add_ReturnValue_1: int32, CallFunc_Less_IntInt_ReturnValue_1: bool, CallFunc_GetAllActorsOfClass_OutActors_2: TArray, CallFunc_Array_Get_Item_2: APlayerAI_C*, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_6: bool, CallFunc_Array_Add_ReturnValue_2: int32, CallFunc_Array_Length_ReturnValue_2: int32, CallFunc_Not_PreBool_ReturnValue_7: bool, CallFunc_Less_IntInt_ReturnValue_2: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_EqualEqual_BoolBool_ReturnValue: bool, CallFunc_BooleanOR_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_GetAllActorsOfClass_OutActors_3: TArray, CallFunc_Array_Get_Item_3: ACCTV_C*, CallFunc_Array_Length_ReturnValue_3: int32, CallFunc_Array_Add_ReturnValue_3: int32, CallFunc_Less_IntInt_ReturnValue_3: bool, CallFunc_GetAllActorsOfClass_OutActors_4: TArray, CallFunc_Array_Get_Item_4: AHorseChar_C*, CallFunc_Array_Length_ReturnValue_4: int32, CallFunc_Less_IntInt_ReturnValue_4: bool, CallFunc_Array_Add_ReturnValue_4: int32, CallFunc_GetAllActorsOfClass_OutActors_5: TArray, CallFunc_Array_Get_Item_5: ACCTV_C*, CallFunc_Array_Length_ReturnValue_5: int32, CallFunc_Array_Add_ReturnValue_5: int32, CallFunc_Less_IntInt_ReturnValue_5: bool, CallFunc_GetAllActorsOfClass_OutActors_6: TArray, CallFunc_Array_Get_Item_6: ABombBuggy_C*, CallFunc_Array_Length_ReturnValue_6: int32, CallFunc_Array_Add_ReturnValue_6: int32, CallFunc_Less_IntInt_ReturnValue_6: bool, CallFunc_GetAllActorsOfClass_OutActors_7: TArray, CallFunc_Array_Get_Item_7: ATechDrone_C*, CallFunc_Array_Add_ReturnValue_7: int32, CallFunc_Array_Length_ReturnValue_7: int32, CallFunc_Less_IntInt_ReturnValue_7: bool, CallFunc_Array_Length_ReturnValue_8: int32, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_GetAllActorsOfClass_OutActors_8: TArray, CallFunc_Array_Length_ReturnValue_9: int32, CallFunc_Array_Get_Item_8: APlayerChar_C*, CallFunc_Less_IntInt_ReturnValue_8: bool, CallFunc_Array_Add_ReturnValue_8: int32, CallFunc_BooleanAND_ReturnValue_3: bool, CallFunc_EqualEqual_BoolBool_ReturnValue_1: bool, CallFunc_Array_Get_Item_9: APlayerChar_C*, CallFunc_Array_Add_ReturnValue_9: int32, CallFunc_Not_PreBool_ReturnValue_8: bool, CallFunc_NotEqual_ObjectObject_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_9: bool, CallFunc_Not_PreBool_ReturnValue_10: bool, CallFunc_EqualEqual_BoolBool_ReturnValue_2: bool, CallFunc_BooleanOR_ReturnValue_2: bool, CallFunc_BooleanAND_ReturnValue_4: bool, CallFunc_BooleanAND_ReturnValue_5: bool, CallFunc_Array_Length_ReturnValue_10: int32, CallFunc_BooleanOR_ReturnValue_3: bool, CallFunc_Less_IntInt_ReturnValue_9: bool, CallFunc_BooleanAND_ReturnValue_6: bool, CallFunc_BooleanAND_ReturnValue_7: bool, CallFunc_BooleanAND_ReturnValue_8: bool, CallFunc_BooleanAND_ReturnValue_9: bool | void |
-| isDisguised? | disguised?: bool, movement?: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_GetInputAxisValue_ReturnValue: float, CallFunc_Abs_ReturnValue: float, CallFunc_GetInputAxisValue_ReturnValue_1: float, CallFunc_Greater_FloatFloat_ReturnValue: bool, CallFunc_Less_FloatFloat_ReturnValue: bool, CallFunc_GetOverlappingActors_OverlappingActors: TArray, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_NotEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_SelectInt_ReturnValue: int32, CallFunc_Greater_IntInt_ReturnValue_1: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_VSize_ReturnValue: float, CallFunc_Less_FloatFloat_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_NotEqual_ObjectObject_ReturnValue: bool, CallFunc_NotEqual_ByteByte_ReturnValue_1: bool, CallFunc_IsCrouching_ReturnValue: bool, CallFunc_VSize_ReturnValue_1: float, CallFunc_Greater_FloatFloat_ReturnValue_1: bool, CallFunc_IsFalling_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_2: bool | FText |
-| getAlivePlayersFromTeams | countBots?: bool, CopsAlive: TArray, CopsNum: int32, RobsAlive: TArray, RobsNum: int32, aiCops: TArray, aiRobs: TArray, aliverobs: TArray, alivecops: TArray, Temp_int_Array_Index_Variable: int32, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_int_Loop_Counter_Variable_1: int32, CallFunc_Add_IntInt_ReturnValue_1: int32, Temp_int_Array_Index_Variable_1: int32, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Array_Length_ReturnValue_1: int32, CallFunc_Array_Length_ReturnValue_2: int32, CallFunc_Array_Length_ReturnValue_3: int32, CallFunc_Add_IntInt_ReturnValue_2: int32, CallFunc_Add_IntInt_ReturnValue_3: int32, CallFunc_GetAllActorsOfClass_OutActors: TArray, CallFunc_Array_Get_Item: APlayerAI_C*, CallFunc_Array_Length_ReturnValue_4: int32, CallFunc_Array_Add_ReturnValue: int32, CallFunc_Array_Add_ReturnValue_1: int32, CallFunc_Array_Length_ReturnValue_5: int32, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_Array_Length_ReturnValue_6: int32, CallFunc_GetAllActorsOfClass_OutActors_1: TArray, CallFunc_Array_Length_ReturnValue_7: int32, CallFunc_Array_Get_Item_1: APlayerChar_C*, CallFunc_Less_IntInt_ReturnValue_1: bool, CallFunc_Conv_BoolToString_ReturnValue: FString, CallFunc_GetDisplayName_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString, CallFunc_K2_IsValidTimerHandle_ReturnValue: bool, CallFunc_Array_AddUnique_ReturnValue: int32, CallFunc_Conv_BoolToString_ReturnValue_1: FString, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_Array_AddUnique_ReturnValue_1: int32, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Conv_BoolToString_ReturnValue_2: FString, CallFunc_Concat_StrStr_ReturnValue_2: FString, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Concat_StrStr_ReturnValue_3: FString, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_Concat_StrStr_ReturnValue_4: FString, CallFunc_BooleanOR_ReturnValue_1: bool, CallFunc_Concat_StrStr_ReturnValue_5: FString, CallFunc_Concat_StrStr_ReturnValue_6: FString | void |
-| OnRep_dead? | CallFunc_Conv_BoolToString_ReturnValue: FString, CallFunc_Conv_BoolToString_ReturnValue_1: FString, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_SelectFloat_ReturnValue: float, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Conv_BoolToString_ReturnValue_2: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString, CallFunc_Concat_StrStr_ReturnValue_2: FString, CallFunc_Concat_StrStr_ReturnValue_3: FString | void |
+| isClass | robber: bool, classID: uint8, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_EqualEqual_BoolBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | bool |
+| sameTeam? | other: APlayerChar_C*, CallFunc_EqualEqual_BoolBool_ReturnValue: bool, CallFunc_EqualEqual_BoolBool_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue: bool | bool |
+| isClass? | rob?: bool, id: uint8, CallFunc_EqualEqual_BoolBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | bool |
 | HealPlayer | amount: float, CallFunc_HasAuthority_ReturnValue: bool, CallFunc_Add_FloatFloat_ReturnValue: float, CallFunc_FMax_ReturnValue: float, CallFunc_FMin_ReturnValue: float | void |
-| FindClassRow | robber?: bool, ClassID: uint8, customClass: FString, row: FClassesStruct__pf1489439355, rowName: FName, foundName: FName, found: bool, foundRow: FClassesStruct__pf1489439355, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_bool_True_if_break_was_hit_Variable: bool, CallFunc_Not_PreBool_ReturnValue: bool, Temp_int_Array_Index_Variable: int32, Temp_int_Loop_Counter_Variable_1: int32, CallFunc_Add_IntInt_ReturnValue_1: int32, Temp_bool_True_if_break_was_hit_Variable_1: bool, Temp_int_Array_Index_Variable_1: int32, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_Conv_StringToName_ReturnValue: FName, CallFunc_getHeistGS_gs: AHeistGS_C*, CallFunc_Map_Find_Value: FClassesStruct__pf1489439355, CallFunc_Map_Find_ReturnValue: bool, CallFunc_GetDataTableRowNames_OutRowNames: TArray, CallFunc_Array_Get_Item: FName, CallFunc_GetDataTableRowFromName_OutRow: FClassesStruct__pf1489439355, CallFunc_GetDataTableRowFromName_ReturnValue: bool, CallFunc_Array_Length_ReturnValue: int32, CallFunc_EqualEqual_BoolBool_ReturnValue: bool, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_GetDataTableRowNames_OutRowNames_1: TArray, CallFunc_Array_Length_ReturnValue_1: int32, CallFunc_Array_Get_Item_1: FName, CallFunc_Less_IntInt_ReturnValue_1: bool, CallFunc_GetDataTableRowFromName_OutRow_1: FClassesStruct__pf1489439355, CallFunc_GetDataTableRowFromName_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_EqualEqual_BoolBool_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_2: bool | void |
-| OnRep_robber? | CallFunc_FindClassRow_row: FClassesStruct__pf1489439355, CallFunc_FindClassRow_rowName: FName, CallFunc_IsValid_ReturnValue: bool, CallFunc_IsValid_ReturnValue_1: bool, CallFunc_IsLocallyControlled_ReturnValue: bool, CallFunc_GetPlayerCharacter_ReturnValue: ACharacter*, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_IsValid_ReturnValue_2: bool | void |
-| OnRep_hasTeam? | CallFunc_GetPlayerCharacter_ReturnValue: ACharacter*, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_IsValid_ReturnValue: bool | void |
-| OnRep_ClassID | none | void |
-| CanJoinTeam | wantsRob?: bool, ignoreAlreadyInTeam?: bool, canJoin?: bool, CallFunc_GetSmallerTeamID_SmallerTeamIsRob_: bool, CallFunc_GetSmallerTeamID_equalCurrently_: bool, CallFunc_GetSmallerTeamID_TeamRobSize: int32, CallFunc_GetSmallerTeamID_TeamCopSize: int32, CallFunc_GetSmallerTeamID_PlayerCount: int32, CallFunc_IsPackagedForDistribution_ReturnValue: bool, CallFunc_EqualEqual_IntInt_ReturnValue: bool, CallFunc_Subtract_IntInt_ReturnValue: int32, CallFunc_Conv_IntToFloat_ReturnValue: float, CallFunc_Subtract_IntInt_ReturnValue_1: int32, CallFunc_Conv_IntToFloat_ReturnValue_1: float, CallFunc_Conv_IntToFloat_ReturnValue_2: float, CallFunc_Divide_FloatFloat_ReturnValue: float, CallFunc_Divide_FloatFloat_ReturnValue_1: float, CallFunc_Multiply_FloatFloat_ReturnValue: float, CallFunc_Multiply_FloatFloat_ReturnValue_1: float, CallFunc_GetGameInstance_ReturnValue: UGameInstance*, K2Node_DynamicCast_AsHeist_GI: UHeistGI_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_EqualEqual_BoolBool_ReturnValue: bool, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_GetGameState_ReturnValue: AGameStateBase*, CallFunc_GetObjectClass_ReturnValue: UClass*, K2Node_DynamicCast_AsHeist_GS: AHeistGS_C*, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_GetClassDisplayName_ReturnValue: FString, CallFunc_GreaterEqual_FloatFloat_ReturnValue: bool, CallFunc_GreaterEqual_FloatFloat_ReturnValue_1: bool | void |
-| GetSmallerTeamID | SmallerTeamIsRob?: bool, equalCurrently?: bool, TeamRobSize: int32, TeamCopSize: int32, PlayerCount: int32, Team2N: int32, Team1N: int32, Temp_int_Variable: int32, Temp_int_Variable_1: int32, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_int_Array_Index_Variable: int32, CallFunc_Add_IntInt_ReturnValue_1: int32, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_Add_IntInt_ReturnValue_2: int32, CallFunc_GetAllActorsOfClass_OutActors: TArray, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Array_Get_Item: APlayerChar_C*, CallFunc_Array_Length_ReturnValue_1: int32, CallFunc_Less_IntInt_ReturnValue_1: bool | void |
-| Set Clothes | CallFunc_CreateDynamicMaterialInstance_ReturnValue: UMaterialInstanceDynamic*, CallFunc_IsLocallyControlled_ReturnValue: bool, CallFunc_GetDisplayName_ReturnValue: FString, CallFunc_GetDisplayName_ReturnValue_1: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString, CallFunc_Concat_StrStr_ReturnValue_2: FString, CallFunc_GetMaterial_ReturnValue: UMaterialInterface*, K2Node_DynamicCast_AsMaterial_Instance_Dynamic: UMaterialInstanceDynamic*, K2Node_DynamicCast_bSuccess: bool, CallFunc_GetGameState_ReturnValue: AGameStateBase*, K2Node_DynamicCast_AsHeist_GS: AHeistGS_C*, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_GetPlayerCharacter_ReturnValue: ACharacter*, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess_2: bool, CallFunc_findPrimaryColorOfOutfit_color: FLinearColor | void |
-| OnRep_MeshMatSv | none | void |
-| OnRep_MeshSv | Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_bool_True_if_break_was_hit_Variable: bool, Temp_int_Array_Index_Variable: int32, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_GetDataTableRowNames_OutRowNames: TArray, CallFunc_Array_Get_Item: FName, CallFunc_Array_Length_ReturnValue: int32, CallFunc_GetDataTableRowFromName_OutRow: FClothingStruct__pf1458230002, CallFunc_GetDataTableRowFromName_ReturnValue: bool, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool | void |
-| UserConstructionScript | CallFunc_K2_AttachToComponent_ReturnValue: bool, CallFunc_K2_AttachToComponent_ReturnValue_1: bool, CallFunc_K2_AttachToComponent_ReturnValue_2: bool, CallFunc_K2_AttachToComponent_ReturnValue_3: bool, CallFunc_K2_AttachToComponent_ReturnValue_4: bool, CallFunc_K2_AttachToComponent_ReturnValue_5: bool, CallFunc_K2_AttachToComponent_ReturnValue_6: bool, CallFunc_K2_AttachToComponent_ReturnValue_7: bool, CallFunc_K2_AttachToComponent_ReturnValue_8: bool, CallFunc_K2_AttachToComponent_ReturnValue_9: bool, CallFunc_K2_AttachToComponent_ReturnValue_10: bool, CallFunc_K2_AttachToComponent_ReturnValue_11: bool, CallFunc_K2_AttachToComponent_ReturnValue_12: bool, CallFunc_K2_AttachToComponent_ReturnValue_13: bool, CallFunc_K2_AttachToComponent_ReturnValue_14: bool, CallFunc_K2_AttachToComponent_ReturnValue_15: bool, CallFunc_K2_AttachToComponent_ReturnValue_16: bool, CallFunc_K2_AttachToComponent_ReturnValue_17: bool, CallFunc_K2_AttachToComponent_ReturnValue_18: bool, CallFunc_K2_AttachToComponent_ReturnValue_19: bool | void |
 | AbilitySV | none | void |
 | StartAbilityCooldown | secs: float | void |
 | AbilityMulticast | none | void |
@@ -439,15 +384,11 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_2: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float, CallFunc_Greater_FloatFloat_ReturnValue: bool | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, CallFunc_Greater_FloatFloat_ReturnValue: bool, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_int_Array_Index_Variable: int32, CallFunc_HasAuthority_ReturnValue: bool, CallFunc_GetAllActorsWithInterface_OutActors: TArray, CallFunc_Array_Get_Item: AActor*, CallFunc_Array_Length_ReturnValue: int32, K2Node_DynamicCast_AsRefresh_Physics_Interface: TScriptInterface, K2Node_DynamicCast_bSuccess: bool, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_RefreshPhysics_true: bool, CallFunc_GetDistanceTo_ReturnValue: float, CallFunc_LessEqual_FloatFloat_ReturnValue: bool | void |
-| OnRep_cut | none | void |
-| OnRep_destroyed | none | void |
+| ignoreDistanceChecks | none | bool |
+| InteractSV | PlayerChar: APlayerChar_C*, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| CanBePenetrated? | inputDmg: float, CallFunc_Greater_FloatFloat_ReturnValue: bool | float |
+| bulletsCanDmg? | helper: bool | bool |
 | DestroyWall | Target: AActor*, sound: bool | void |
 | ResetMesh | none | void |
 | OnWindowDestroyed | none | void |
@@ -507,22 +448,11 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| Taser | secs: float, true: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_Add_IntInt_ReturnValue: int32, CallFunc_Subtract_IntInt_ReturnValue: int32, CallFunc_Subtract_IntInt_ReturnValue_1: int32, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_GreaterEqual_IntInt_ReturnValue: bool, CallFunc_Add_IntInt_ReturnValue_1: int32, CallFunc_getCurrentMlmReward_dollar: int32, CallFunc_Add_IntInt_ReturnValue_2: int32, CallFunc_Subtract_IntInt_ReturnValue_2: int32, CallFunc_Subtract_IntInt_ReturnValue_3: int32, CallFunc_Greater_IntInt_ReturnValue_1: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Subtract_IntInt_ReturnValue_4: int32, CallFunc_Greater_IntInt_ReturnValue_2: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_2: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_3: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_4: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_2: bool, Temp_int_Variable: int32, Temp_int_Variable_1: int32, Temp_int_Variable_2: int32, Temp_int_Variable_3: int32, Temp_int_Variable_4: int32, Temp_int_Variable_5: int32, CallFunc_GetGameState_ReturnValue: AGameStateBase*, K2Node_DynamicCast_AsHeist_GS: AHeistGS_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Greater_IntInt_ReturnValue_3: bool, CallFunc_Add_IntInt_ReturnValue_3: int32, CallFunc_Add_IntInt_ReturnValue_4: int32, CallFunc_GetTransform_ReturnValue: FTransform, CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue: AActor*, CallFunc_GetMaterial_ReturnValue: UMaterialInterface*, CallFunc_GetMeshIdMatInterface_zone: TEnumAsByte<ZoneEnum>, CallFunc_GetMeshIdMatInterface_idRow: int32, CallFunc_FinishSpawningActor_ReturnValue: APlayerAI_Rob_C*, K2Node_DynamicCast_AsAI_VIP: AAI_VIP_C*, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_3: bool, CallFunc_BooleanAND_ReturnValue_4: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_SelectFloat_ReturnValue: float, K2Node_DynamicCast_AsAI_VIP: AAI_VIP_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_SelectFloat_ReturnValue_1: float | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, K2Node_MakeStruct_FormatArgumentData: FFormatArgumentData, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, K2Node_MakeArray_Array: TArray, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_Format_ReturnValue: FText, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_GreaterEqual_IntInt_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue_2: bool, CallFunc_Not_PreBool_ReturnValue_2: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_2: bool, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_BooleanAND_ReturnValue_3: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_3: bool, CallFunc_BooleanAND_ReturnValue_4: bool, CallFunc_Greater_IntInt_ReturnValue_3: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_4: bool, CallFunc_Not_PreBool_ReturnValue_3: bool, CallFunc_Not_PreBool_ReturnValue_4: bool, CallFunc_BooleanAND_ReturnValue_5: bool, CallFunc_BooleanAND_ReturnValue_6: bool, CallFunc_BooleanAND_ReturnValue_7: bool, CallFunc_BooleanAND_ReturnValue_8: bool, CallFunc_Not_PreBool_ReturnValue_5: bool, CallFunc_BooleanAND_ReturnValue_9: bool, CallFunc_BooleanAND_ReturnValue_10: bool, CallFunc_Not_PreBool_ReturnValue_6: bool, CallFunc_BooleanAND_ReturnValue_11: bool, CallFunc_BooleanAND_ReturnValue_12: bool, CallFunc_BooleanAND_ReturnValue_13: bool, CallFunc_Not_PreBool_ReturnValue_7: bool, CallFunc_Not_PreBool_ReturnValue_8: bool, CallFunc_BooleanAND_ReturnValue_14: bool, K2Node_DynamicCast_AsAI_VIP: AAI_VIP_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_BooleanAND_ReturnValue_15: bool, CallFunc_Not_PreBool_ReturnValue_9: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_10: bool, CallFunc_BooleanAND_ReturnValue_16: bool, CallFunc_BooleanAND_ReturnValue_17: bool | void |
-| ToggleThermal | on?: bool, true: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, dmgtovest: float, playerkiller: APlayerChar_C*, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_2: bool, CallFunc_GetDisplayName_ReturnValue: FString, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_GetOwner_ReturnValue: AActor*, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, K2Node_DynamicCast_AsPlayer_Char_1: APlayerChar_C*, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_GetOwner_ReturnValue_1: AActor*, K2Node_DynamicCast_AsPlayer_Char_2: APlayerChar_C*, K2Node_DynamicCast_bSuccess_2: bool, CallFunc_GetDisplayName_ReturnValue_1: FString, K2Node_DynamicCast_AsHeist_PC: AHeistPC_C*, K2Node_DynamicCast_bSuccess_3: bool, K2Node_DynamicCast_AsPlayer_Char_3: APlayerChar_C*, K2Node_DynamicCast_bSuccess_4: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_Multiply_FloatFloat_ReturnValue: float, CallFunc_Multiply_FloatFloat_ReturnValue_1: float, Temp_int_Variable: int32, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_HasAuthority_ReturnValue: bool, CallFunc_UtcNow_ReturnValue: FDateTime, K2Node_MakeStruct_DeathInfo: FDeathInfo__pf1458230002, CallFunc_IsValid_ReturnValue_1: bool, CallFunc_Add_IntInt_ReturnValue: int32, CallFunc_Greater_FloatFloat_ReturnValue: bool, Temp_int_Variable_1: int32, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_VSize_ReturnValue: float, CallFunc_LessEqual_FloatFloat_ReturnValue_1: bool, CallFunc_SelectFloat_ReturnValue: float, CallFunc_SelectFloat_ReturnValue_1: float, CallFunc_Subtract_FloatFloat_ReturnValue: float, CallFunc_Subtract_FloatFloat_ReturnValue_1: float, CallFunc_Subtract_FloatFloat_ReturnValue_2: float, CallFunc_FMax_ReturnValue: float, CallFunc_Subtract_FloatFloat_ReturnValue_3: float, CallFunc_GetGameState_ReturnValue: AGameStateBase*, K2Node_DynamicCast_AsHeist_GS: AHeistGS_C*, K2Node_DynamicCast_bSuccess_5: bool, CallFunc_Subtract_IntInt_ReturnValue: int32, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_BooleanOR_ReturnValue_1: bool, CallFunc_GetGameState_ReturnValue_1: AGameStateBase*, K2Node_DynamicCast_AsHeist_GS_1: AHeistGS_C*, K2Node_DynamicCast_bSuccess_6: bool, CallFunc_LessEqual_FloatFloat_ReturnValue_2: bool, CallFunc_GetGameInstance_ReturnValue: UGameInstance*, K2Node_DynamicCast_AsHeist_GI: UHeistGI_C*, K2Node_DynamicCast_bSuccess_7: bool, CallFunc_Add_IntInt_ReturnValue_1: int32, CallFunc_IsValid_ReturnValue_2: bool, CallFunc_GetDisplayName_ReturnValue_2: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Concat_StrStr_ReturnValue_2: FString, CallFunc_Concat_StrStr_ReturnValue_3: FString, CallFunc_Concat_StrStr_ReturnValue_4: FString, CallFunc_getAlivePlayersFromTeams_CopsAlive: TArray, CallFunc_getAlivePlayersFromTeams_CopsNum: int32, CallFunc_getAlivePlayersFromTeams_RobsAlive: TArray, CallFunc_getAlivePlayersFromTeams_RobsNum: int32, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_UtcNow_ReturnValue_1: FDateTime, CallFunc_GetGameMode_ReturnValue: AGameModeBase*, K2Node_MakeStruct_DeathInfo_1: FDeathInfo__pf1458230002, K2Node_DynamicCast_AsHeist_GM: AHeistGM_C*, K2Node_DynamicCast_bSuccess_8: bool | void |
-| OnRep_useAvoid? | none | void |
-| OnRep_vested? | none | void |
-| OnRep_tasered? | none | void |
-| OnRep_RotRateZ | CallFunc_MakeRotator_ReturnValue: FRotator | void |
-| OnRep_roped? | none | void |
-| SetClothingMats | CallFunc_GetPlayerCharacter_ReturnValue: ACharacter*, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Conv_ByteToString_ReturnValue: FString, CallFunc_Conv_StringToName_ReturnValue: FName, CallFunc_GetDataTableRowFromName_OutRow: FClothingStruct__pf1458230002, CallFunc_GetDataTableRowFromName_ReturnValue: bool | void |
-| OnRep_ClothingID | none | void |
+| Taser | secs: float | bool |
+| ignoreDistanceChecks | none | bool |
+| ToggleThermal | on?: bool | bool |
+| CanBePenetrated? | inputDmg: float | float |
+| bulletsCanDmg? | helper: bool | bool |
 | SetClothingID | NewLocalVar_0: bool, CallFunc_RandomIntegerInRange_ReturnValue: int32, CallFunc_Conv_IntToByte_ReturnValue: uint8 | void |
 | UserConstructionScript | CallFunc_K2_AttachToComponent_ReturnValue: bool, CallFunc_K2_AttachToComponent_ReturnValue_1: bool | void |
 | StartRandomMovement | none | void |
@@ -572,21 +502,16 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| getPaintingValue | easel: ACanvasEasel_C*, preventPaint: bool, paintingName: FText, paintingDescr: FText, value: int32, traceOffset: FVector | void |
-| GetAiInteractTraceLocation | offset: FVector | void |
-| PlayerAiCanInteract | prevent?: bool | void |
-| PlayerAiInteract | playerai: APlayerAI_C*, true: bool, K2Node_DynamicCast_AsPlayer_AI_Rob: APlayerAI_Rob_C*, K2Node_DynamicCast_bSuccess: bool | void |
-| PlayerAiInteractTimer | playerai: APlayerAI_C*, secs: float | void |
-| GetAiInteractWorldLoc | worldLoc: FVector, CallFunc_K2_GetComponentLocation_ReturnValue: FVector | void |
-| CopInter? | shouldInter?: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, Temp_bool_Variable: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_2: bool, Temp_text_Variable: FText, Temp_text_Variable_1: FText, CallFunc_Not_PreBool_ReturnValue_1: bool, K2Node_Select_Default: FText, CallFunc_BooleanAND_ReturnValue_3: bool, CallFunc_SelectString_ReturnValue: FString | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_getCurrentMaskInfo_fasterInteract: bool, CallFunc_getCurrentMaskInfo_hpReg: bool, CallFunc_getCurrentMaskInfo_fasterSprintMoney: bool, CallFunc_getCurrentMaskInfo_reduceHpTick: bool, CallFunc_getCurrentMaskInfo_interestMoneybag: bool, CallFunc_getCurrentMaskInfo_reduceFallDmg: bool, CallFunc_getCurrentMaskInfo_reduceExplDmg: bool, CallFunc_getCurrentMaskInfo_fasterBags: bool, CallFunc_getCurrentMaskInfo_newbomb: bool, CallFunc_getCurrentMaskInfo_canttakeoff: bool, CallFunc_getCurrentMaskInfo_cdr: float, CallFunc_getCurrentMaskInfo_doubleJump_: bool, CallFunc_getCurrentMaskInfo_invisForCCTV_: bool, CallFunc_getCurrentMaskInfo_gainAmmo_: bool, CallFunc_getCurrentMaskInfo_canRide_: bool, CallFunc_getCurrentMaskInfo_slowFall_: bool, CallFunc_getCurrentMaskInfo_FoodOnMoneyPickup_: bool, CallFunc_getCurrentMaskInfo_fasterBodyCarry: bool, CallFunc_getCurrentMaskInfo_spawnMoney_: bool, CallFunc_getCurrentMaskInfo_noPoisonDmg_: bool, CallFunc_getCurrentMaskInfo_chargeJump: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_GetController_ReturnValue: AController*, CallFunc_BooleanAND_ReturnValue_1: bool, K2Node_DynamicCast_AsHeist_PC: AHeistPC_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_GetGameInstance_ReturnValue: UGameInstance*, CallFunc_Not_PreBool_ReturnValue_1: bool, K2Node_DynamicCast_AsHeist_GI: UHeistGI_C*, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_GetGameState_ReturnValue: AGameStateBase*, CallFunc_FTrunc_ReturnValue: int32, K2Node_DynamicCast_AsHeist_GS: AHeistGS_C*, K2Node_DynamicCast_bSuccess_2: bool, CallFunc_Not_PreBool_ReturnValue_2: bool, CallFunc_Subtract_IntInt_ReturnValue: int32, CallFunc_BooleanAND_ReturnValue_3: bool, CallFunc_LessEqual_IntInt_ReturnValue: bool | void |
-| OnRep_smoke? | none | void |
-| OnRep_opened? | CallFunc_GetTransform_ReturnValue: FTransform, CallFunc_GetPlayerPawn_ReturnValue: APawn*, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue: AActor*, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_FinishSpawningActor_ReturnValue: APingAct_C*, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_GetGameState_ReturnValue: AGameStateBase*, CallFunc_K2_GetActorLocation_ReturnValue: FVector, K2Node_DynamicCast_AsHeist_GS: AHeistGS_C*, K2Node_DynamicCast_bSuccess_1: bool | void |
+| getPaintingValue | easel: ACanvasEasel_C* | FVector |
+| GetAiInteractTraceLocation | none | FVector |
+| PlayerAiCanInteract | none | bool |
+| PlayerAiInteract | playerai: APlayerAI_C*, K2Node_DynamicCast_AsPlayer_AI_Rob: APlayerAI_Rob_C*, K2Node_DynamicCast_bSuccess: bool | bool |
+| PlayerAiInteractTimer | playerai: APlayerAI_C* | float |
+| GetAiInteractWorldLoc | CallFunc_K2_GetComponentLocation_ReturnValue: FVector | FVector |
+| CopInter? | none | bool |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
 | destroyedCl | CallFunc_GetTransform_ReturnValue: FTransform, CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue: AActor*, CallFunc_FinishSpawningActor_ReturnValue: ASafeDoorDestructible_C* | void |
-| OnRep_bombPlanted? | none | void |
 | StartCountdown | none | void |
 | Explode | none | void |
 | StartBeep | none | void |
@@ -626,17 +551,10 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| LosCheck | startLoc: FVector, ignores: TArray, hasLos?: bool, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_LineTraceSingle_OutHit: FHitResult, CallFunc_LineTraceSingle_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Subtract_IntInt_ReturnValue: int32, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue_2: bool, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_K2_GetComponentLocation_ReturnValue_1: FVector, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_Subtract_VectorVector_ReturnValue_1: FVector, CallFunc_Conv_VectorToString_ReturnValue: FString, CallFunc_VSize_ReturnValue: float, CallFunc_VSize_ReturnValue_1: float, CallFunc_Conv_FloatToString_ReturnValue: FString, CallFunc_Conv_FloatToString_ReturnValue_1: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Conv_FloatToString_ReturnValue_2: FString, CallFunc_Less_FloatFloat_ReturnValue: bool, CallFunc_Concat_StrStr_ReturnValue_1: FString, CallFunc_Conv_BoolToString_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_2: FString, CallFunc_Not_PreBool_ReturnValue_3: bool, CallFunc_Concat_StrStr_ReturnValue_3: FString, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_Concat_StrStr_ReturnValue_4: FString, CallFunc_BooleanAND_ReturnValue_3: bool, CallFunc_BooleanOR_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_SelectString_ReturnValue: FString, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue_2: bool, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_K2_GetComponentLocation_ReturnValue_1: FVector, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_Subtract_VectorVector_ReturnValue_1: FVector, CallFunc_VSize_ReturnValue: float, CallFunc_VSize_ReturnValue_1: float, CallFunc_Less_FloatFloat_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_Not_PreBool_ReturnValue_3: bool, CallFunc_BooleanAND_ReturnValue_3: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_4: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float, CallFunc_SelectFloat_ReturnValue: float | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Conv_FloatToString_ReturnValue: FString, CallFunc_GetController_ReturnValue: AController*, K2Node_DynamicCast_AsHeist_PC: AHeistPC_C*, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_Greater_FloatFloat_ReturnValue: bool, CallFunc_K2_GetActorLocation_ReturnValue_1: FVector, K2Node_MakeArray_Array: TArray, CallFunc_GetGameMode_ReturnValue: AGameModeBase*, CallFunc_HasAuthority_ReturnValue: bool, K2Node_DynamicCast_AsHeist_GM: AHeistGM_C*, K2Node_DynamicCast_bSuccess_2: bool, CallFunc_ClosestActorOfClass_closest: AActor*, CallFunc_ClosestActorOfClass_dist: float, CallFunc_ClosestActorOfClass_valid: bool, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, K2Node_DynamicCast_AsPlayer_AI_Cop: APlayerAI_Cop_C*, K2Node_DynamicCast_bSuccess_3: bool, CallFunc_LessEqual_FloatFloat_ReturnValue_1: bool, CallFunc_Subtract_FloatFloat_ReturnValue: float, CallFunc_Subtract_FloatFloat_ReturnValue_1: float, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_K2_GetComponentLocation_ReturnValue_1: FVector, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_Subtract_VectorVector_ReturnValue_1: FVector, CallFunc_VSize_ReturnValue: float, CallFunc_VSize_ReturnValue_1: float, CallFunc_Less_FloatFloat_ReturnValue: bool | void |
-| OnRep_armorOutside? | none | void |
-| OnRep_armorInside? | none | void |
-| OnRep_destroyed | none | void |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| CanBePenetrated? | inputDmg: float, CallFunc_SelectFloat_ReturnValue: float | float |
+| bulletsCanDmg? | helper: bool | bool |
 | DestroyWall | Target: AActor* | void |
 | CheckTargetVis | none | void |
 | PlacementTick | inside?: bool | void |
@@ -678,14 +596,8 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| EmpStart | duration: float, true: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_Subtract_IntInt_ReturnValue: int32, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, Temp_int_Variable: int32, CallFunc_K2_GetComponentToWorld_ReturnValue: FTransform, CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue: AActor*, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_FinishSpawningActor_ReturnValue: AProximityMine_C*, CallFunc_BooleanAND_ReturnValue_2: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool, CallFunc_GetPlayerPawn_ReturnValue: APawn*, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_BooleanAND_ReturnValue_3: bool | void |
-| OnRep_emp? | CallFunc_BooleanOR_ReturnValue: bool, K2Node_DynamicCast_AsChameleon: AChameleon_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_BooleanOR_ReturnValue_1: bool, CallFunc_SelectFloat_ReturnValue: float, CallFunc_Conv_BoolToString_ReturnValue: FString, CallFunc_Conv_FloatToString_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString | void |
-| OnRep_brokenTemp? | CallFunc_BooleanOR_ReturnValue: bool, K2Node_DynamicCast_AsChameleon: AChameleon_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_BooleanOR_ReturnValue_1: bool, CallFunc_SelectFloat_ReturnValue: float, CallFunc_Conv_BoolToString_ReturnValue: FString, CallFunc_Conv_FloatToString_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString | void |
-| OnRep_broken? | CallFunc_BooleanOR_ReturnValue: bool, K2Node_DynamicCast_AsChameleon: AChameleon_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_SelectFloat_ReturnValue: float | void |
+| EmpStart | duration: float | bool |
+| ignoreDistanceChecks | none | bool |
 | destroyedCl | CallFunc_GetPlayerCharacter_ReturnValue: ACharacter*, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool | void |
 | UserConstructionScript | none | void |
 | CheckusedSV | none | void |
@@ -719,11 +631,9 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, Temp_int_Variable: int32, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_Add_FloatFloat_ReturnValue: float, CallFunc_FClamp_ReturnValue: float, CallFunc_Subtract_IntInt_ReturnValue: int32 | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| OnRep_uses? | none | void |
+| GetInteractName | PlayerChar: APlayerChar_C* | FText |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
 | RefreshUses | none | void |
 | TickVis | none | void |
 
@@ -742,10 +652,9 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_IsActorBeingDestroyed_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool | void |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool | FText |
 
 ---
 
@@ -765,12 +674,10 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_IsActorBeingDestroyed_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| EmpStart | duration: float, true: bool | void |
-| OnRep_emp? | CallFunc_Not_PreBool_ReturnValue: bool | void |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool | FText |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| EmpStart | duration: float | bool |
 | RefreshLaserLength | none | void |
 | destroyedCl | none | void |
 | EmpBegin | Duration: float | void |
@@ -792,11 +699,9 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_GetOwner_ReturnValue: AActor*, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText | void |
-| ExplodeSV | alreadyDmged: TArray, Temp_int_Array_Index_Variable: int32, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_int_Loop_Counter_Variable_1: int32, CallFunc_Add_IntInt_ReturnValue_1: int32, Temp_int_Array_Index_Variable_1: int32, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_GetOverlappingActors_OverlappingActors: TArray, CallFunc_Array_Get_Item: AActor*, CallFunc_Array_Length_ReturnValue: int32, K2Node_DynamicCast_AsDamage_Interface: TScriptInterface, K2Node_DynamicCast_bSuccess: bool, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_GetDistanceTo_ReturnValue: float, CallFunc_Divide_FloatFloat_ReturnValue: float, CallFunc_Array_Contains_ReturnValue: bool, CallFunc_Subtract_FloatFloat_ReturnValue: float, CallFunc_FClamp_ReturnValue: float, CallFunc_Multiply_FloatFloat_ReturnValue: float, CallFunc_DealDmg_dead: bool, CallFunc_GetOverlappingActors_OverlappingActors_1: TArray, CallFunc_Array_Get_Item_1: AActor*, CallFunc_Array_Length_ReturnValue_1: int32, K2Node_DynamicCast_AsLos_Interface: TScriptInterface, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_Less_IntInt_ReturnValue_1: bool, K2Node_DynamicCast_AsDamage_Interface_1: TScriptInterface, K2Node_DynamicCast_bSuccess_2: bool, CallFunc_DealDmg_dead_1: bool, K2Node_MakeArray_Array: TArray, CallFunc_LosCheck_hasLos_: bool, CallFunc_DoesImplementInterface_ReturnValue: bool, K2Node_MakeArray_Array_1: TArray, CallFunc_K2_GetActorLocation_ReturnValue_1: FVector, CallFunc_NotEqual_ObjectObject_ReturnValue: bool, CallFunc_LineTraceSingle_OutHit: FHitResult, CallFunc_LineTraceSingle_ReturnValue: bool, CallFunc_BreakHitResult_bBlockingHit: bool, CallFunc_BreakHitResult_bInitialOverlap: bool, CallFunc_BreakHitResult_Time: float, CallFunc_BreakHitResult_Distance: float, CallFunc_BreakHitResult_Location: FVector, CallFunc_BreakHitResult_ImpactPoint: FVector, CallFunc_BreakHitResult_Normal: FVector, CallFunc_BreakHitResult_ImpactNormal: FVector, CallFunc_BreakHitResult_PhysMat: UPhysicalMaterial*, CallFunc_BreakHitResult_HitActor: AActor*, CallFunc_BreakHitResult_HitComponent: UPrimitiveComponent*, CallFunc_BreakHitResult_HitBoneName: FName, CallFunc_BreakHitResult_HitItem: int32, CallFunc_BreakHitResult_FaceIndex: int32, CallFunc_BreakHitResult_TraceStart: FVector, CallFunc_BreakHitResult_TraceEnd: FVector, CallFunc_Array_Add_ReturnValue: int32, CallFunc_GetDisplayName_ReturnValue: FString | void |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| GetInteractName | PlayerChar: APlayerChar_C* | FText |
 | DontExplodeAll | none | void |
 
 ---
@@ -875,7 +780,7 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| VisColl | l1: FVector, l2: FVector, blocked?: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_LineIntersectsSphere_blocked_: bool | void |
+| VisColl | l1: FVector, l2: FVector, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_LineIntersectsSphere_blocked_: bool | bool |
 | DamageTick | none | void |
 
 ---
@@ -909,12 +814,7 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| ToggleDrillPlacementGuide | active?: bool, true?: bool, Temp_bool_Variable: bool, Temp_byte_Variable: TEnumAsByte<ECollisionEnabled::Type>, Temp_byte_Variable_1: TEnumAsByte<ECollisionEnabled::Type>, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, K2Node_Select_Default: TEnumAsByte<ECollisionEnabled::Type> | void |
-| ToggleDrillPreview | active?: bool, true?: bool | void |
-| PlaceDrill | place?: bool, true?: bool, Temp_bool_Variable: bool, Temp_byte_Variable: TEnumAsByte<ECollisionEnabled::Type>, Temp_byte_Variable_1: TEnumAsByte<ECollisionEnabled::Type>, CallFunc_ToggleDrillPlacementGuide_true_: bool, K2Node_Select_Default: TEnumAsByte<ECollisionEnabled::Type>, K2Node_DynamicCast_AsDrill_for_Floor: ADrillForFloor_C*, K2Node_DynamicCast_bSuccess: bool | void |
-| updateBroken | broken?: bool, Temp_bool_Variable: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, Temp_byte_Variable: TEnumAsByte<ECollisionEnabled::Type>, Temp_byte_Variable_1: TEnumAsByte<ECollisionEnabled::Type>, K2Node_Select_Default: TEnumAsByte<ECollisionEnabled::Type>, CallFunc_HasAuthority_ReturnValue: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_IsValid_ReturnValue_1: bool, CallFunc_K2_GetComponentToWorld_ReturnValue: FTransform, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue: AActor*, CallFunc_FinishSpawningActor_ReturnValue: ALadderAct_C*, CallFunc_BreakTransform_Location: FVector, CallFunc_BreakTransform_Rotation: FRotator, CallFunc_BreakTransform_Scale: FVector | void |
-| OnRep_finished? | none | void |
-| OnRep_drillPlaced? | Temp_bool_Variable: bool, Temp_byte_Variable: TEnumAsByte<ECollisionEnabled::Type>, Temp_byte_Variable_1: TEnumAsByte<ECollisionEnabled::Type>, CallFunc_ToggleDrillPlacementGuide_true_: bool, K2Node_DynamicCast_AsDrill_for_Floor: ADrillForFloor_C*, K2Node_DynamicCast_bSuccess: bool, K2Node_Select_Default: TEnumAsByte<ECollisionEnabled::Type> | void |
+| ToggleDrillPreview | active?: bool | bool |
 | UserConstructionScript | none | void |
 | TickVis | none | void |
 
@@ -938,18 +838,14 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| getPaintingValue | easel: ACanvasEasel_C*, preventPaint: bool, paintingName: FText, paintingDescr: FText, value: int32, traceOffset: FVector, CallFunc_Not_PreBool_ReturnValue: bool | void |
-| GetAiInteractTraceLocation | offset: FVector | void |
-| PlayerAiCanInteract | prevent?: bool | void |
-| CopInter? | shouldInter?: bool | void |
-| PlayerAiInteract | playerai: APlayerAI_C*, true: bool | void |
-| PlayerAiInteractTimer | playerai: APlayerAI_C*, secs: float | void |
-| GetAiInteractWorldLoc | worldLoc: FVector, Temp_object_Variable: TArray, Temp_object_Variable_1: TArray, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_K2_GetComponentLocation_ReturnValue_1: FVector, CallFunc_K2_GetComponentLocation_ReturnValue_2: FVector, CallFunc_LineTraceSingle_OutHit: FHitResult, CallFunc_LineTraceSingle_ReturnValue: bool, CallFunc_K2_GetComponentLocation_ReturnValue_3: FVector, CallFunc_BreakHitResult_bBlockingHit: bool, CallFunc_BreakHitResult_bInitialOverlap: bool, CallFunc_BreakHitResult_Time: float, CallFunc_BreakHitResult_Distance: float, CallFunc_BreakHitResult_Location: FVector, CallFunc_BreakHitResult_ImpactPoint: FVector, CallFunc_BreakHitResult_Normal: FVector, CallFunc_BreakHitResult_ImpactNormal: FVector, CallFunc_BreakHitResult_PhysMat: UPhysicalMaterial*, CallFunc_BreakHitResult_HitActor: AActor*, CallFunc_BreakHitResult_HitComponent: UPrimitiveComponent*, CallFunc_BreakHitResult_HitBoneName: FName, CallFunc_BreakHitResult_HitItem: int32, CallFunc_BreakHitResult_FaceIndex: int32, CallFunc_BreakHitResult_TraceStart: FVector, CallFunc_BreakHitResult_TraceEnd: FVector, CallFunc_K2_GetComponentLocation_ReturnValue_4: FVector, CallFunc_LineTraceSingle_OutHit_1: FHitResult, CallFunc_LineTraceSingle_ReturnValue_1: bool, CallFunc_BreakHitResult_bBlockingHit_1: bool, CallFunc_BreakHitResult_bInitialOverlap_1: bool, CallFunc_BreakHitResult_Time_1: float, CallFunc_BreakHitResult_Distance_1: float, CallFunc_BreakHitResult_Location_1: FVector, CallFunc_BreakHitResult_ImpactPoint_1: FVector, CallFunc_BreakHitResult_Normal_1: FVector, CallFunc_BreakHitResult_ImpactNormal_1: FVector, CallFunc_BreakHitResult_PhysMat_1: UPhysicalMaterial*, CallFunc_BreakHitResult_HitActor_1: AActor*, CallFunc_BreakHitResult_HitComponent_1: UPrimitiveComponent*, CallFunc_BreakHitResult_HitBoneName_1: FName, CallFunc_BreakHitResult_HitItem_1: int32, CallFunc_BreakHitResult_FaceIndex_1: int32, CallFunc_BreakHitResult_TraceStart_1: FVector, CallFunc_BreakHitResult_TraceEnd_1: FVector | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_GetParentActor_ReturnValue: AActor*, CallFunc_SelectString_ReturnValue: FString, K2Node_DynamicCast_AsDrillable_Floor: ADrillableFloor_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Not_PreBool_ReturnValue: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_ClosestActToLoc_closest: AActor*, CallFunc_ClosestActToLoc_dist: float, CallFunc_ClosestActToLoc_valid: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Less_FloatFloat_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| OnRep_running? | CallFunc_SelectFloat_ReturnValue: float | void |
+| getPaintingValue | easel: ACanvasEasel_C*, CallFunc_Not_PreBool_ReturnValue: bool | FVector |
+| GetAiInteractTraceLocation | none | FVector |
+| PlayerAiCanInteract | none | bool |
+| CopInter? | none | bool |
+| PlayerAiInteract | playerai: APlayerAI_C* | bool |
+| PlayerAiInteractTimer | playerai: APlayerAI_C* | float |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
 
 ---
 
@@ -975,22 +871,17 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| getPaintingValue | easel: ACanvasEasel_C*, preventPaint: bool, paintingName: FText, paintingDescr: FText, value: int32, traceOffset: FVector, CallFunc_NotEqual_ObjectObject_ReturnValue: bool | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
-| RefreshPhysics | true: bool | void |
-| InteractClAlt | PlayerChar: APlayerChar_C*, true: bool | void |
-| ClTimer | char: APlayerChar_C*, secs: float, CallFunc_isClass__is_: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| InteractCl | PlayerChar: APlayerChar_C*, true: bool | void |
-| GetAltInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_IsValid_ReturnValue_1: bool, CallFunc_GetName_name: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_IsValid_ReturnValue_2: bool, CallFunc_GetName_name_1: FString, CallFunc_Concat_StrStr_ReturnValue_2: FString, CallFunc_IsValid_ReturnValue_3: bool, CallFunc_Concat_StrStr_ReturnValue_3: FString, CallFunc_IsValid_ReturnValue_4: bool, CallFunc_SelectString_ReturnValue: FString | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_isClass__is_: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_NotEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_2: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_3: bool, CallFunc_fired__fired: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_GetGameTimeSinceCreation_ReturnValue: float, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_IsValid_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue_2: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_2: bool, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_IsValid_ReturnValue_2: bool, CallFunc_lastCarrierCop__lastCarrierCop_: bool, CallFunc_lastCarrierCop__lastCarrierRob_: bool, CallFunc_killedByCop__killedByCop: bool, CallFunc_killedByCop__killedByRob: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_BooleanOR_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue_3: bool | void |
-| fired? | fired: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool | void |
-| InteractAltSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_BooleanOR_ReturnValue: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, OldPlayerMat: UMaterialInterface*, OldPlayerMesh: USkeletalMesh*, CallFunc_GetMaterial_ReturnValue: UMaterialInterface*, CallFunc_GetMaterial_ReturnValue_1: UMaterialInterface* | void |
+| getPaintingValue | easel: ACanvasEasel_C*, CallFunc_NotEqual_ObjectObject_ReturnValue: bool | FVector |
+| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool | bool |
+| bulletsCanDmg? | helper: bool | bool |
+| CanBePenetrated? | inputDmg: float | float |
+| RefreshPhysics | none | bool |
+| InteractClAlt | PlayerChar: APlayerChar_C* | bool |
+| ClTimer | char: APlayerChar_C*, CallFunc_isClass__is_: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | float |
+| InteractCl | PlayerChar: APlayerChar_C* | bool |
+| fired? | CallFunc_EqualEqual_ByteByte_ReturnValue: bool | bool |
+| InteractAltSV | PlayerChar: APlayerChar_C*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_BooleanOR_ReturnValue: bool | bool |
 | UpdateMeshMat | none | void |
-| OnRep_MeshMaterial | none | void |
-| OnRep_Mesh | none | void |
 | UserConstructionScript | none | void |
 | TickVis | none | void |
 | RefreshPhys | none | void |
@@ -1024,22 +915,16 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetAiInteractTraceLocation | offset: FVector | void |
-| PlayerAiCanInteract | prevent?: bool | void |
-| PlayerAiInteract | playerai: APlayerAI_C*, true: bool, OldPlayerMat: UMaterialInterface*, OldPlayerMesh: USkeletalMesh*, CallFunc_GetDisplayName_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue: FString, K2Node_DynamicCast_AsPlayer_AI_Rob: APlayerAI_Rob_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_GetMaterial_ReturnValue: UMaterialInterface*, K2Node_DynamicCast_AsMaterial: UMaterial*, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_GetMeshId_zone: TEnumAsByte<ZoneEnum>, CallFunc_GetMeshId_idRow: int32 | void |
-| PlayerAiInteractTimer | playerai: APlayerAI_C*, secs: float | void |
-| GetAiInteractWorldLoc | worldLoc: FVector | void |
-| CopInter? | shouldInter?: bool | void |
-| TimerAlt | timer: float, retry: bool | void |
-| InteractAltSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_canCarryBodies__can_: bool, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_IsValid_ReturnValue_1: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, OldPlayerRadiation: float, OldPlayerMat: UMaterialInterface*, OldPlayerMesh: USkeletalMesh*, CallFunc_GetMeshZone_zone: TEnumAsByte<ZoneEnum>, CallFunc_GetMeshZone_clothesRow: FName, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_isClass__is_: bool, CallFunc_FMax_ReturnValue: float, CallFunc_Add_FloatFloat_ReturnValue: float, CallFunc_FMin_ReturnValue: float, CallFunc_GreaterEqual_FloatFloat_ReturnValue: bool, CallFunc_Add_FloatFloat_ReturnValue_1: float, CallFunc_Add_IntInt_ReturnValue: int32, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_2: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Add_IntInt_ReturnValue_1: int32, CallFunc_GetController_ReturnValue: AController*, CallFunc_EqualEqual_ByteByte_ReturnValue_3: bool, K2Node_DynamicCast_AsHeist_PC: AHeistPC_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_GetMaterial_ReturnValue: UMaterialInterface*, Temp_int_Variable: int32, Temp_int_Variable_1: int32, Temp_int_Variable_2: int32, CallFunc_lastCarrierCop__lastCarrierCop_: bool, CallFunc_lastCarrierCop__lastCarrierRob_: bool, CallFunc_killedByCop__killedByCop: bool, CallFunc_killedByCop__killedByRob: bool, CallFunc_GetGameTimeSinceCreation_ReturnValue: float, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_GetGameMode_ReturnValue: AGameModeBase*, K2Node_DynamicCast_AsHeist_GM: AHeistGM_C*, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_K2_GetRandomReachablePointInRadius_RandomLocation: FVector, CallFunc_K2_GetRandomReachablePointInRadius_ReturnValue: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_Add_VectorVector_ReturnValue: FVector, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_MakeTransform_ReturnValue: FTransform, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue: AActor*, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_FinishSpawningActor_ReturnValue: APlayerAI_Cop_C*, CallFunc_IsValid_ReturnValue_1: bool, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess_2: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_4: bool, CallFunc_GetAllActorsOfClass_OutActors: TArray, CallFunc_GetGameMode_ReturnValue_1: AGameModeBase*, K2Node_DynamicCast_AsTutorial_GM: ATutorialGM_C*, K2Node_DynamicCast_bSuccess_3: bool, CallFunc_GetGameState_ReturnValue: AGameStateBase*, K2Node_DynamicCast_AsHeist_GS: AHeistGS_C*, K2Node_DynamicCast_bSuccess_4: bool, CallFunc_GetEnumeratorUserFriendlyName_ReturnValue: FString, CallFunc_Add_IntInt_ReturnValue_2: int32, CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1: FString, CallFunc_Left_ReturnValue: FString, CallFunc_UtcNow_ReturnValue: FDateTime, CallFunc_EqualEqual_StrStr_ReturnValue: bool, CallFunc_Subtract_DateTimeDateTime_ReturnValue: FTimespan, CallFunc_SelectString_ReturnValue: FString, CallFunc_GetTotalSeconds_ReturnValue: float, CallFunc_FTrunc_ReturnValue: int32, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_Conv_IntToString_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString, CallFunc_Concat_StrStr_ReturnValue_2: FString, CallFunc_Concat_StrStr_ReturnValue_3: FString | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| lastCarrierCop? | lastCarrierCop?: bool, lastCarrierRob?: bool, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool | void |
-| killedByCop? | killedByCop: bool, killedByRob: bool, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool | void |
-| OnRep_deathInfo | CallFunc_IsValid_ReturnValue: bool | void |
-| OnRep_MeshMaterial | CallFunc_IsValid_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| OnRep_Mesh | CallFunc_IsValid_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
+| GetAiInteractTraceLocation | none | FVector |
+| PlayerAiCanInteract | none | bool |
+| PlayerAiInteractTimer | playerai: APlayerAI_C* | float |
+| GetAiInteractWorldLoc | none | FVector |
+| CopInter? | none | bool |
+| TimerAlt | none | bool |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C*, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | bool |
+| lastCarrierCop? | K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool | bool |
+| killedByCop? | K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool | bool |
 | SpawnRagdoll | none | void |
 | SelfDestroy | none | void |
 | OnPlayerSwappedClothes | playerchar: APlayerChar_C* | void |
@@ -1063,20 +948,18 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetAiInteractTraceLocation | offset: FVector | void |
-| PlayerAiCanInteract | prevent?: bool | void |
-| PlayerAiInteract | playerai: APlayerAI_C*, true: bool, K2Node_DynamicCast_AsPlayer_AI_Rob: APlayerAI_Rob_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_HasAuthority_ReturnValue: bool | void |
-| PlayerAiInteractTimer | playerai: APlayerAI_C*, secs: float | void |
-| GetAiInteractWorldLoc | worldLoc: FVector | void |
-| CopInter? | shouldInter?: bool | void |
-| GetItemName | name: FString | void |
-| RefreshPhysics | true: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_GetGameTimeSinceCreation_ReturnValue: float, CallFunc_isClass__is_: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_canCarryBombs__can_: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_BooleanAND_ReturnValue_3: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, OldPlayerMat: UMaterialInterface*, OldPlayerMesh: USkeletalMesh*, Temp_int_Variable: int32, CallFunc_isClass__is_: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Add_IntInt_ReturnValue: int32, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_GetGameTimeSinceCreation_ReturnValue: float, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_GetGameMode_ReturnValue: AGameModeBase*, K2Node_DynamicCast_AsTutorial_GM: ATutorialGM_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_GetAllActorsOfClass_OutActors: TArray, CallFunc_Array_Get_Item: ACopCar_C*, CallFunc_IsValid_ReturnValue: bool, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_MakeTransform_ReturnValue: FTransform, CallFunc_GetDistanceTo_ReturnValue: float, CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue: AActor*, CallFunc_Greater_FloatFloat_ReturnValue: bool, CallFunc_FinishSpawningActor_ReturnValue: ABombBag_C* | void |
-| GetCustomTrace | Hit: FHitResult | void |
-| GetCustomPingSettings | Executor: APawn*, Icon: FName, Conditions: TArray | void |
+| GetAiInteractTraceLocation | none | FVector |
+| PlayerAiCanInteract | none | bool |
+| PlayerAiInteract | playerai: APlayerAI_C*, K2Node_DynamicCast_AsPlayer_AI_Rob: APlayerAI_Rob_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_HasAuthority_ReturnValue: bool | bool |
+| PlayerAiInteractTimer | playerai: APlayerAI_C* | float |
+| GetAiInteractWorldLoc | none | FVector |
+| CopInter? | none | bool |
+| GetItemName | none | FString |
+| RefreshPhysics | none | bool |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| GetCustomTrace | none | FHitResult |
+| GetCustomPingSettings | Executor: APawn* | TArray |
 | RefreshPhys | none | void |
 | TickVis | none | void |
 | getBags | none | void |
@@ -1107,22 +990,18 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetRadiation | loc: FVector, power: float | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
-| GetAiInteractTraceLocation | offset: FVector | void |
-| PlayerAiCanInteract | prevent?: bool | void |
-| PlayerAiInteract | playerai: APlayerAI_C*, true: bool, K2Node_DynamicCast_AsPlayer_AI_Rob: APlayerAI_Rob_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Add_FloatFloat_ReturnValue: float, CallFunc_FMin_ReturnValue: float, CallFunc_Add_IntInt_ReturnValue: int32 | void |
-| PlayerAiInteractTimer | playerai: APlayerAI_C*, secs: float | void |
-| GetAiInteractWorldLoc | worldLoc: FVector | void |
-| CopInter? | shouldInter?: bool | void |
-| GetItemName | name: FString | void |
-| RefreshPhysics | true: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_GetGameTimeSinceCreation_ReturnValue: float, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_isClass__is_: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_2: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue_2: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_canCarryMoney__can_: bool, CallFunc_Add_IntInt_ReturnValue: int32, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_Conv_IntToText_ReturnValue: FText, K2Node_MakeStruct_FormatArgumentData: FFormatArgumentData, CallFunc_Conv_IntToString_ReturnValue: FString, K2Node_MakeArray_Array: TArray, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Format_ReturnValue: FText, CallFunc_Concat_StrStr_ReturnValue_1: FString, CallFunc_Conv_IntToString_ReturnValue_1: FString, CallFunc_Conv_StringToText_ReturnValue: FText, CallFunc_Concat_StrStr_ReturnValue_2: FString, K2Node_MakeStruct_FormatArgumentData_1: FFormatArgumentData, CallFunc_Concat_StrStr_ReturnValue_3: FString, K2Node_MakeArray_Array_1: TArray, CallFunc_Format_ReturnValue_1: FText, CallFunc_Conv_IntToText_ReturnValue_1: FText, K2Node_MakeStruct_FormatArgumentData_2: FFormatArgumentData, CallFunc_Conv_IntToString_ReturnValue_2: FString, K2Node_MakeArray_Array_2: TArray, CallFunc_Concat_StrStr_ReturnValue_4: FString, CallFunc_Format_ReturnValue_2: FText, CallFunc_Concat_StrStr_ReturnValue_5: FString | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool, CallFunc_isClass__is_: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, OldPlayerMat: UMaterialInterface*, OldPlayerMesh: USkeletalMesh*, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_isClass__is_: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_2: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Add_FloatFloat_ReturnValue: float, CallFunc_GetGameTimeSinceCreation_ReturnValue: float, CallFunc_FMin_ReturnValue: float, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_canCarryMoney__can_: bool, CallFunc_Add_IntInt_ReturnValue: int32, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_Add_IntInt_ReturnValue_1: int32, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_IsActorBeingDestroyed_ReturnValue: bool, CallFunc_Conv_IntToString_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString, CallFunc_Add_IntInt_ReturnValue_2: int32 | void |
+| GetRadiation | loc: FVector | float |
+| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool | bool |
+| bulletsCanDmg? | helper: bool | bool |
+| CanBePenetrated? | inputDmg: float | float |
+| GetAiInteractTraceLocation | none | FVector |
+| PlayerAiCanInteract | none | bool |
+| PlayerAiInteractTimer | playerai: APlayerAI_C* | float |
+| GetAiInteractWorldLoc | none | FVector |
+| CopInter? | none | bool |
+| GetItemName | none | FString |
+| RefreshPhysics | none | bool |
+| ignoreDistanceChecks | none | bool |
 | RefreshPhys | none | void |
 | TickVis | none | void |
 | ExplodeAll | none | void |
@@ -1174,11 +1053,7 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_GetGameState_ReturnValue: AGameStateBase*, K2Node_DynamicCast_AsHeist_GS: AHeistGS_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Conv_IntToString_ReturnValue: FString, CallFunc_GreaterEqual_IntInt_ReturnValue: bool, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Concat_StrStr_ReturnValue_1: FString, CallFunc_BooleanAND_ReturnValue_1: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_GetGameMode_ReturnValue: AGameModeBase*, K2Node_DynamicCast_AsHeist_GM: AHeistGM_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Add_FloatFloat_ReturnValue: float, CallFunc_FClamp_ReturnValue: float, CallFunc_GetGameState_ReturnValue: AGameStateBase*, K2Node_DynamicCast_AsHeist_GS: AHeistGS_C*, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_GreaterEqual_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool, CallFunc_GetGameState_ReturnValue: AGameStateBase*, K2Node_DynamicCast_AsHeist_GS: AHeistGS_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_GreaterEqual_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| OnRep_moving? | none | void |
+| ignoreDistanceChecks | none | bool |
 | StartRotating | none | void |
 | PostMoving | none | void |
 | SetRecentlyMoved | none | void |
@@ -1211,21 +1086,15 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetRadiation | loc: FVector, power: float | void |
-| GetAiInteractTraceLocation | offset: FVector | void |
-| PlayerAiCanInteract | prevent?: bool, CallFunc_IsValid_ReturnValue: bool | void |
-| PlayerAiInteract | playerai: APlayerAI_C*, true: bool, K2Node_DynamicCast_AsPlayer_AI_Rob: APlayerAI_Rob_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_HasAuthority_ReturnValue: bool, CallFunc_HasAuthority_ReturnValue_1: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_Add_FloatFloat_ReturnValue: float, CallFunc_FMin_ReturnValue: float, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_ClosestActToLoc_closest: AActor*, CallFunc_ClosestActToLoc_dist: float, CallFunc_ClosestActToLoc_valid: bool, K2Node_DynamicCast_AsMoney_Jewels: AMoneyJewels_C*, K2Node_DynamicCast_bSuccess_1: bool, K2Node_DynamicCast_AsJewels_Case: AJewelsCase_C*, K2Node_DynamicCast_bSuccess_2: bool, CallFunc_Add_IntInt_ReturnValue: int32 | void |
-| PlayerAiInteractTimer | playerai: APlayerAI_C*, secs: float | void |
-| GetAiInteractWorldLoc | worldLoc: FVector | void |
-| CopInter? | shouldInter?: bool | void |
-| GetItemName | name: FString, CallFunc_Conv_TextToString_ReturnValue: FString | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, Temp_text_Variable: FText, CallFunc_isClass_is: bool, CallFunc_GetActorScale3D_ReturnValue: FVector, CallFunc_BreakVector_X: float, CallFunc_BreakVector_Y: float, CallFunc_BreakVector_Z: float, CallFunc_Less_FloatFloat_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, K2Node_DynamicCast_AsMoney_Top_Secret: AMoneyTopSecret_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Not_PreBool_ReturnValue_2: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_Add_IntInt_ReturnValue: int32, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_Conv_IntToText_ReturnValue: FText, K2Node_MakeStruct_FormatArgumentData: FFormatArgumentData, CallFunc_canCarryMoney__can_: bool, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_EqualEqual_FloatFloat_ReturnValue: bool, Temp_text_Variable_1: FText, CallFunc_BooleanAND_ReturnValue_3: bool, CallFunc_BooleanAND_ReturnValue_4: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_2: bool, CallFunc_BooleanOR_ReturnValue_1: bool, K2Node_MakeStruct_FormatArgumentData_1: FFormatArgumentData, CallFunc_BooleanAND_ReturnValue_5: bool, K2Node_MakeArray_Array: TArray, CallFunc_Conv_TextToString_ReturnValue: FString, CallFunc_Format_ReturnValue: FText, CallFunc_Concat_StrStr_ReturnValue: FString, Temp_bool_Variable: bool, K2Node_Select_Default: FText | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool, CallFunc_GetPlayerPawn_ReturnValue: APawn*, CallFunc_Divide_FloatFloat_ReturnValue: float, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_SelectFloat_ReturnValue: float | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_isClass_is: bool, CallFunc_Conv_FloatToString_ReturnValue: FString, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_getCurrentMaskInfo_fasterInteract: bool, CallFunc_getCurrentMaskInfo_hpReg: bool, CallFunc_getCurrentMaskInfo_fasterSprintMoney: bool, CallFunc_getCurrentMaskInfo_reduceHpTick: bool, CallFunc_getCurrentMaskInfo_interestMoneybag: bool, CallFunc_getCurrentMaskInfo_reduceFallDmg: bool, CallFunc_getCurrentMaskInfo_reduceExplDmg: bool, CallFunc_getCurrentMaskInfo_fasterBags: bool, CallFunc_getCurrentMaskInfo_newbomb: bool, CallFunc_getCurrentMaskInfo_canttakeoff: bool, CallFunc_getCurrentMaskInfo_cdr: float, CallFunc_getCurrentMaskInfo_doubleJump_: bool, CallFunc_getCurrentMaskInfo_invisForCCTV_: bool, CallFunc_getCurrentMaskInfo_gainAmmo_: bool, CallFunc_getCurrentMaskInfo_canRide_: bool, CallFunc_getCurrentMaskInfo_slowFall_: bool, CallFunc_getCurrentMaskInfo_FoodOnMoneyPickup_: bool, CallFunc_getCurrentMaskInfo_fasterBodyCarry: bool, CallFunc_getCurrentMaskInfo_spawnMoney_: bool, CallFunc_getCurrentMaskInfo_noPoisonDmg_: bool, CallFunc_getCurrentMaskInfo_chargeJump: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_2: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_3: bool, CallFunc_Conv_IntToString_ReturnValue: FString, CallFunc_Add_IntInt_ReturnValue: int32, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString, CallFunc_Concat_StrStr_ReturnValue_2: FString, CallFunc_Subtract_IntInt_ReturnValue: int32, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_Greater_IntInt_ReturnValue_1: bool, Temp_int_Variable: int32, K2Node_DynamicCast_AsMoney_Top_Secret: AMoneyTopSecret_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Add_IntInt_ReturnValue_1: int32, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_Add_FloatFloat_ReturnValue: float, CallFunc_FMin_ReturnValue: float, CallFunc_EqualEqual_FloatFloat_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_BooleanAND_ReturnValue_3: bool, K2Node_DynamicCast_AsMoney_Diamond: AMoney_Diamond_C*, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_4: bool, CallFunc_BooleanAND_ReturnValue_4: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_5: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_5: bool, Temp_int_Variable_1: int32, CallFunc_GetTransform_ReturnValue: FTransform, CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue: AActor*, CallFunc_FinishSpawningActor_ReturnValue: AHpKit_Donut_C*, CallFunc_GetTransform_ReturnValue_1: FTransform, CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_1: AActor*, CallFunc_GetGameMode_ReturnValue: AGameModeBase*, CallFunc_FinishSpawningActor_ReturnValue_1: AJokerCard_C*, K2Node_DynamicCast_AsTutorial_GM: ATutorialGM_C*, K2Node_DynamicCast_bSuccess_2: bool, CallFunc_SelectInt_ReturnValue: int32, CallFunc_Multiply_IntInt_ReturnValue: int32, CallFunc_SelectInt_ReturnValue_1: int32, CallFunc_Multiply_IntFloat_ReturnValue: float, CallFunc_FTrunc_ReturnValue: int32, CallFunc_SelectInt_ReturnValue_2: int32, CallFunc_Conv_IntToFloat_ReturnValue: float, CallFunc_Multiply_FloatFloat_ReturnValue: float, CallFunc_FTrunc_ReturnValue_1: int32, CallFunc_Add_IntInt_ReturnValue_2: int32 | void |
+| GetRadiation | loc: FVector | float |
+| GetAiInteractTraceLocation | none | FVector |
+| PlayerAiCanInteract | CallFunc_IsValid_ReturnValue: bool | bool |
+| PlayerAiInteractTimer | playerai: APlayerAI_C* | float |
+| GetAiInteractWorldLoc | none | FVector |
+| CopInter? | none | bool |
+| GetItemName | CallFunc_Conv_TextToString_ReturnValue: FString | FString |
+| ignoreDistanceChecks | none | bool |
 | PlayerInteracted | player: APlayerChar_C* | void |
-| OnRep_cloaked? | Temp_bool_Variable: bool, Temp_object_Variable: USoundBase*, Temp_object_Variable_1: USoundBase*, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_IsValid_ReturnValue: bool, K2Node_Select_Default: USoundBase*, CallFunc_NotEqual_BoolBool_ReturnValue: bool, CallFunc_SpawnSoundAttached_ReturnValue: UAudioComponent* | void |
-| OnRep_attachedTo | CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_K2_SetActorLocation_SweepHitResult: FHitResult, CallFunc_K2_SetActorLocation_ReturnValue: bool | void |
 | SaveMeshMat | none | void |
 | CloakTick | none | void |
 
@@ -1243,8 +1112,8 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| RestartCl | true?: bool | void |
-| RestartSV | true?: bool | void |
+| RestartCl | none | bool |
+| RestartSV | none | bool |
 
 ---
 
@@ -1296,22 +1165,12 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| EmpStart | duration: float, true: bool, CallFunc_DealDmg_dead: bool | void |
-| isSus | isSus?: bool, isSusEasy?: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_Subtract_IntInt_ReturnValue: int32, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, Temp_int_Variable: int32, CallFunc_K2_GetComponentToWorld_ReturnValue: FTransform, CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue: AActor*, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_FinishSpawningActor_ReturnValue: AProximityMine_C*, CallFunc_BooleanAND_ReturnValue_1: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool, CallFunc_GetPlayerPawn_ReturnValue: APawn*, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_2: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_HasAuthority_ReturnValue: bool, CallFunc_customDestroyedHandling_handled_: bool, CallFunc_GetController_ReturnValue: AController*, K2Node_DynamicCast_AsHeist_PC: AHeistPC_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Subtract_FloatFloat_ReturnValue: float | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| customDestroyedHandling | handled?: bool | void |
-| OnRep_hasGymBag? | none | void |
-| OnRep_hasDrillBag? | none | void |
-| OnRep_attachedwepcrate | CallFunc_IsValid_ReturnValue: bool | void |
-| OnRep_emp? | CallFunc_SelectFloat_ReturnValue: float | void |
-| OnRep_hasBombBag? | none | void |
-| OnRep_hasBag? | none | void |
+| EmpStart | duration: float, CallFunc_DealDmg_dead: bool | bool |
+| isSus | none | bool |
+| ignoreDistanceChecks | none | bool |
+| CanBePenetrated? | inputDmg: float | float |
+| bulletsCanDmg? | helper: bool | bool |
+| customDestroyedHandling | none | bool |
 | TellClPossessed | none | void |
 | WantsUnpossessCl | none | void |
 | WantsUnpossessSV | possessOverride: APawn* | void |
@@ -1353,13 +1212,12 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, Temp_int_Variable: int32, CallFunc_FMax_ReturnValue: float, CallFunc_Add_FloatFloat_ReturnValue: float, CallFunc_FMin_ReturnValue: float, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_GreaterEqual_FloatFloat_ReturnValue: bool, CallFunc_Add_FloatFloat_ReturnValue_1: float, CallFunc_Add_IntInt_ReturnValue: int32 | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, CallFunc_HasAuthority_ReturnValue: bool | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| ignoreDistanceChecks | none | bool |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | FText |
+| CanBePenetrated? | inputDmg: float | float |
+| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, CallFunc_HasAuthority_ReturnValue: bool | bool |
+| bulletsCanDmg? | helper: bool | bool |
 | UserConstructionScript | CallFunc_Conv_BoolToFloat_ReturnValue: float, K2Node_SwitchInteger_CmpSuccess: bool | void |
 
 ---
@@ -1453,11 +1311,8 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_Conv_IntToString_ReturnValue: FString, CallFunc_Less_FloatFloat_ReturnValue: bool, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, Temp_int_Variable: int32, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_IsValid_ReturnValue_1: bool, CallFunc_Less_FloatFloat_ReturnValue: bool, CallFunc_Less_FloatFloat_ReturnValue_1: bool, CallFunc_GreaterEqual_IntInt_ReturnValue: bool, CallFunc_Subtract_IntInt_ReturnValue: int32, CallFunc_Greater_IntInt_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| OnRep_remainingVests | CallFunc_GreaterEqual_IntInt_ReturnValue: bool | void |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
 | TickVis | none | void |
 
 ---
@@ -1481,15 +1336,11 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_2: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float, CallFunc_Greater_FloatFloat_ReturnValue: bool | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, CallFunc_Greater_FloatFloat_ReturnValue: bool, CallFunc_HasAuthority_ReturnValue: bool | void |
-| OnRep_cut | none | void |
-| OnRep_destroyed | none | void |
+| ignoreDistanceChecks | none | bool |
+| InteractSV | PlayerChar: APlayerChar_C*, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| CanBePenetrated? | inputDmg: float, CallFunc_Greater_FloatFloat_ReturnValue: bool | float |
+| bulletsCanDmg? | helper: bool | bool |
 | DestroyWall | Target: AActor*, sound?: bool | void |
 | ResetMesh | none | void |
 
@@ -1547,14 +1398,12 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_FMax_ReturnValue: float, CallFunc_Add_FloatFloat_ReturnValue: float, CallFunc_FMin_ReturnValue: float, CallFunc_GreaterEqual_FloatFloat_ReturnValue: bool, CallFunc_Add_FloatFloat_ReturnValue_1: float, CallFunc_Add_IntInt_ReturnValue: int32, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, Temp_int_Variable: int32, CallFunc_BooleanAND_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| isSus | isSus?: bool, isSusEasy?: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_HasAuthority_ReturnValue: bool, CallFunc_GetController_ReturnValue: AController*, K2Node_DynamicCast_AsHeist_PC: AHeistPC_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Subtract_FloatFloat_ReturnValue: float | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | FText |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| isSus | none | bool |
+| CanBePenetrated? | inputDmg: float | float |
+| bulletsCanDmg? | helper: bool | bool |
 | TellClPossessed | none | void |
 | WantsUnpossessCl | none | void |
 | WantsUnpossessSV | none | void |
@@ -1588,17 +1437,16 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| getPaintingValue | easel: ACanvasEasel_C*, preventPaint: bool, paintingName: FText, paintingDescr: FText, value: int32, traceOffset: FVector | void |
-| GetAiInteractTraceLocation | offset: FVector | void |
-| PlayerAiCanInteract | prevent?: bool | void |
-| CopInter? | shouldInter?: bool | void |
-| GetAiInteractWorldLoc | worldLoc: FVector, Temp_object_Variable: TArray, Temp_object_Variable_1: TArray, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_K2_GetComponentLocation_ReturnValue_1: FVector, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_LineTraceSingle_OutHit: FHitResult, CallFunc_LineTraceSingle_ReturnValue: bool, CallFunc_LineTraceSingle_OutHit_1: FHitResult, CallFunc_LineTraceSingle_ReturnValue_1: bool, CallFunc_BreakHitResult_bBlockingHit: bool, CallFunc_BreakHitResult_bInitialOverlap: bool, CallFunc_BreakHitResult_Time: float, CallFunc_BreakHitResult_Distance: float, CallFunc_BreakHitResult_Location: FVector, CallFunc_BreakHitResult_ImpactPoint: FVector, CallFunc_BreakHitResult_Normal: FVector, CallFunc_BreakHitResult_ImpactNormal: FVector, CallFunc_BreakHitResult_PhysMat: UPhysicalMaterial*, CallFunc_BreakHitResult_HitActor: AActor*, CallFunc_BreakHitResult_HitComponent: UPrimitiveComponent*, CallFunc_BreakHitResult_HitBoneName: FName, CallFunc_BreakHitResult_HitItem: int32, CallFunc_BreakHitResult_FaceIndex: int32, CallFunc_BreakHitResult_TraceStart: FVector, CallFunc_BreakHitResult_TraceEnd: FVector | void |
-| PlayerAiInteract | playerai: APlayerAI_C*, true: bool | void |
-| PlayerAiInteractTimer | playerai: APlayerAI_C*, secs: float | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_Not_PreBool_ReturnValue: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
+| getPaintingValue | easel: ACanvasEasel_C* | FVector |
+| GetAiInteractTraceLocation | none | FVector |
+| PlayerAiCanInteract | none | bool |
+| CopInter? | none | bool |
+| PlayerAiInteract | playerai: APlayerAI_C* | bool |
+| PlayerAiInteractTimer | playerai: APlayerAI_C* | float |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_Not_PreBool_ReturnValue: bool | FText |
+| ignoreDistanceChecks | none | bool |
+| InteractSV | PlayerChar: APlayerChar_C* | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
 | ExplodeAll | none | void |
 | ExplodeSV | none | void |
 | Beep | none | void |
@@ -1624,17 +1472,14 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_IsActorBeingDestroyed_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| VisColl | l1: FVector, l2: FVector, blocked?: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_LineIntersectsSphere_blocked_: bool | void |
-| ToggleThermal | on?: bool, true: bool, CallFunc_Not_PreBool_ReturnValue: bool | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
-| traceFromTo | actorLoc: FVector, ourLoc: FVector, ActorsToIgnore: TArray, blocked: bool, hit: FHitResult, CallFunc_Add_VectorVector_ReturnValue: FVector, CallFunc_Add_VectorVector_ReturnValue_1: FVector, CallFunc_SphereTraceSingle_OutHit: FHitResult, CallFunc_SphereTraceSingle_ReturnValue: bool, CallFunc_LineTraceSingle_OutHit: FHitResult, CallFunc_LineTraceSingle_ReturnValue: bool, CallFunc_BreakHitResult_bBlockingHit: bool, CallFunc_BreakHitResult_bInitialOverlap: bool, CallFunc_BreakHitResult_Time: float, CallFunc_BreakHitResult_Distance: float, CallFunc_BreakHitResult_Location: FVector, CallFunc_BreakHitResult_ImpactPoint: FVector, CallFunc_BreakHitResult_Normal: FVector, CallFunc_BreakHitResult_ImpactNormal: FVector, CallFunc_BreakHitResult_PhysMat: UPhysicalMaterial*, CallFunc_BreakHitResult_HitActor: AActor*, CallFunc_BreakHitResult_HitComponent: UPrimitiveComponent*, CallFunc_BreakHitResult_HitBoneName: FName, CallFunc_BreakHitResult_HitItem: int32, CallFunc_BreakHitResult_FaceIndex: int32, CallFunc_BreakHitResult_TraceStart: FVector, CallFunc_BreakHitResult_TraceEnd: FVector, CallFunc_Vector_Distance_ReturnValue: float, CallFunc_Less_FloatFloat_ReturnValue: bool | void |
-| OnRep_triggered? | CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_SpawnSoundAtLocation_ReturnValue: UAudioComponent* | void |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool | FText |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| VisColl | l1: FVector, l2: FVector, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_LineIntersectsSphere_blocked_: bool | bool |
+| ToggleThermal | on?: bool, CallFunc_Not_PreBool_ReturnValue: bool | bool |
+| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool | bool |
+| bulletsCanDmg? | helper: bool | bool |
+| CanBePenetrated? | inputDmg: float | float |
 | DamageTick | none | void |
 | ActivateSV | none | void |
 | DeactivateParticle | none | void |
@@ -1657,8 +1502,7 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| EmpStart | duration: float, true: bool | void |
-| OnRep_emp? | none | void |
+| EmpStart | duration: float | bool |
 | Blinking | none | void |
 | EmpBegin | Duration: float | void |
 
@@ -1683,15 +1527,11 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_2: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float, CallFunc_Greater_FloatFloat_ReturnValue: bool | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, CallFunc_Greater_FloatFloat_ReturnValue: bool, CallFunc_HasAuthority_ReturnValue: bool | void |
-| OnRep_cut | none | void |
-| OnRep_destroyed | none | void |
+| ignoreDistanceChecks | none | bool |
+| InteractSV | PlayerChar: APlayerChar_C*, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| CanBePenetrated? | inputDmg: float, CallFunc_Greater_FloatFloat_ReturnValue: bool | float |
+| bulletsCanDmg? | helper: bool | bool |
 | DestroyWall | Target: AActor*, sound: bool | void |
 | ResetMesh | none | void |
 
@@ -1709,10 +1549,9 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| getPaintingValue | easel: ACanvasEasel_C*, preventPaint: bool, paintingName: FText, paintingDescr: FText, value: int32, traceOffset: FVector | void |
-| ToggleDrillPreview | active?: bool, true?: bool | void |
-| PlaceDrill | place?: bool, true?: bool, CallFunc_GetTransform_ReturnValue: FTransform, CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue: AActor*, CallFunc_IsValid_ReturnValue: bool, CallFunc_FinishSpawningActor_ReturnValue: ASafeDoor_C*, CallFunc_IsActorBeingDestroyed_ReturnValue: bool | void |
-| ToggleDrillPlacementGuide | active?: bool, true?: bool | void |
+| getPaintingValue | easel: ACanvasEasel_C* | FVector |
+| ToggleDrillPreview | active?: bool | bool |
+| ToggleDrillPlacementGuide | active?: bool | bool |
 
 ---
 
@@ -1733,17 +1572,13 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetAiInteractTraceLocation | offset: FVector | void |
-| PlayerAiCanInteract | prevent?: bool | void |
-| PlayerAiInteract | playerai: APlayerAI_C*, true: bool, Temp_int_Variable: int32, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_NotEqual_ByteByte_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_Subtract_IntInt_ReturnValue: int32 | void |
-| PlayerAiInteractTimer | playerai: APlayerAI_C*, secs: float | void |
-| GetAiInteractWorldLoc | worldLoc: FVector | void |
-| CopInter? | shouldInter?: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_isClass__is_: bool, Temp_byte_Variable: uint8, CallFunc_Conv_ByteToInt_ReturnValue: int32, CallFunc_Array_Get_Item: uint8, CallFunc_Array_Contains_ReturnValue: bool, CallFunc_Conv_ByteToString_ReturnValue: FString, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Conv_StringToName_ReturnValue: FName, CallFunc_GetDataTableRowFromName_OutRow: FWeaponTypesStructs__pf3747386746, CallFunc_GetDataTableRowFromName_ReturnValue: bool, CallFunc_Conv_TextToString_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, Temp_int_Variable: int32, CallFunc_isClass__is_: bool, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_Subtract_IntInt_ReturnValue: int32 | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| OnRep_uses? | none | void |
+| GetAiInteractTraceLocation | none | FVector |
+| PlayerAiCanInteract | none | bool |
+| PlayerAiInteractTimer | playerai: APlayerAI_C* | float |
+| GetAiInteractWorldLoc | none | FVector |
+| CopInter? | none | bool |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
 | RefreshUses | none | void |
 | TickVis | none | void |
 
@@ -1784,17 +1619,11 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| getPaintingValue | easel: ACanvasEasel_C*, preventPaint: bool, paintingName: FText, paintingDescr: FText, value: int32, traceOffset: FVector | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_DealDmg_self_CastInput: TScriptInterface, CallFunc_DealDmg_dead: bool, CallFunc_Conv_FloatToString_ReturnValue: FString, CallFunc_Multiply_FloatFloat_ReturnValue: float, CallFunc_SelectFloat_ReturnValue: float, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_IsValid_ReturnValue_1: bool, CallFunc_DealDmg_self_CastInput_1: TScriptInterface, CallFunc_DealDmg_dead_1: bool, CallFunc_Conv_FloatToString_ReturnValue_1: FString, CallFunc_GetTransform_ReturnValue: FTransform, CallFunc_Subtract_FloatFloat_ReturnValue: float, CallFunc_InverseTransformLocation_ReturnValue: FVector, CallFunc_BreakVector_X: float, CallFunc_BreakVector_Y: float, CallFunc_BreakVector_Z: float, CallFunc_Greater_FloatFloat_ReturnValue: bool, CallFunc_Conv_FloatToString_ReturnValue_2: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString, CallFunc_Concat_StrStr_ReturnValue_2: FString, CallFunc_Concat_StrStr_ReturnValue_3: FString | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_getCurrentMaskInfo_fasterInteract: bool, CallFunc_getCurrentMaskInfo_hpReg: bool, CallFunc_getCurrentMaskInfo_fasterSprintMoney: bool, CallFunc_getCurrentMaskInfo_reduceHpTick: bool, CallFunc_getCurrentMaskInfo_interestMoneybag: bool, CallFunc_getCurrentMaskInfo_reduceFallDmg: bool, CallFunc_getCurrentMaskInfo_reduceExplDmg: bool, CallFunc_getCurrentMaskInfo_fasterBags: bool, CallFunc_getCurrentMaskInfo_newbomb: bool, CallFunc_getCurrentMaskInfo_canttakeoff: bool, CallFunc_getCurrentMaskInfo_cdr: float, CallFunc_getCurrentMaskInfo_doubleJump_: bool, CallFunc_getCurrentMaskInfo_invisForCCTV_: bool, CallFunc_getCurrentMaskInfo_gainAmmo_: bool, CallFunc_getCurrentMaskInfo_canRide_: bool, CallFunc_getCurrentMaskInfo_slowFall_: bool, CallFunc_getCurrentMaskInfo_FoodOnMoneyPickup_: bool, CallFunc_getCurrentMaskInfo_fasterBodyCarry: bool, CallFunc_getCurrentMaskInfo_spawnMoney_: bool, CallFunc_getCurrentMaskInfo_noPoisonDmg_: bool, CallFunc_getCurrentMaskInfo_chargeJump: bool, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_GetController_ReturnValue: AController*, K2Node_DynamicCast_AsHeist_PC: AHeistPC_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_GetController_ReturnValue_1: AController*, K2Node_DynamicCast_AsHeist_PC_1: AHeistPC_C*, K2Node_DynamicCast_bSuccess_1: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| isCapsuleFree | caps: UCapsuleComponent*, slim: bool, free: bool, Temp_object_Variable: TArray, CallFunc_GetDisplayName_ReturnValue: FString, CallFunc_GetScaledCapsuleRadius_ReturnValue: float, CallFunc_GetScaledCapsuleHalfHeight_ReturnValue: float, CallFunc_SelectFloat_ReturnValue: float, CallFunc_MakeVector_ReturnValue: FVector, CallFunc_MakeVector_ReturnValue_1: FVector, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_Add_VectorVector_ReturnValue: FVector, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_SphereTraceSingle_OutHit: FHitResult, CallFunc_SphereTraceSingle_ReturnValue: bool, CallFunc_BreakHitResult_bBlockingHit: bool, CallFunc_BreakHitResult_bInitialOverlap: bool, CallFunc_BreakHitResult_Time: float, CallFunc_BreakHitResult_Distance: float, CallFunc_BreakHitResult_Location: FVector, CallFunc_BreakHitResult_ImpactPoint: FVector, CallFunc_BreakHitResult_Normal: FVector, CallFunc_BreakHitResult_ImpactNormal: FVector, CallFunc_BreakHitResult_PhysMat: UPhysicalMaterial*, CallFunc_BreakHitResult_HitActor: AActor*, CallFunc_BreakHitResult_HitComponent: UPrimitiveComponent*, CallFunc_BreakHitResult_HitBoneName: FName, CallFunc_BreakHitResult_HitItem: int32, CallFunc_BreakHitResult_FaceIndex: int32, CallFunc_BreakHitResult_TraceStart: FVector, CallFunc_BreakHitResult_TraceEnd: FVector, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_GetDisplayName_ReturnValue_1: FString, CallFunc_Conv_BoolToString_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString, CallFunc_Concat_StrStr_ReturnValue_2: FString, CallFunc_Concat_StrStr_ReturnValue_3: FString | void |
-| Find Unsaddle Pos | wloc: FVector, wrot: FRotator, trySlim?: bool, CallFunc_GetDisplayName_ReturnValue: FString, CallFunc_GetDisplayName_ReturnValue_1: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString, CallFunc_K2_GetComponentToWorld_ReturnValue: FTransform, CallFunc_K2_GetComponentToWorld_ReturnValue_1: FTransform, CallFunc_BreakTransform_Location: FVector, CallFunc_BreakTransform_Rotation: FRotator, CallFunc_BreakTransform_Scale: FVector, CallFunc_BreakTransform_Location_1: FVector, CallFunc_BreakTransform_Rotation_1: FRotator, CallFunc_BreakTransform_Scale_1: FVector, CallFunc_GetDisplayName_ReturnValue_2: FString, CallFunc_Concat_StrStr_ReturnValue_2: FString, CallFunc_K2_GetComponentToWorld_ReturnValue_2: FTransform, CallFunc_BreakTransform_Location_2: FVector, CallFunc_BreakTransform_Rotation_2: FRotator, CallFunc_BreakTransform_Scale_2: FVector, CallFunc_GetDisplayName_ReturnValue_3: FString, CallFunc_K2_GetComponentToWorld_ReturnValue_3: FTransform, CallFunc_Concat_StrStr_ReturnValue_3: FString, CallFunc_BreakTransform_Location_3: FVector, CallFunc_BreakTransform_Rotation_3: FRotator, CallFunc_BreakTransform_Scale_3: FVector, CallFunc_GetDisplayName_ReturnValue_4: FString, CallFunc_K2_GetComponentToWorld_ReturnValue_4: FTransform, CallFunc_Concat_StrStr_ReturnValue_4: FString, CallFunc_BreakTransform_Location_4: FVector, CallFunc_BreakTransform_Rotation_4: FRotator, CallFunc_BreakTransform_Scale_4: FVector, CallFunc_isCapsuleFree_free: bool, CallFunc_isCapsuleFree_free_1: bool, CallFunc_isCapsuleFree_free_2: bool, CallFunc_isCapsuleFree_free_3: bool, CallFunc_isCapsuleFree_free_4: bool, CallFunc_isCapsuleFree_free_5: bool, CallFunc_GetDisplayName_ReturnValue_5: FString, CallFunc_Concat_StrStr_ReturnValue_5: FString, CallFunc_K2_GetComponentToWorld_ReturnValue_5: FTransform, CallFunc_BreakTransform_Location_5: FVector, CallFunc_BreakTransform_Rotation_5: FRotator, CallFunc_BreakTransform_Scale_5: FVector, CallFunc_K2_GetComponentToWorld_ReturnValue_6: FTransform, CallFunc_BreakTransform_Location_6: FVector, CallFunc_BreakTransform_Rotation_6: FRotator, CallFunc_BreakTransform_Scale_6: FVector, CallFunc_K2_GetComponentToWorld_ReturnValue_7: FTransform, CallFunc_BreakTransform_Location_7: FVector, CallFunc_BreakTransform_Rotation_7: FRotator, CallFunc_BreakTransform_Scale_7: FVector, CallFunc_K2_GetComponentToWorld_ReturnValue_8: FTransform, CallFunc_BreakTransform_Location_8: FVector, CallFunc_BreakTransform_Rotation_8: FRotator, CallFunc_BreakTransform_Scale_8: FVector, CallFunc_GetOverlappingActors_OverlappingActors: TArray, CallFunc_Array_Length_ReturnValue: int32, CallFunc_GetOverlappingActors_OverlappingActors_1: TArray, CallFunc_GetOverlappingActors_OverlappingActors_2: TArray, CallFunc_Array_Length_ReturnValue_1: int32, CallFunc_Array_Length_ReturnValue_2: int32, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_LessEqual_IntInt_ReturnValue_1: bool, CallFunc_LessEqual_IntInt_ReturnValue_2: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_LessEqual_IntInt_ReturnValue_3: bool, CallFunc_BooleanAND_ReturnValue_1: bool | void |
-| OnRep_playerRiding | CallFunc_IsLocallyControlled_ReturnValue: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool | void |
+| getPaintingValue | easel: ACanvasEasel_C* | FVector |
+| bulletsCanDmg? | helper: bool | bool |
+| CanBePenetrated? | inputDmg: float | float |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
 | UserConstructionScript | CallFunc_K2_AttachToComponent_ReturnValue: bool | void |
 | TellClPossessed | none | void |
 | ForceUnpossessOnCl | none | void |
@@ -1825,10 +1654,9 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_IsActorBeingDestroyed_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool | void |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool | FText |
 | AiBlockFix | none | void |
 
 ---
@@ -1848,11 +1676,10 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, Temp_int_Variable: int32, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_Subtract_IntInt_ReturnValue: int32 | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| OnRep_uses? | none | void |
+| GetInteractName | PlayerChar: APlayerChar_C* | FText |
+| ignoreDistanceChecks | none | bool |
+| InteractSV | PlayerChar: APlayerChar_C*, Temp_int_Variable: int32, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_Subtract_IntInt_ReturnValue: int32 | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
 | RefreshUses | none | void |
 | TickVis | none | void |
 
@@ -1871,8 +1698,8 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| RestartSV | true?: bool | void |
-| RestartCl | true?: bool | void |
+| RestartSV | none | bool |
+| RestartCl | none | bool |
 
 ---
 
@@ -1895,10 +1722,8 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_GetController_ReturnValue: AController*, CallFunc_Conv_FloatToString_ReturnValue: FString, K2Node_DynamicCast_AsHeist_PC: AHeistPC_C*, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_Greater_FloatFloat_ReturnValue: bool, CallFunc_HasAuthority_ReturnValue: bool | void |
-| OnRep_destroyed | none | void |
+| CanBePenetrated? | inputDmg: float | float |
+| bulletsCanDmg? | helper: bool | bool |
 | DestroyWall | Target: AActor* | void |
 | CheckTargetVis | none | void |
 
@@ -1934,9 +1759,9 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, CallFunc_HasAuthority_ReturnValue: bool | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
+| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, CallFunc_HasAuthority_ReturnValue: bool | bool |
+| bulletsCanDmg? | helper: bool | bool |
+| CanBePenetrated? | inputDmg: float | float |
 | TickVis | none | void |
 
 ---
@@ -1975,15 +1800,11 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| getPaintingValue | easel: ACanvasEasel_C*, preventPaint: bool, paintingName: FText, paintingDescr: FText, value: int32, traceOffset: FVector | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_IsActorBeingDestroyed_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool | void |
-| EmpStart | duration: float, true: bool | void |
-| OnRep_emp? | none | void |
-| OnRep_HpRepl | CallFunc_IsValid_ReturnValue: bool, CallFunc_Divide_FloatFloat_ReturnValue: float, CallFunc_Multiply_FloatFloat_ReturnValue: float, CallFunc_FTrunc_ReturnValue: int32, CallFunc_Conv_IntToString_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Conv_StringToText_ReturnValue: FText | void |
-| OnRep_foundTarget? | none | void |
+| getPaintingValue | easel: ACanvasEasel_C* | FVector |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool | FText |
+| EmpStart | duration: float | bool |
 | RotateTick | none | void |
 | UpdateTarget | none | void |
 | Shoot | none | void |
@@ -2007,13 +1828,12 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, Temp_int_Variable: int32, CallFunc_FMax_ReturnValue: float, CallFunc_Add_FloatFloat_ReturnValue: float, CallFunc_FMin_ReturnValue: float, CallFunc_GreaterEqual_FloatFloat_ReturnValue: bool, CallFunc_Add_FloatFloat_ReturnValue_1: float, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Add_IntInt_ReturnValue: int32, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | FText |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool | bool |
+| bulletsCanDmg? | helper: bool | bool |
+| CanBePenetrated? | inputDmg: float | float |
 | SpawnMolotovPart | loc: FVector | void |
 | ExplodeDelaySV | delay: float | void |
 | NotExplodeALL | none | void |
@@ -2046,13 +1866,10 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText | void |
-| OnRep_absoluteLoc | CallFunc_K2_SetActorLocation_SweepHitResult: FHitResult, CallFunc_K2_SetActorLocation_ReturnValue: bool | void |
-| OnRep_AttachedToComp | CallFunc_IsValid_ReturnValue: bool, CallFunc_GetDisplayName_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue: FString | void |
-| OnRep_RelativeAttachLoc | CallFunc_Conv_VectorToString_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue: FString | void |
+| ignoreDistanceChecks | none | bool |
+| InteractSV | PlayerChar: APlayerChar_C* | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| GetInteractName | PlayerChar: APlayerChar_C* | FText |
 | DontExplodeAll | none | void |
 | DrawAll | Origin: FVector | void |
 | ReplCheck | none | void |
@@ -2156,31 +1973,13 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| getPaintingValue | easel: ACanvasEasel_C*, preventPaint: bool, paintingName: FText, paintingDescr: FText, value: int32, traceOffset: FVector, K2Node_DynamicCast_AsPlayer_AI_Rob: APlayerAI_Rob_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Greater_IntInt_ReturnValue: bool | void |
-| GetRadiation | loc: FVector, power: float | void |
-| Taser | secs: float, true: bool | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, wepID: uint8, realDMG: float, K2Node_DynamicCast_AsCharacter: ACharacter*, K2Node_DynamicCast_bSuccess: bool, K2Node_DynamicCast_AsCharacter_1: ACharacter*, K2Node_DynamicCast_bSuccess_1: bool, K2Node_DynamicCast_AsPolice_Dog: APolice_Dog_C*, K2Node_DynamicCast_bSuccess_2: bool, K2Node_DynamicCast_AsPlayer_AI_Rob: APlayerAI_Rob_C*, K2Node_DynamicCast_bSuccess_3: bool, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess_4: bool, K2Node_DynamicCast_AsPolice_Dog_1: APolice_Dog_C*, K2Node_DynamicCast_bSuccess_5: bool, K2Node_DynamicCast_AsPlayer_Char_1: APlayerChar_C*, K2Node_DynamicCast_bSuccess_6: bool, K2Node_DynamicCast_AsPlayer_Char_2: APlayerChar_C*, K2Node_DynamicCast_bSuccess_7: bool, CallFunc_GetController_ReturnValue: AController*, K2Node_DynamicCast_AsHeist_PC: AHeistPC_C*, K2Node_DynamicCast_bSuccess_8: bool, CallFunc_Add_IntInt_ReturnValue: int32, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Add_IntInt_ReturnValue_1: int32, CallFunc_Not_PreBool_ReturnValue: bool, K2Node_DynamicCast_AsRemote_Turret: ARemoteTurret_C*, K2Node_DynamicCast_bSuccess_9: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_GetOwner_ReturnValue: AActor*, K2Node_DynamicCast_AsPlayer_Char_3: APlayerChar_C*, K2Node_DynamicCast_bSuccess_10: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, K2Node_DynamicCast_AsPlayer_AI: APlayerAI_C*, K2Node_DynamicCast_bSuccess_11: bool, CallFunc_Add_IntInt_ReturnValue_2: int32, K2Node_DynamicCast_AsPlayer_Char_4: APlayerChar_C*, K2Node_DynamicCast_bSuccess_12: bool, CallFunc_Conv_FloatToString_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue: FString, Temp_int_Variable: int32, Temp_int_Variable_1: int32, Temp_int_Variable_2: int32, CallFunc_GreaterEqual_IntInt_ReturnValue: bool, Temp_int_Variable_3: int32, CallFunc_GreaterEqual_IntInt_ReturnValue_1: bool, CallFunc_HasAuthority_ReturnValue: bool, K2Node_DynamicCast_AsPlayer_Char_5: APlayerChar_C*, K2Node_DynamicCast_bSuccess_13: bool, CallFunc_NotEqual_BoolBool_ReturnValue: bool, CallFunc_GetGameState_ReturnValue: AGameStateBase*, CallFunc_GetAllActorsOfClass_OutActors: TArray, K2Node_DynamicCast_AsHeist_GS: AHeistGS_C*, K2Node_DynamicCast_bSuccess_14: bool, CallFunc_RandomArray_randomAct: AActor*, CallFunc_K2_GetActorLocation_ReturnValue_1: FVector, CallFunc_K2_SetActorLocation_SweepHitResult: FHitResult, CallFunc_K2_SetActorLocation_ReturnValue: bool, CallFunc_Subtract_IntInt_ReturnValue: int32, CallFunc_GetPlayersInEachTeam_robbers: int32, CallFunc_GetPlayersInEachTeam_cops: int32, CallFunc_GetGameState_ReturnValue_1: AGameStateBase*, CallFunc_EqualEqual_IntInt_ReturnValue: bool, K2Node_DynamicCast_AsHeist_GS_1: AHeistGS_C*, K2Node_DynamicCast_bSuccess_15: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_IsValid_ReturnValue: bool, K2Node_DynamicCast_AsPlayer_Char_6: APlayerChar_C*, K2Node_DynamicCast_bSuccess_16: bool, CallFunc_GetController_ReturnValue_1: AController*, K2Node_DynamicCast_AsHeist_PC_1: AHeistPC_C*, K2Node_DynamicCast_bSuccess_17: bool, CallFunc_Less_FloatFloat_ReturnValue: bool, CallFunc_Add_IntInt_ReturnValue_3: int32, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_GetAllActorsOfClass_OutActors_1: TArray, CallFunc_Array_Get_Item: APlayerStart*, CallFunc_K2_GetActorLocation_ReturnValue_2: FVector, CallFunc_K2_SetActorLocation_SweepHitResult_1: FHitResult, CallFunc_K2_SetActorLocation_ReturnValue_1: bool, CallFunc_GetGameMode_ReturnValue: AGameModeBase*, K2Node_DynamicCast_AsHeist_GM: AHeistGM_C*, K2Node_DynamicCast_bSuccess_18: bool, CallFunc_GetAlivePlayers_CopsAlive: TArray, CallFunc_GetAlivePlayers_CopsNum: int32, CallFunc_GetAlivePlayers_RobsAlive: TArray, CallFunc_GetAlivePlayers_RobsNum: int32, CallFunc_Conv_IntToString_ReturnValue: FString, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_Concat_StrStr_ReturnValue_1: FString, K2Node_DynamicCast_AsPlayer_AI_Rob_1: APlayerAI_Rob_C*, K2Node_DynamicCast_bSuccess_19: bool, CallFunc_Multiply_FloatFloat_ReturnValue: float, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_GetGameMode_ReturnValue_1: AGameModeBase*, CallFunc_VSize_ReturnValue: float, K2Node_DynamicCast_AsHeist_GM_1: AHeistGM_C*, K2Node_DynamicCast_bSuccess_20: bool, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_GetPlayersAliveFromEachTeam_CopsAlive: TArray, CallFunc_GetPlayersAliveFromEachTeam_CopsNum: int32, CallFunc_GetPlayersAliveFromEachTeam_RobsAlive: TArray, CallFunc_GetPlayersAliveFromEachTeam_RobsNum: int32, CallFunc_SelectFloat_ReturnValue: float, CallFunc_LessEqual_IntInt_ReturnValue_1: bool, CallFunc_GetGameMode_ReturnValue_2: AGameModeBase*, CallFunc_GetPlayersAliveFromEachTeam_CopsAlive_1: TArray, CallFunc_GetPlayersAliveFromEachTeam_CopsNum_1: int32, CallFunc_GetPlayersAliveFromEachTeam_RobsAlive_1: TArray, CallFunc_GetPlayersAliveFromEachTeam_RobsNum_1: int32, K2Node_DynamicCast_AsHeist_GM_2: AHeistGM_C*, K2Node_DynamicCast_bSuccess_21: bool, CallFunc_LessEqual_IntInt_ReturnValue_2: bool, CallFunc_GetGameMode_ReturnValue_3: AGameModeBase*, K2Node_DynamicCast_AsHeist_GM_3: AHeistGM_C*, K2Node_DynamicCast_bSuccess_22: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_2: bool, K2Node_DynamicCast_AsPlayer_AI_Rob_2: APlayerAI_Rob_C*, K2Node_DynamicCast_bSuccess_23: bool, K2Node_DynamicCast_AsPlayer_AI_Cop: APlayerAI_Cop_C*, K2Node_DynamicCast_bSuccess_24: bool, K2Node_DynamicCast_AsPlayer_AI_Cop_1: APlayerAI_Cop_C*, K2Node_DynamicCast_bSuccess_25: bool, CallFunc_GetGameState_ReturnValue_2: AGameStateBase*, K2Node_DynamicCast_AsHeist_GS_2: AHeistGS_C*, K2Node_DynamicCast_bSuccess_26: bool, CallFunc_UtcNow_ReturnValue: FDateTime, CallFunc_Greater_IntInt_ReturnValue_1: bool, CallFunc_BooleanOR_ReturnValue: bool, K2Node_MakeStruct_DeathInfo: FDeathInfo__pf1458230002, CallFunc_GetMaterial_ReturnValue: UMaterialInterface*, CallFunc_GetTransform_ReturnValue: FTransform, CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue: AActor*, CallFunc_Conv_FloatToString_ReturnValue_1: FString, CallFunc_FinishSpawningActor_ReturnValue: ARagdollSpawn_C*, CallFunc_Multiply_FloatFloat_ReturnValue_1: float, CallFunc_Multiply_FloatFloat_ReturnValue_2: float, CallFunc_Multiply_FloatFloat_ReturnValue_3: float, K2Node_SwitchInteger_CmpSuccess: bool, CallFunc_Conv_FloatToString_ReturnValue_2: FString, CallFunc_Subtract_FloatFloat_ReturnValue: float, CallFunc_Concat_StrStr_ReturnValue_2: FString, CallFunc_Conv_FloatToString_ReturnValue_3: FString, CallFunc_Concat_StrStr_ReturnValue_3: FString, CallFunc_Concat_StrStr_ReturnValue_4: FString, CallFunc_Concat_StrStr_ReturnValue_5: FString, CallFunc_Concat_StrStr_ReturnValue_6: FString | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
+| getPaintingValue | easel: ACanvasEasel_C*, K2Node_DynamicCast_AsPlayer_AI_Rob: APlayerAI_Rob_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Greater_IntInt_ReturnValue: bool | FVector |
+| GetRadiation | loc: FVector | float |
+| Taser | secs: float | bool |
+| bulletsCanDmg? | helper: bool | bool |
+| CanBePenetrated? | inputDmg: float | float |
 | helperPrint | InString: FString | void |
-| hasLosTo | act: AActor*, los: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, K2Node_MakeArray_Array: TArray, CallFunc_K2_GetActorLocation_ReturnValue_1: FVector, CallFunc_LineTraceSingle_OutHit: FHitResult, CallFunc_LineTraceSingle_ReturnValue: bool, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_LineTraceSingle_OutHit_1: FHitResult, CallFunc_LineTraceSingle_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue_1: bool | void |
-| OnRep_tasered? | CallFunc_SelectFloat_ReturnValue: float | void |
-| CheckOverlappingLadder | Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_int_Array_Index_Variable: int32, CallFunc_MakeHitResult_ReturnValue: FHitResult, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_GetOverlappingActors_OverlappingActors: TArray, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Array_Get_Item: AActor*, CallFunc_Conv_IntToString_ReturnValue: FString, K2Node_DynamicCast_AsLadder_Act: ALadderAct_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_K2_GetComponentLocation_ReturnValue_1: FVector, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_Subtract_VectorVector_ReturnValue_1: FVector, CallFunc_VSize_ReturnValue: float, CallFunc_VSize_ReturnValue_1: float, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_LessEqual_FloatFloat_ReturnValue_1: bool, CallFunc_K2_GetComponentLocation_ReturnValue_2: FVector, CallFunc_K2_GetComponentLocation_ReturnValue_3: FVector, CallFunc_Array_Length_ReturnValue_1: int32, CallFunc_Less_IntInt_ReturnValue: bool | void |
-| OnRep_dead? | CallFunc_Not_PreBool_ReturnValue: bool | void |
-| spottedByCop? | spotted?: bool, cops: TArray, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_int_Array_Index_Variable: int32, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_RandomFloatInRange_ReturnValue: float, CallFunc_K2_GetActorLocation_ReturnValue_1: FVector, CallFunc_MakeVector_ReturnValue: FVector, CallFunc_Add_VectorVector_ReturnValue: FVector, CallFunc_GetAllActorsOfClass_OutActors: TArray, CallFunc_Array_Get_Item: ACharacter*, CallFunc_K2_GetActorLocation_ReturnValue_2: FVector, CallFunc_K2_GetActorRotation_ReturnValue: FRotator, CallFunc_FindLookAtRotation_ReturnValue: FRotator, CallFunc_BreakRotator_Roll: float, CallFunc_BreakRotator_Pitch: float, CallFunc_BreakRotator_Yaw: float, CallFunc_BreakRotator_Roll_1: float, CallFunc_BreakRotator_Pitch_1: float, CallFunc_BreakRotator_Yaw_1: float, CallFunc_MakeRotator_ReturnValue: FRotator, CallFunc_MakeRotator_ReturnValue_1: FRotator, CallFunc_K2_GetActorLocation_ReturnValue_3: FVector, CallFunc_EqualEqual_RotatorRotator_ReturnValue: bool, CallFunc_Add_VectorVector_ReturnValue_1: FVector, CallFunc_LineTraceSingle_OutHit: FHitResult, CallFunc_LineTraceSingle_ReturnValue: bool, CallFunc_GetDistanceTo_ReturnValue: float, CallFunc_Less_FloatFloat_ReturnValue: bool, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_GetAllActorsOfClass_OutActors_1: TArray | void |
-| OnRep_difficulty | K2Node_DynamicCast_AsPlayer_AI_Cop: APlayerAI_Cop_C*, K2Node_DynamicCast_bSuccess: bool | void |
-| getSpottedRobberItem | found?: bool, item: AActor*, inth: int32, CallFunc_GetGameMode_ReturnValue: AGameModeBase*, K2Node_DynamicCast_AsHeist_GM: AHeistGM_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Array_Get_Item: AActor*, CallFunc_Subtract_IntInt_ReturnValue: int32, CallFunc_IsValid_ReturnValue: bool, CallFunc_RandomIntegerInRange_ReturnValue: int32, CallFunc_Greater_IntInt_ReturnValue: bool | void |
-| OnRep_DeathInfo | none | void |
-| canPing | ItemToFind: AActor*, blocked: bool, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_int_Array_Index_Variable: int32, CallFunc_GetAllActorsOfClass_OutActors: TArray, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Array_Get_Item: APlayerAI_C*, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_Array_Contains_ReturnValue: bool | void |
-| CheckCloseDoor | door: AActor*, block?: bool, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_int_Array_Index_Variable: int32, CallFunc_GetAllActorsOfClass_OutActors: TArray, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Array_Get_Item: APlayerAI_C*, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_GetOverlappingActors_OverlappingActors: TArray, CallFunc_Array_Contains_ReturnValue: bool | void |
-| BlockedBySmoke? | l1: FVector, l2: FVector, blocked: bool, block: bool, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_bool_True_if_break_was_hit_Variable: bool, Temp_int_Array_Index_Variable: int32, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_GetAllActorsWithInterface_OutActors: TArray, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Array_Get_Item: AActor*, CallFunc_Less_IntInt_ReturnValue: bool, K2Node_DynamicCast_AsSmoke_Vis_Interface: TScriptInterface, K2Node_DynamicCast_bSuccess: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_VisColl_blocked_: bool | void |
-| GetName | name: FString, CallFunc_EqualEqual_IntInt_ReturnValue: bool, CallFunc_SelectString_ReturnValue: FString, CallFunc_EqualEqual_IntInt_ReturnValue_1: bool, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_SelectString_ReturnValue_1: FString, CallFunc_SelectString_ReturnValue_2: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString | void |
-| GetPlayersAliveFromEachTeam | CopsAlive: TArray, CopsNum: int32, RobsAlive: TArray, RobsNum: int32, aliverobs: TArray, alivecops: TArray, aiCops: TArray, aiRobs: TArray, Temp_int_Array_Index_Variable: int32, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_int_Loop_Counter_Variable_1: int32, CallFunc_Add_IntInt_ReturnValue_1: int32, Temp_int_Array_Index_Variable_1: int32, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Array_Length_ReturnValue_1: int32, CallFunc_Array_Length_ReturnValue_2: int32, CallFunc_Array_Length_ReturnValue_3: int32, CallFunc_Add_IntInt_ReturnValue_2: int32, CallFunc_Add_IntInt_ReturnValue_3: int32, CallFunc_GetAllActorsOfClass_OutActors: TArray, CallFunc_Array_Get_Item: APlayerAI_C*, CallFunc_Array_Length_ReturnValue_4: int32, CallFunc_Array_Add_ReturnValue: int32, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_Array_Add_ReturnValue_1: int32, CallFunc_GetAllActorsOfClass_OutActors_1: TArray, CallFunc_Array_Length_ReturnValue_5: int32, CallFunc_Array_Get_Item_1: APlayerChar_C*, CallFunc_Less_IntInt_ReturnValue_1: bool, CallFunc_Array_AddUnique_ReturnValue: int32, CallFunc_K2_IsValidTimerHandle_ReturnValue: bool, CallFunc_Array_AddUnique_ReturnValue_1: int32, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| OnRep_sprinting? | CallFunc_SelectFloat_ReturnValue: float, CallFunc_IsValid_ReturnValue: bool | void |
-| OnRep_shootTarget | CallFunc_IsValid_ReturnValue: bool | void |
-| OnRep_ReloadingSV? | none | void |
 | AddRecoil | RecoilAdd: float, CallFunc_Add_FloatFloat_ReturnValue: float, CallFunc_FClamp_ReturnValue: float | void |
-| OnRep_currentWeaponID | none | void |
 | UserConstructionScript | CallFunc_K2_AttachToComponent_ReturnValue: bool, CallFunc_K2_AttachToComponent_ReturnValue_1: bool | void |
 | CheckTurnAnim | none | void |
 | EquipWeapon | WepID: uint8 | void |
@@ -2256,10 +2055,10 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_Add_IntInt_ReturnValue: int32 | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool | FText |
+| ignoreDistanceChecks | none | bool |
+| InteractSV | PlayerChar: APlayerChar_C*, CallFunc_Add_IntInt_ReturnValue: int32 | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
 | SetMat | K2Node_SwitchInteger_CmpSuccess: bool | void |
 | UserConstructionScript | none | void |
 | SetState | none | void |
@@ -2299,18 +2098,9 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Subtract_IntInt_ReturnValue: int32, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, Temp_int_Variable: int32, CallFunc_IsValid_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_2: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_IsValid_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_2: bool | void |
-| isSus | isSus?: bool, isSusEasy?: bool, CallFunc_GetOverlappingActors_OverlappingActors: TArray, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_GetMeshZone_zone: TEnumAsByte<ZoneEnum>, CallFunc_GetMeshZone_clothesRow: FName, CallFunc_NotEqual_ByteByte_ReturnValue: bool, CallFunc_NotEqual_ByteByte_ReturnValue_1: bool, CallFunc_VSize_ReturnValue: float, CallFunc_Greater_IntInt_ReturnValue_1: bool, CallFunc_Greater_FloatFloat_ReturnValue: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_BooleanOR_ReturnValue_1: bool, CallFunc_BooleanOR_ReturnValue_2: bool, CallFunc_BooleanOR_ReturnValue_3: bool, CallFunc_BooleanOR_ReturnValue_4: bool, CallFunc_BooleanOR_ReturnValue_5: bool | void |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
 | debugPrint | InString: FString | void |
-| OnRep_clothingID | CallFunc_Conv_IntToString_ReturnValue: FString, CallFunc_Conv_StringToName_ReturnValue: FName, CallFunc_GetDataTableRowFromName_OutRow: FClothingStruct__pf1458230002, CallFunc_GetDataTableRowFromName_ReturnValue: bool | void |
-| SetMesh | CallFunc_HasAuthority_ReturnValue: bool, CallFunc_RandomIntegerInRange_ReturnValue: int32, CallFunc_Conv_IntToString_ReturnValue: FString, CallFunc_Conv_StringToName_ReturnValue: FName, CallFunc_GetDataTableRowFromName_OutRow: FClothingStruct__pf1458230002, CallFunc_GetDataTableRowFromName_ReturnValue: bool | void |
-| copCanSeeHim? | isSpotted?: bool, spotted?: bool, copActs: TArray, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_bool_True_if_break_was_hit_Variable: bool, Temp_int_Array_Index_Variable: int32, CallFunc_Not_PreBool_ReturnValue: bool, Temp_int_Loop_Counter_Variable_1: int32, CallFunc_Add_IntInt_ReturnValue_1: int32, Temp_int_Loop_Counter_Variable_2: int32, CallFunc_Add_IntInt_ReturnValue_2: int32, Temp_int_Array_Index_Variable_1: int32, Temp_int_Array_Index_Variable_2: int32, Temp_int_Loop_Counter_Variable_3: int32, CallFunc_Add_IntInt_ReturnValue_3: int32, Temp_int_Array_Index_Variable_3: int32, CallFunc_GetAllActorsOfClass_OutActors: TArray, CallFunc_Array_Get_Item: APolice_Dog_C*, CallFunc_Array_Add_ReturnValue: int32, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_Array_Get_Item_1: AActor*, CallFunc_Array_Length_ReturnValue_1: int32, CallFunc_K2_GetActorLocation_ReturnValue_1: FVector, CallFunc_Less_IntInt_ReturnValue_1: bool, K2Node_MakeArray_Array: TArray, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_LineTraceSingle_OutHit: FHitResult, CallFunc_LineTraceSingle_ReturnValue: bool, CallFunc_GetAllActorsOfClass_OutActors_1: TArray, CallFunc_Array_Get_Item_2: APlayerAI_Cop_C*, CallFunc_Array_Length_ReturnValue_2: int32, CallFunc_Array_Add_ReturnValue_1: int32, CallFunc_Less_IntInt_ReturnValue_2: bool, CallFunc_GetAllActorsOfClass_OutActors_2: TArray, CallFunc_Array_Length_ReturnValue_3: int32, CallFunc_Array_Get_Item_3: APlayerChar_C*, CallFunc_Less_IntInt_ReturnValue_3: bool, CallFunc_Array_Add_ReturnValue_2: int32 | void |
-| OnRep_roped? | none | void |
-| OnRep_hasBombBag? | none | void |
-| OnRep_moneyAmount | CallFunc_Greater_IntInt_ReturnValue: bool | void |
 | UserConstructionScript | CallFunc_K2_SetRelativeLocation_SweepHitResult: FHitResult, CallFunc_K2_AttachToComponent_ReturnValue: bool, CallFunc_K2_AttachToComponent_ReturnValue_1: bool | void |
 | CheckUnrope | none | void |
 | SetState | none | void |
@@ -2350,18 +2140,16 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetAiInteractTraceLocation | offset: FVector | void |
-| PlayerAiCanInteract | prevent?: bool | void |
-| PlayerAiInteract | playerai: APlayerAI_C*, true: bool, K2Node_DynamicCast_AsPlayer_AI_Rob: APlayerAI_Rob_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Add_IntInt_ReturnValue: int32 | void |
-| PlayerAiInteractTimer | playerai: APlayerAI_C*, secs: float | void |
-| GetAiInteractWorldLoc | worldLoc: FVector | void |
-| CopInter? | shouldInter?: bool | void |
-| GetItemName | name: FString | void |
-| RefreshPhysics | true: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Conv_IntToString_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool, CallFunc_GetPlayerPawn_ReturnValue: APawn*, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_SelectFloat_ReturnValue: float | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, OldPlayerMat: UMaterialInterface*, OldPlayerMesh: USkeletalMesh*, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_IsActorBeingDestroyed_ReturnValue: bool | void |
+| GetAiInteractTraceLocation | none | FVector |
+| PlayerAiCanInteract | none | bool |
+| PlayerAiInteract | playerai: APlayerAI_C*, K2Node_DynamicCast_AsPlayer_AI_Rob: APlayerAI_Rob_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Add_IntInt_ReturnValue: int32 | bool |
+| PlayerAiInteractTimer | playerai: APlayerAI_C* | float |
+| GetAiInteractWorldLoc | none | FVector |
+| CopInter? | none | bool |
+| GetItemName | none | FString |
+| RefreshPhysics | none | bool |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C*, CallFunc_GetPlayerPawn_ReturnValue: APawn*, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_SelectFloat_ReturnValue: float | bool |
 | RefreshPhys | none | void |
 | TickVis | none | void |
 | DontAll | none | void |
@@ -2382,10 +2170,9 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_IsActorBeingDestroyed_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_EqualEqual_ByteByte_ReturnValue: bool | void |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_EqualEqual_ByteByte_ReturnValue: bool | FText |
 | GotDamagedBy | player: APlayerChar_C*, local: FVector | void |
 | AiBlockFix | none | void |
 
@@ -2411,13 +2198,8 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_isClass__is_: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_Not_PreBool_ReturnValue_2: bool, CallFunc_Not_PreBool_ReturnValue_3: bool, CallFunc_LessEqual_IntInt_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_3: bool, CallFunc_BooleanAND_ReturnValue_4: bool, CallFunc_EqualEqual_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_5: bool, CallFunc_EqualEqual_IntInt_ReturnValue_1: bool, CallFunc_Conv_IntToByte_ReturnValue: uint8 | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_EqualEqual_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_Conv_IntToString_ReturnValue: FString, CallFunc_Conv_StringToName_ReturnValue: FName, CallFunc_GetDataTableRowFromName_OutRow: FWeaponTypesStructs__pf3747386746, CallFunc_GetDataTableRowFromName_ReturnValue: bool, CallFunc_EqualEqual_IntInt_ReturnValue_1: bool, CallFunc_Conv_TextToString_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString | void |
-| OnRep_chuteGone? | none | void |
-| OnRep_weaponID | none | void |
-| SetWepModel | CallFunc_GetUserWidgetObject_ReturnValue: UUserWidget*, CallFunc_GetUserWidgetObject_ReturnValue_1: UUserWidget*, K2Node_DynamicCast_AsWorld_Wep_Icon: UWorldWepIcon_C*, K2Node_DynamicCast_bSuccess: bool, K2Node_DynamicCast_AsWorld_Wep_Icon_1: UWorldWepIcon_C*, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_GetUserWidgetObject_ReturnValue_2: UUserWidget*, K2Node_DynamicCast_AsWorld_Wep_Icon_2: UWorldWepIcon_C*, K2Node_DynamicCast_bSuccess_2: bool | void |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
 | Refresh | none | void |
 | TickVis | none | void |
 | detach | Target: USceneComponent* | void |
@@ -2440,7 +2222,6 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| OnRep_alert | none | void |
 | SmartTick | none | void |
 | GetRobbers | none | void |
 | startalert | none | void |
@@ -2486,10 +2267,9 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_IsActorBeingDestroyed_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool | void |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool | FText |
 | AiBlockFix | none | void |
 | UpdateCollisions | none | void |
 
@@ -2516,9 +2296,7 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| EmpStart | duration: float, true: bool | void |
-| OnRep_emp? | none | void |
-| OnRep_tasering? | CallFunc_K2_GetComponentLocation_ReturnValue: FVector | void |
+| EmpStart | duration: float | bool |
 | RobberTick | none | void |
 | StartTaser | act: AActor* | void |
 | EmpBegin | Duration: float | void |
@@ -2540,20 +2318,18 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetAiInteractTraceLocation | offset: FVector | void |
-| PlayerAiCanInteract | prevent?: bool | void |
-| PlayerAiInteract | playerai: APlayerAI_C*, true: bool, K2Node_DynamicCast_AsPlayer_AI_Rob: APlayerAI_Rob_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_HasAuthority_ReturnValue: bool | void |
-| PlayerAiInteractTimer | playerai: APlayerAI_C*, secs: float | void |
-| GetAiInteractWorldLoc | worldLoc: FVector | void |
-| CopInter? | shouldInter?: bool | void |
-| GetItemName | name: FString | void |
-| RefreshPhysics | true: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_canCarryBombs__can_: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_2: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, OldPlayerMat: UMaterialInterface*, OldPlayerMesh: USkeletalMesh*, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_2: bool | void |
-| GetCustomTrace | Hit: FHitResult | void |
-| GetCustomPingSettings | Executor: APawn*, Icon: FName, Conditions: TArray | void |
+| GetAiInteractTraceLocation | none | FVector |
+| PlayerAiCanInteract | none | bool |
+| PlayerAiInteract | playerai: APlayerAI_C*, K2Node_DynamicCast_AsPlayer_AI_Rob: APlayerAI_Rob_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_HasAuthority_ReturnValue: bool | bool |
+| PlayerAiInteractTimer | playerai: APlayerAI_C* | float |
+| GetAiInteractWorldLoc | none | FVector |
+| CopInter? | none | bool |
+| GetItemName | none | FString |
+| RefreshPhysics | none | bool |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| GetCustomTrace | none | FHitResult |
+| GetCustomPingSettings | Executor: APawn* | TArray |
 | RefreshPhys | none | void |
 | TickVis | none | void |
 
@@ -2572,10 +2348,10 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | FText |
+| ignoreDistanceChecks | none | bool |
+| InteractSV | PlayerChar: APlayerChar_C*, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
 | dmg | none | void |
 | AiBlockFix | none | void |
 
@@ -2625,12 +2401,9 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, Temp_int_Variable: int32, CallFunc_FMax_ReturnValue: float, CallFunc_GreaterEqual_FloatFloat_ReturnValue: bool, CallFunc_Add_FloatFloat_ReturnValue: float, CallFunc_Add_FloatFloat_ReturnValue_1: float, CallFunc_FMin_ReturnValue: float, CallFunc_Add_IntInt_ReturnValue: int32, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| giveRevive? | oldScore: int32, newScore: int32, stepSize: int32, giveRevive?: bool, CallFunc_Conv_IntToString_ReturnValue: FString, CallFunc_NotEqual_IntInt_ReturnValue: bool, CallFunc_Conv_IntToFloat_ReturnValue: float, CallFunc_Conv_IntToString_ReturnValue_1: FString, CallFunc_Conv_IntToString_ReturnValue_2: FString, CallFunc_Add_IntInt_ReturnValue: int32, CallFunc_Conv_IntToString_ReturnValue_3: FString, CallFunc_Conv_IntToFloat_ReturnValue_1: float, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Divide_FloatFloat_ReturnValue: float, CallFunc_Concat_StrStr_ReturnValue_1: FString, CallFunc_FCeil_ReturnValue: int32, CallFunc_Concat_StrStr_ReturnValue_2: FString, CallFunc_Multiply_IntInt_ReturnValue: int32, CallFunc_Concat_StrStr_ReturnValue_3: FString, CallFunc_Conv_IntToString_ReturnValue_4: FString, CallFunc_Concat_StrStr_ReturnValue_4: FString, CallFunc_GreaterEqual_IntInt_ReturnValue: bool, CallFunc_Concat_StrStr_ReturnValue_5: FString, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_Conv_IntToString_ReturnValue_5: FString, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Concat_StrStr_ReturnValue_6: FString, CallFunc_Concat_StrStr_ReturnValue_7: FString, CallFunc_Conv_BoolToString_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_8: FString, CallFunc_Concat_StrStr_ReturnValue_9: FString, CallFunc_Concat_StrStr_ReturnValue_10: FString, CallFunc_Concat_StrStr_ReturnValue_11: FString, CallFunc_Concat_StrStr_ReturnValue_12: FString | void |
-| OnRep_cryptoProgress | CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_IsValid_ReturnValue: bool, CallFunc_SpawnSoundAtLocation_ReturnValue: UAudioComponent*, CallFunc_Less_FloatFloat_ReturnValue: bool | void |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool | FText |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
 | Print | none | void |
 | ProgressTick | none | void |
 | ReviveAll | none | void |
@@ -2650,10 +2423,10 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_Add_FloatFloat_ReturnValue: float, CallFunc_FClamp_ReturnValue: float | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
+| GetInteractName | PlayerChar: APlayerChar_C* | FText |
+| ignoreDistanceChecks | none | bool |
+| InteractSV | PlayerChar: APlayerChar_C*, CallFunc_Add_FloatFloat_ReturnValue: float, CallFunc_FClamp_ReturnValue: float | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
 
 ---
 
@@ -2690,15 +2463,11 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_2: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float, CallFunc_Greater_FloatFloat_ReturnValue: bool | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_HasAuthority_ReturnValue: bool, CallFunc_Subtract_FloatFloat_ReturnValue: float | void |
-| OnRep_cut | none | void |
-| OnRep_destroyed | none | void |
+| ignoreDistanceChecks | none | bool |
+| InteractSV | PlayerChar: APlayerChar_C*, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| CanBePenetrated? | inputDmg: float, CallFunc_Greater_FloatFloat_ReturnValue: bool | float |
+| bulletsCanDmg? | helper: bool | bool |
 | DestroyWall | Target: AActor*, sound: bool | void |
 | ResetMesh | none | void |
 
@@ -2718,10 +2487,10 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_Not_PreBool_ReturnValue: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, NewLocalVar_0: FTransform | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_Not_PreBool_ReturnValue: bool | FText |
+| ignoreDistanceChecks | none | bool |
+| InteractSV | PlayerChar: APlayerChar_C*, NewLocalVar_0: FTransform | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
 | StartPinging | none | void |
 | PingTick | none | void |
 
@@ -2764,9 +2533,7 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| EmpStart | duration: float, true: bool | void |
-| OnRep_emp? | Temp_bool_Variable: bool, Temp_byte_Variable: TEnumAsByte<ECollisionEnabled::Type>, Temp_byte_Variable_1: TEnumAsByte<ECollisionEnabled::Type>, K2Node_Select_Default: TEnumAsByte<ECollisionEnabled::Type>, CallFunc_Not_PreBool_ReturnValue: bool | void |
-| OnRep_hpRepl | CallFunc_MapRangeClamped_ReturnValue: float | void |
+| EmpStart | duration: float | bool |
 | heal | none | void |
 | ReplDmg | none | void |
 | EmpBegin | Duration: float | void |
@@ -2786,11 +2553,9 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| getPaintingValue | easel: ACanvasEasel_C*, preventPaint: bool, paintingName: FText, paintingDescr: FText, value: int32, traceOffset: FVector | void |
-| InteractAltSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_K2_GetActorLocation_ReturnValue_1: FVector, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_Normal_ReturnValue: FVector, CallFunc_Multiply_VectorInt_ReturnValue: FVector | void |
-| TimerAlt | timer: float, retry: bool | void |
-| GetAltInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| OnRep_poisoned? | none | void |
+| getPaintingValue | easel: ACanvasEasel_C* | FVector |
+| TimerAlt | none | bool |
+| GetAltInteractName | PlayerChar: APlayerChar_C*, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | FText |
 | TickTeamName | none | void |
 | heal | none | void |
 
@@ -2831,12 +2596,9 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| getPaintingValue | easel: ACanvasEasel_C*, preventPaint: bool, paintingName: FText, paintingDescr: FText, value: int32, traceOffset: FVector | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_HasAuthority_ReturnValue: bool, CallFunc_GetController_ReturnValue: AController*, K2Node_DynamicCast_AsHeist_PC: AHeistPC_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Subtract_FloatFloat_ReturnValue: float | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
-| OnRep_improvedSpeed? | CallFunc_SelectFloat_ReturnValue: float, CallFunc_SelectFloat_ReturnValue_1: float | void |
-| OnRep_hasWeapons? | none | void |
+| getPaintingValue | easel: ACanvasEasel_C* | FVector |
+| bulletsCanDmg? | helper: bool | bool |
+| CanBePenetrated? | inputDmg: float | float |
 | PropellerTick | none | void |
 | TellClPossessed | none | void |
 | WantsUnpossessCl | none | void |
@@ -2879,17 +2641,10 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| LosCheck | startLoc: FVector, ignores: TArray, hasLos?: bool, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_LineTraceSingle_OutHit: FHitResult, CallFunc_LineTraceSingle_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Subtract_IntInt_ReturnValue: int32, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue_2: bool, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_K2_GetComponentLocation_ReturnValue_1: FVector, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_Subtract_VectorVector_ReturnValue_1: FVector, CallFunc_Conv_VectorToString_ReturnValue: FString, CallFunc_VSize_ReturnValue: float, CallFunc_VSize_ReturnValue_1: float, CallFunc_Conv_FloatToString_ReturnValue: FString, CallFunc_Conv_FloatToString_ReturnValue_1: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Conv_FloatToString_ReturnValue_2: FString, CallFunc_Less_FloatFloat_ReturnValue: bool, CallFunc_Concat_StrStr_ReturnValue_1: FString, CallFunc_Conv_BoolToString_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_2: FString, CallFunc_Not_PreBool_ReturnValue_3: bool, CallFunc_Concat_StrStr_ReturnValue_3: FString, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_Concat_StrStr_ReturnValue_4: FString, CallFunc_BooleanAND_ReturnValue_3: bool, CallFunc_BooleanOR_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_SelectString_ReturnValue: FString, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue_2: bool, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_K2_GetComponentLocation_ReturnValue_1: FVector, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_Subtract_VectorVector_ReturnValue_1: FVector, CallFunc_VSize_ReturnValue: float, CallFunc_VSize_ReturnValue_1: float, CallFunc_Less_FloatFloat_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_Not_PreBool_ReturnValue_3: bool, CallFunc_BooleanAND_ReturnValue_3: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_4: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Conv_FloatToString_ReturnValue: FString, CallFunc_GetController_ReturnValue: AController*, K2Node_DynamicCast_AsHeist_PC: AHeistPC_C*, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_Greater_FloatFloat_ReturnValue: bool, CallFunc_K2_GetActorLocation_ReturnValue_1: FVector, K2Node_MakeArray_Array: TArray, CallFunc_GetGameMode_ReturnValue: AGameModeBase*, CallFunc_HasAuthority_ReturnValue: bool, K2Node_DynamicCast_AsHeist_GM: AHeistGM_C*, K2Node_DynamicCast_bSuccess_2: bool, CallFunc_ClosestActorOfClass_closest: AActor*, CallFunc_ClosestActorOfClass_dist: float, CallFunc_ClosestActorOfClass_valid: bool, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, K2Node_DynamicCast_AsPlayer_AI_Cop: APlayerAI_Cop_C*, K2Node_DynamicCast_bSuccess_3: bool, CallFunc_LessEqual_FloatFloat_ReturnValue_1: bool, CallFunc_Subtract_FloatFloat_ReturnValue: float, CallFunc_Subtract_FloatFloat_ReturnValue_1: float, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_K2_GetComponentLocation_ReturnValue_1: FVector, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_Subtract_VectorVector_ReturnValue_1: FVector, CallFunc_VSize_ReturnValue: float, CallFunc_VSize_ReturnValue_1: float, CallFunc_Less_FloatFloat_ReturnValue: bool | void |
-| OnRep_armorOutside? | none | void |
-| OnRep_armorInside? | none | void |
-| OnRep_destroyed | none | void |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| CanBePenetrated? | inputDmg: float | float |
+| bulletsCanDmg? | helper: bool | bool |
 | CheckTargetVis | none | void |
 | PlacementTick | inside?: bool | void |
 | DestroyWall | Target: AActor* | void |
@@ -2926,17 +2681,10 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| LosCheck | startLoc: FVector, ignores: TArray, hasLos?: bool, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_LineTraceSingle_OutHit: FHitResult, CallFunc_LineTraceSingle_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Subtract_IntInt_ReturnValue: int32, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue_2: bool, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_K2_GetComponentLocation_ReturnValue_1: FVector, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_Subtract_VectorVector_ReturnValue_1: FVector, CallFunc_Conv_VectorToString_ReturnValue: FString, CallFunc_VSize_ReturnValue: float, CallFunc_VSize_ReturnValue_1: float, CallFunc_Conv_FloatToString_ReturnValue: FString, CallFunc_Conv_FloatToString_ReturnValue_1: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Conv_FloatToString_ReturnValue_2: FString, CallFunc_Less_FloatFloat_ReturnValue: bool, CallFunc_Concat_StrStr_ReturnValue_1: FString, CallFunc_Conv_BoolToString_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_2: FString, CallFunc_Not_PreBool_ReturnValue_3: bool, CallFunc_Concat_StrStr_ReturnValue_3: FString, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_Concat_StrStr_ReturnValue_4: FString, CallFunc_BooleanAND_ReturnValue_3: bool, CallFunc_BooleanOR_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_SelectString_ReturnValue: FString, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue_2: bool, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_K2_GetComponentLocation_ReturnValue_1: FVector, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_Subtract_VectorVector_ReturnValue_1: FVector, CallFunc_VSize_ReturnValue: float, CallFunc_VSize_ReturnValue_1: float, CallFunc_Less_FloatFloat_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_Not_PreBool_ReturnValue_3: bool, CallFunc_BooleanAND_ReturnValue_3: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_4: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Conv_FloatToString_ReturnValue: FString, CallFunc_GetController_ReturnValue: AController*, K2Node_DynamicCast_AsHeist_PC: AHeistPC_C*, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_Greater_FloatFloat_ReturnValue: bool, CallFunc_K2_GetActorLocation_ReturnValue_1: FVector, K2Node_MakeArray_Array: TArray, CallFunc_GetGameMode_ReturnValue: AGameModeBase*, CallFunc_HasAuthority_ReturnValue: bool, K2Node_DynamicCast_AsHeist_GM: AHeistGM_C*, K2Node_DynamicCast_bSuccess_2: bool, CallFunc_ClosestActorOfClass_closest: AActor*, CallFunc_ClosestActorOfClass_dist: float, CallFunc_ClosestActorOfClass_valid: bool, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, K2Node_DynamicCast_AsPlayer_AI_Cop: APlayerAI_Cop_C*, K2Node_DynamicCast_bSuccess_3: bool, CallFunc_LessEqual_FloatFloat_ReturnValue_1: bool, CallFunc_Subtract_FloatFloat_ReturnValue: float, CallFunc_Subtract_FloatFloat_ReturnValue_1: float, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_K2_GetComponentLocation_ReturnValue_1: FVector, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_Subtract_VectorVector_ReturnValue_1: FVector, CallFunc_VSize_ReturnValue: float, CallFunc_VSize_ReturnValue_1: float, CallFunc_Less_FloatFloat_ReturnValue: bool | void |
-| OnRep_armorOutside? | none | void |
-| OnRep_armorInside? | none | void |
-| OnRep_destroyed | none | void |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| CanBePenetrated? | inputDmg: float | float |
+| bulletsCanDmg? | helper: bool | bool |
 | CheckTargetVis | none | void |
 | PlacementTick | inside?: bool | void |
 | DestroyWall | Target: AActor* | void |
@@ -2973,17 +2721,10 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| LosCheck | startLoc: FVector, ignores: TArray, hasLos?: bool, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_LineTraceSingle_OutHit: FHitResult, CallFunc_LineTraceSingle_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Subtract_IntInt_ReturnValue: int32, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue_2: bool, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_K2_GetComponentLocation_ReturnValue_1: FVector, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_Subtract_VectorVector_ReturnValue_1: FVector, CallFunc_Conv_VectorToString_ReturnValue: FString, CallFunc_VSize_ReturnValue: float, CallFunc_VSize_ReturnValue_1: float, CallFunc_Conv_FloatToString_ReturnValue: FString, CallFunc_Conv_FloatToString_ReturnValue_1: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Conv_FloatToString_ReturnValue_2: FString, CallFunc_Less_FloatFloat_ReturnValue: bool, CallFunc_Concat_StrStr_ReturnValue_1: FString, CallFunc_Conv_BoolToString_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_2: FString, CallFunc_Not_PreBool_ReturnValue_3: bool, CallFunc_Concat_StrStr_ReturnValue_3: FString, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_Concat_StrStr_ReturnValue_4: FString, CallFunc_BooleanAND_ReturnValue_3: bool, CallFunc_BooleanOR_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_SelectString_ReturnValue: FString, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue_2: bool, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_K2_GetComponentLocation_ReturnValue_1: FVector, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_Subtract_VectorVector_ReturnValue_1: FVector, CallFunc_VSize_ReturnValue: float, CallFunc_VSize_ReturnValue_1: float, CallFunc_Less_FloatFloat_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_2: bool, CallFunc_Not_PreBool_ReturnValue_3: bool, CallFunc_BooleanAND_ReturnValue_3: bool, CallFunc_BooleanOR_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_4: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Conv_FloatToString_ReturnValue: FString, CallFunc_GetController_ReturnValue: AController*, K2Node_DynamicCast_AsHeist_PC: AHeistPC_C*, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_Greater_FloatFloat_ReturnValue: bool, CallFunc_K2_GetActorLocation_ReturnValue_1: FVector, K2Node_MakeArray_Array: TArray, CallFunc_GetGameMode_ReturnValue: AGameModeBase*, CallFunc_HasAuthority_ReturnValue: bool, K2Node_DynamicCast_AsHeist_GM: AHeistGM_C*, K2Node_DynamicCast_bSuccess_2: bool, CallFunc_ClosestActorOfClass_closest: AActor*, CallFunc_ClosestActorOfClass_dist: float, CallFunc_ClosestActorOfClass_valid: bool, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, K2Node_DynamicCast_AsPlayer_AI_Cop: APlayerAI_Cop_C*, K2Node_DynamicCast_bSuccess_3: bool, CallFunc_LessEqual_FloatFloat_ReturnValue_1: bool, CallFunc_Subtract_FloatFloat_ReturnValue: float, CallFunc_Subtract_FloatFloat_ReturnValue_1: float, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_K2_GetComponentLocation_ReturnValue_1: FVector, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_Subtract_VectorVector_ReturnValue_1: FVector, CallFunc_VSize_ReturnValue: float, CallFunc_VSize_ReturnValue_1: float, CallFunc_Less_FloatFloat_ReturnValue: bool | void |
-| OnRep_armorOutside? | none | void |
-| OnRep_armorInside? | none | void |
-| OnRep_destroyed | none | void |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| CanBePenetrated? | inputDmg: float | float |
+| bulletsCanDmg? | helper: bool | bool |
 | CheckTargetVis | none | void |
 | PlacementTick | inside?: bool | void |
 | DestroyWall | Target: AActor* | void |
@@ -3023,10 +2764,8 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, Temp_int_Variable: int32, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_FMax_ReturnValue: float, CallFunc_Add_FloatFloat_ReturnValue: float, CallFunc_FMin_ReturnValue: float, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_GreaterEqual_FloatFloat_ReturnValue: bool, CallFunc_Add_FloatFloat_ReturnValue_1: float, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_Add_IntInt_ReturnValue: int32, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_IsActorBeingDestroyed_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
 
 ---
 
@@ -3048,13 +2787,13 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| RefreshPhysics | true: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_canCarryBombs__can_: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, OldPlayerMat: UMaterialInterface*, OldPlayerMesh: USkeletalMesh*, CallFunc_canCarryBombs__can_: bool | void |
+| RefreshPhysics | none | bool |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_canCarryBombs__can_: bool | FText |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| InteractSV | PlayerChar: APlayerChar_C*, OldPlayerMat: UMaterialInterface*, OldPlayerMesh: USkeletalMesh*, CallFunc_canCarryBombs__can_: bool | bool |
 | help2 | NewParam: bool | void |
-| helper | z: TEnumAsByte<ZoneEnum>, c?: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool | void |
+| helper | z: TEnumAsByte<ZoneEnum>, CallFunc_EqualEqual_ByteByte_ReturnValue: bool | bool |
 | RefreshPhys | none | void |
 | TickVis | none | void |
 
@@ -3163,20 +2902,13 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| getPaintingValue | easel: ACanvasEasel_C*, preventPaint: bool, paintingName: FText, paintingDescr: FText, value: int32, traceOffset: FVector | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_isClass__is_: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_Subtract_IntInt_ReturnValue: int32, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_2: bool, Temp_int_Variable: int32, CallFunc_K2_GetActorLocation_ReturnValue_1: FVector, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_Normal_ReturnValue: FVector, CallFunc_Multiply_VectorInt_ReturnValue: FVector | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| Taser | secs: float, true: bool | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, trueDMG: float, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_Subtract_FloatFloat_ReturnValue: float, CallFunc_GetAnimInstance_ReturnValue: UAnimInstance*, CallFunc_FMax_ReturnValue: float, CallFunc_Greater_FloatFloat_ReturnValue: bool, CallFunc_GetAnimInstance_ReturnValue_1: UAnimInstance*, CallFunc_Montage_IsPlaying_ReturnValue: bool, CallFunc_K2_IsValidTimerHandle_ReturnValue: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_Subtract_FloatFloat_ReturnValue_1: float | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
-| getRagdollForChar | sniffchar: AActor*, ragdoll: ARagdollSpawn_C*, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_bool_True_if_break_was_hit_Variable: bool, CallFunc_Not_PreBool_ReturnValue: bool, Temp_int_Array_Index_Variable: int32, CallFunc_GetAllActorsOfClass_OutActors: TArray, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Array_Get_Item: ARagdollSpawn_C*, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_EqualEqual_ObjectObject_ReturnValue_1: bool, CallFunc_BooleanOR_ReturnValue: bool | void |
-| OnRep_vestHP | CallFunc_Greater_FloatFloat_ReturnValue: bool | void |
+| getPaintingValue | easel: ACanvasEasel_C* | FVector |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| Taser | secs: float | bool |
+| bulletsCanDmg? | helper: bool | bool |
+| CanBePenetrated? | inputDmg: float | float |
 | TryStopSniffing | CallFunc_GetAnimInstance_ReturnValue: UAnimInstance*, CallFunc_Montage_IsPlaying_ReturnValue: bool, CallFunc_K2_IsValidTimerHandle_ReturnValue: bool | void |
-| OnRep_tasered? | none | void |
-| maybeTargetChar | char: ACharacter*, K2Node_DynamicCast_AsPlayer_AI_Rob: APlayerAI_Rob_C*, K2Node_DynamicCast_bSuccess: bool, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_GetAnimInstance_ReturnValue: UAnimInstance*, CallFunc_GetAnimInstance_ReturnValue_1: UAnimInstance*, CallFunc_K2_IsValidTimerHandle_ReturnValue: bool, CallFunc_Montage_IsPlaying_ReturnValue: bool, CallFunc_IsValid_ReturnValue: bool | void |
 | CheckTurnAnim | none | void |
 | MoveToOwner | TargetActor: AActor* | void |
 | SetLookAtTarget | lookAtTarget: AActor*, duration: float | void |
@@ -3216,12 +2948,11 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_isClass__is_: bool, CallFunc_IsValid_ReturnValue: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_isClass__is_: bool, CallFunc_IsValid_ReturnValue: bool, CallFunc_GetTransform_ReturnValue: FTransform, CallFunc_BreakTransform_Location: FVector, CallFunc_BreakTransform_Rotation: FRotator, CallFunc_BreakTransform_Scale: FVector, CallFunc_Add_VectorVector_ReturnValue: FVector, CallFunc_BreakRotator_Roll: float, CallFunc_BreakRotator_Pitch: float, CallFunc_BreakRotator_Yaw: float, CallFunc_Add_FloatFloat_ReturnValue: float, CallFunc_MakeRotator_ReturnValue: FRotator, CallFunc_MakeTransform_ReturnValue: FTransform, CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue: AActor*, CallFunc_FinishSpawningActor_ReturnValue: APolice_Dog_C* | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| RestartSV | true?: bool | void |
-| RestartCl | true?: bool | void |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_isClass__is_: bool, CallFunc_IsValid_ReturnValue: bool | FText |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| RestartSV | none | bool |
+| RestartCl | none | bool |
 
 ---
 
@@ -3261,10 +2992,8 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, Temp_int_Variable: int32, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_FMax_ReturnValue: float, CallFunc_Add_FloatFloat_ReturnValue: float, CallFunc_FMin_ReturnValue: float, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_GreaterEqual_FloatFloat_ReturnValue: bool, CallFunc_Add_FloatFloat_ReturnValue_1: float, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_Add_IntInt_ReturnValue: int32, CallFunc_IsActorBeingDestroyed_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue_1: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
 | DebugPrint | InString: FString | void |
 
 ---
@@ -3300,10 +3029,9 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, Temp_int_Variable: int32, CallFunc_FMax_ReturnValue: float, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Add_FloatFloat_ReturnValue: float, CallFunc_FMin_ReturnValue: float, CallFunc_GreaterEqual_FloatFloat_ReturnValue: bool, CallFunc_Add_FloatFloat_ReturnValue_1: float, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Add_IntInt_ReturnValue: int32, CallFunc_BooleanAND_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | FText |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| ignoreDistanceChecks | none | bool |
 
 ---
 
@@ -3340,11 +3068,10 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_Add_IntInt_ReturnValue: int32 | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| OnRep_queen | none | void |
+| GetInteractName | PlayerChar: APlayerChar_C* | FText |
+| ignoreDistanceChecks | none | bool |
+| InteractSV | PlayerChar: APlayerChar_C*, CallFunc_Add_IntInt_ReturnValue: int32 | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
 | UserConstructionScript | CallFunc_IsValid_ReturnValue: bool | void |
 | Attach | none | void |
 
@@ -3364,20 +3091,20 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetAiInteractTraceLocation | offset: FVector | void |
-| PlayerAiCanInteract | prevent?: bool | void |
-| PlayerAiInteract | playerai: APlayerAI_C*, true: bool, K2Node_DynamicCast_AsPlayer_AI_Rob: APlayerAI_Rob_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_HasAuthority_ReturnValue: bool | void |
-| PlayerAiInteractTimer | playerai: APlayerAI_C*, secs: float | void |
-| GetAiInteractWorldLoc | worldLoc: FVector | void |
-| CopInter? | shouldInter?: bool | void |
-| GetItemName | name: FString | void |
-| RefreshPhysics | true: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, OldPlayerMat: UMaterialInterface*, OldPlayerMesh: USkeletalMesh* | void |
-| GetCustomTrace | Hit: FHitResult | void |
-| GetCustomPingSettings | Executor: APawn*, Icon: FName, Conditions: TArray | void |
+| GetAiInteractTraceLocation | none | FVector |
+| PlayerAiCanInteract | none | bool |
+| PlayerAiInteract | playerai: APlayerAI_C*, K2Node_DynamicCast_AsPlayer_AI_Rob: APlayerAI_Rob_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_HasAuthority_ReturnValue: bool | bool |
+| PlayerAiInteractTimer | playerai: APlayerAI_C* | float |
+| GetAiInteractWorldLoc | none | FVector |
+| CopInter? | none | bool |
+| GetItemName | none | FString |
+| RefreshPhysics | none | bool |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | FText |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| InteractSV | PlayerChar: APlayerChar_C*, OldPlayerMat: UMaterialInterface*, OldPlayerMesh: USkeletalMesh* | bool |
+| GetCustomTrace | none | FHitResult |
+| GetCustomPingSettings | Executor: APawn* | TArray |
 | RefreshPhys | none | void |
 | TickVis | none | void |
 
@@ -3430,13 +3157,8 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_GetDistanceTo_ReturnValue: float, CallFunc_IsValid_ReturnValue: bool, CallFunc_Divide_FloatFloat_ReturnValue: float, CallFunc_FTrunc_ReturnValue: int32, K2Node_MakeStruct_FormatArgumentData: FFormatArgumentData, K2Node_MakeArray_Array: TArray, CallFunc_Format_ReturnValue: FText | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_bool_True_if_break_was_hit_Variable: bool, Temp_int_Array_Index_Variable: int32, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_GetComponentsByTag_ReturnValue: TArray, CallFunc_Array_Get_Item: USceneComponent*, CallFunc_IsValid_ReturnValue: bool, CallFunc_K2_GetComponentLocation_ReturnValue: FVector, CallFunc_tpClear__clear: bool, CallFunc_K2_SetActorLocation_SweepHitResult: FHitResult, CallFunc_K2_SetActorLocation_ReturnValue: bool, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool, CallFunc_GetDistanceTo_ReturnValue: float, CallFunc_MapRangeClamped_ReturnValue: float | void |
-| OnRep_running? | CallFunc_SelectFloat_ReturnValue: float | void |
-| OnRep_finished? | none | void |
-| tpClear? | worldPos: FVector, char: ACharacter*, clear: bool, K2Node_MakeArray_Array: TArray, CallFunc_GetScaledCapsuleSize_OutRadius: float, CallFunc_GetScaledCapsuleSize_OutHalfHeight: float, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_CapsuleTraceSingle_OutHit: FHitResult, CallFunc_CapsuleTraceSingle_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool | void |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C*, CallFunc_GetDistanceTo_ReturnValue: float, CallFunc_MapRangeClamped_ReturnValue: float | bool |
 | FinishedDrill | none | void |
 | SetDrillDone | none | void |
 | TickVis | none | void |
@@ -3470,10 +3192,8 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, CallFunc_GetDisplayName_ReturnValue: FString, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_Concat_StrStr_ReturnValue: FString, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, K2Node_DynamicCast_AsPlayer_AI_Rob: APlayerAI_Rob_C*, K2Node_DynamicCast_bSuccess_1: bool, CallFunc_GetGameTimeSinceCreation_ReturnValue: float, CallFunc_Subtract_FloatFloat_ReturnValue: float | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
-| getOverlappingFriendlies | ignore: AActor*, near: bool, friendlyNearby: bool, Temp_bool_True_if_break_was_hit_Variable: bool, Temp_int_Array_Index_Variable: int32, CallFunc_Not_PreBool_ReturnValue: bool, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_bool_True_if_break_was_hit_Variable_1: bool, Temp_int_Array_Index_Variable_1: int32, CallFunc_Not_PreBool_ReturnValue_1: bool, Temp_int_Loop_Counter_Variable_1: int32, CallFunc_Add_IntInt_ReturnValue_1: int32, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Array_Get_Item: UClass*, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_GetOverlappingActors_OverlappingActors: TArray, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Array_Get_Item_1: AActor*, CallFunc_NotEqual_ObjectObject_ReturnValue: bool, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Array_Length_ReturnValue_1: int32, CallFunc_Less_IntInt_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_1: bool | void |
+| bulletsCanDmg? | helper: bool | bool |
+| CanBePenetrated? | inputDmg: float | float |
 | UserConstructionScript | CallFunc_K2_AttachToComponent_ReturnValue: bool, CallFunc_K2_AttachToComponent_ReturnValue_1: bool | void |
 | CheckTurnAnim | none | void |
 | DestroyHandle | none | void |
@@ -3526,7 +3246,6 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| OnRep_canvasWorld | none | void |
 | CapturePainting | none | void |
 
 ---
@@ -3552,15 +3271,8 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetAltInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, CallFunc_MakeLiteralText_ReturnValue: FText, CallFunc_isClass_is: bool, CallFunc_Conv_TextToString_ReturnValue: FString, CallFunc_Conv_StringToText_ReturnValue: FText, CallFunc_Less_FloatFloat_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue_1: bool | void |
-| InteractAltSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_GreaterEqual_FloatFloat_ReturnValue: bool, CallFunc_Subtract_IntInt_ReturnValue: int32, CallFunc_Divide_FloatFloat_ReturnValue: float, CallFunc_SelectFloat_ReturnValue: float, CallFunc_Multiply_IntFloat_ReturnValue: float, CallFunc_Add_FloatFloat_ReturnValue: float, CallFunc_FTrunc_ReturnValue: int32, CallFunc_FClamp_ReturnValue: float, CallFunc_Add_IntInt_ReturnValue: int32 | void |
-| TimerAlt | timer: float, retry: bool | void |
-| OnRep_painter | none | void |
-| addUniquePaintingToStats | placedPaintings: TArray, Temp_int_Array_Index_Variable: int32, CallFunc_Conv_IntToString_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_1: FString, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_int_Array_Index_Variable_1: int32, Temp_int_Loop_Counter_Variable_1: int32, CallFunc_Conv_IntToString_ReturnValue_1: FString, CallFunc_Concat_StrStr_ReturnValue_2: FString, CallFunc_Add_IntInt_ReturnValue_1: int32, CallFunc_Concat_StrStr_ReturnValue_3: FString, CallFunc_Array_Get_Item: FString, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Concat_StrStr_ReturnValue_4: FString, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_GetPlayerController_ReturnValue: APlayerController*, K2Node_DynamicCast_AsHeist_PC: AHeistPC_C*, K2Node_DynamicCast_bSuccess: bool, CallFunc_Array_Length_ReturnValue_1: int32, CallFunc_IsLocalController_ReturnValue: bool, CallFunc_GreaterEqual_IntInt_ReturnValue: bool, CallFunc_Conv_TextToString_ReturnValue: FString, CallFunc_Array_Get_Item_1: FString, CallFunc_IsEmpty_ReturnValue: bool, CallFunc_Concat_StrStr_ReturnValue_5: FString, CallFunc_Array_Get_Item_2: FString, CallFunc_Array_Length_ReturnValue_2: int32, CallFunc_Array_Length_ReturnValue_3: int32, CallFunc_Less_IntInt_ReturnValue_1: bool, CallFunc_Conv_IntToString_ReturnValue_2: FString, CallFunc_Concat_StrStr_ReturnValue_6: FString, CallFunc_Array_Length_ReturnValue_4: int32, CallFunc_Concat_StrStr_ReturnValue_7: FString, CallFunc_Conv_IntToString_ReturnValue_3: FString, CallFunc_JoinStringArray_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue_8: FString, CallFunc_Concat_StrStr_ReturnValue_9: FString, CallFunc_Concat_StrStr_ReturnValue_10: FString, CallFunc_Concat_StrStr_ReturnValue_11: FString, CallFunc_Concat_StrStr_ReturnValue_12: FString, CallFunc_Concat_StrStr_ReturnValue_13: FString, CallFunc_Concat_StrStr_ReturnValue_14: FString, CallFunc_GetCustomConfigVar_String_IsValid: bool, CallFunc_GetCustomConfigVar_String_ReturnValue: FString, CallFunc_Conv_TextToString_ReturnValue_1: FString, CallFunc_Concat_StrStr_ReturnValue_15: FString, CallFunc_Concat_StrStr_ReturnValue_16: FString, CallFunc_Concat_StrStr_ReturnValue_17: FString, CallFunc_Array_Add_ReturnValue: int32, CallFunc_Array_Contains_ReturnValue: bool, CallFunc_ParseIntoArray_ReturnValue: TArray, CallFunc_IsLocallyControlled_ReturnValue: bool, CallFunc_IsValid_ReturnValue: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| OnRep_paintingName | CallFunc_GetUserWidgetObject_ReturnValue: UUserWidget*, CallFunc_IsValid_ReturnValue: bool, K2Node_DynamicCast_AsPainting_Name_UI: UPaintingNameUI_C*, K2Node_DynamicCast_bSuccess: bool | void |
-| OnRep_falling? | CallFunc_HasAuthority_ReturnValue: bool | void |
-| OnRep_ProgressSV | none | void |
+| TimerAlt | none | bool |
+| ignoreDistanceChecks | none | bool |
 | InitPainting | canvasRtPencil: UTexture*, canvasRtColor: UTexture* | void |
 | StartFalling | none | void |
 | PaintSoundALL | none | void |
@@ -3586,11 +3298,10 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| OnRep_active? | CallFunc_IsValid_ReturnValue: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_SpawnSoundAtLocation_ReturnValue: UAudioComponent* | void |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | FText |
+| InteractSV | PlayerChar: APlayerChar_C* | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| ignoreDistanceChecks | none | bool |
 | HealTick | none | void |
 | SetActiveAgain | none | void |
 
@@ -3643,11 +3354,9 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, Temp_int_Variable: int32, CallFunc_FMax_ReturnValue: float, CallFunc_GreaterEqual_FloatFloat_ReturnValue: bool, CallFunc_Add_FloatFloat_ReturnValue: float, CallFunc_Add_FloatFloat_ReturnValue_1: float, CallFunc_FMin_ReturnValue: float, CallFunc_Add_IntInt_ReturnValue: int32, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| OnRep_remainingBalls | Temp_int_Variable: int32, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_Add_IntInt_ReturnValue: int32, CallFunc_Subtract_IntInt_ReturnValue: int32, CallFunc_Array_Get_Item: USceneComponent*, CallFunc_Array_IsValidIndex_ReturnValue: bool | void |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | FText |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| ignoreDistanceChecks | none | bool |
 | ShootBall | none | void |
 | SortBalls | none | void |
 
@@ -3704,12 +3413,8 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_isClass_is: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, K2Node_MakeStruct_FormatArgumentData: FFormatArgumentData, K2Node_MakeArray_Array: TArray, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Format_ReturnValue: FText | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_isClass_is: bool, CallFunc_BooleanAND_ReturnValue: bool | void |
-| OnRep_destroyed? | Temp_bool_Variable: bool, Temp_byte_Variable: TEnumAsByte<ECollisionEnabled::Type>, Temp_byte_Variable_1: TEnumAsByte<ECollisionEnabled::Type>, CallFunc_GetTransform_ReturnValue: FTransform, CallFunc_K2_AttachToComponent_ReturnValue: bool, CallFunc_TransformLocation_ReturnValue: FVector, CallFunc_TransformRotation_ReturnValue: FRotator, CallFunc_K2_SetWorldLocationAndRotation_SweepHitResult: FHitResult, K2Node_Select_Default: TEnumAsByte<ECollisionEnabled::Type>, CallFunc_SelectFloat_ReturnValue: float | void |
-| customDestroyedHandling | handled?: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_Add_VectorVector_ReturnValue: FVector, CallFunc_MakeTransform_ReturnValue: FTransform, CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue: AActor*, CallFunc_FinishSpawningActor_ReturnValue: AScrapSentry_C*, CallFunc_GetController_ReturnValue: AController*, K2Node_DynamicCast_AsHeist_PC: AHeistPC_C*, K2Node_DynamicCast_bSuccess: bool | void |
-| UserConstructionScript | CallFunc_Conv_LinearColorToColor_ReturnValue: FColor, CallFunc_IsDedicatedServer_ReturnValue: bool, CallFunc_CreateDynamicMaterialInstance_ReturnValue: UMaterialInstanceDynamic*, CallFunc_IsValid_ReturnValue: bool | void |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| InteractSV | PlayerChar: APlayerChar_C*, CallFunc_isClass_is: bool, CallFunc_BooleanAND_ReturnValue: bool | bool |
 | MotorNoiseTick | none | void |
 | RepairSV | none | void |
 | ForceMoveToLoc | forceMoveTo: FVector, forceMoveToAnchor: FVector | void |
@@ -3758,13 +3463,9 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| EmpStart | duration: float, true: bool, CallFunc_HasAuthority_ReturnValue: bool | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_Subtract_FloatFloat_ReturnValue: float | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
-| OnRep_walkSpeedSlow? | CallFunc_SelectFloat_ReturnValue: float | void |
-| OnRep_firing? | CallFunc_SelectFloat_ReturnValue: float | void |
-| findClosestBurning | plant: AActor*, otherTargets: TMap, barrels: TArray, bombs: TArray, closestP: AIgniteablePlant_C*, closestD: float, Temp_int_Array_Index_Variable: int32, Temp_bool_True_if_break_was_hit_Variable: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_Array_Length_ReturnValue: int32, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_int_Array_Index_Variable_1: int32, Temp_int_Loop_Counter_Variable_1: int32, CallFunc_Add_IntInt_ReturnValue_1: int32, Temp_int_Loop_Counter_Variable_2: int32, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_Add_IntInt_ReturnValue_2: int32, Temp_bool_True_if_break_was_hit_Variable_1: bool, CallFunc_Not_PreBool_ReturnValue_1: bool, Temp_int_Array_Index_Variable_2: int32, CallFunc_BooleanAND_ReturnValue: bool, CallFunc_Array_Get_Item: ABoomBarrell_C*, CallFunc_GetOwner_ReturnValue: AActor*, K2Node_DynamicCast_AsPlayer_Char: APlayerChar_C*, K2Node_DynamicCast_bSuccess: bool, Temp_int_Loop_Counter_Variable_3: int32, CallFunc_Add_IntInt_ReturnValue_3: int32, Temp_int_Array_Index_Variable_3: int32, CallFunc_Array_Get_Item_1: AMadmanBomb_C*, CallFunc_Map_Find_Value: int32, CallFunc_Map_Find_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_Array_Length_ReturnValue_1: int32, CallFunc_Less_IntInt_ReturnValue_1: bool, CallFunc_BooleanAND_ReturnValue_1: bool, CallFunc_Map_Find_Value_1: int32, CallFunc_Map_Find_ReturnValue_1: bool, CallFunc_Greater_IntInt_ReturnValue_1: bool, CallFunc_Map_Find_Value_2: int32, CallFunc_Map_Find_ReturnValue_2: bool, CallFunc_LessEqual_IntInt_ReturnValue: bool, CallFunc_Map_Find_Value_3: int32, CallFunc_Map_Find_ReturnValue_3: bool, CallFunc_LessEqual_IntInt_ReturnValue_1: bool, CallFunc_MakeLiteralInt_ReturnValue: int32, CallFunc_GetAllActorsOfClass_OutActors: TArray, CallFunc_Array_Get_Item_2: ASweepo_C*, CallFunc_Array_Length_ReturnValue_2: int32, CallFunc_Less_IntInt_ReturnValue_2: bool, CallFunc_Map_Find_Value_4: int32, CallFunc_Map_Find_ReturnValue_4: bool, CallFunc_NotEqual_ObjectObject_ReturnValue: bool, CallFunc_Add_IntInt_ReturnValue_4: int32, CallFunc_GetAllActorsOfClass_OutActors_1: TArray, CallFunc_GetAllActorsOfClass_OutActors_2: TArray, CallFunc_IsValid_ReturnValue: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_BreakVector_X: float, CallFunc_BreakVector_Y: float, CallFunc_BreakVector_Z: float, CallFunc_Array_Length_ReturnValue_3: int32, CallFunc_Array_Get_Item_3: AIgniteablePlant_C*, CallFunc_Less_IntInt_ReturnValue_3: bool, CallFunc_Map_Find_Value_5: int32, CallFunc_Map_Find_ReturnValue_5: bool, CallFunc_Greater_IntInt_ReturnValue_2: bool, CallFunc_Map_Find_Value_6: int32, CallFunc_Map_Find_ReturnValue_6: bool, CallFunc_LessEqual_IntInt_ReturnValue_2: bool, CallFunc_GetDistanceTo_ReturnValue: float, CallFunc_K2_GetActorLocation_ReturnValue_1: FVector, CallFunc_BreakVector_X_1: float, CallFunc_BreakVector_Y_1: float, CallFunc_BreakVector_Z_1: float, CallFunc_NearlyEqual_FloatFloat_ReturnValue: bool, CallFunc_SelectFloat_ReturnValue: float, CallFunc_Add_FloatFloat_ReturnValue: float, CallFunc_Greater_FloatFloat_ReturnValue: bool | void |
+| EmpStart | duration: float, CallFunc_HasAuthority_ReturnValue: bool | bool |
+| bulletsCanDmg? | helper: bool | bool |
+| CanBePenetrated? | inputDmg: float | float |
 | FindFire | none | void |
 | MoveToPlant | none | void |
 | Rotate | none | void |
@@ -3808,13 +3509,10 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_IsActorBeingDestroyed_ReturnValue: bool, CallFunc_Add_IntInt_ReturnValue: int32 | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| EmpStart | duration: float, true: bool | void |
-| OnRep_shooting? | CallFunc_HasAuthority_ReturnValue: bool, CallFunc_K2_IsValidTimerHandle_ReturnValue: bool | void |
-| OnRep_emp? | CallFunc_Not_PreBool_ReturnValue: bool | void |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_GetOwner_ReturnValue: AActor*, CallFunc_EqualEqual_ObjectObject_ReturnValue: bool | FText |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| EmpStart | duration: float | bool |
 | RefreshLaserLength | none | void |
 | destroyedCl | none | void |
 | EmpBegin | Duration: float | void |
@@ -3873,12 +3571,9 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| EmpStart | duration: float, true: bool, CallFunc_HasAuthority_ReturnValue: bool | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_Subtract_FloatFloat_ReturnValue: float | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
-| findBlockInDir | dirWorld: FVector, limit: FVector, Temp_object_Variable: TArray, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_LineTraceSingle_OutHit: FHitResult, CallFunc_LineTraceSingle_ReturnValue: bool, CallFunc_BreakHitResult_bBlockingHit: bool, CallFunc_BreakHitResult_bInitialOverlap: bool, CallFunc_BreakHitResult_Time: float, CallFunc_BreakHitResult_Distance: float, CallFunc_BreakHitResult_Location: FVector, CallFunc_BreakHitResult_ImpactPoint: FVector, CallFunc_BreakHitResult_Normal: FVector, CallFunc_BreakHitResult_ImpactNormal: FVector, CallFunc_BreakHitResult_PhysMat: UPhysicalMaterial*, CallFunc_BreakHitResult_HitActor: AActor*, CallFunc_BreakHitResult_HitComponent: UPrimitiveComponent*, CallFunc_BreakHitResult_HitBoneName: FName, CallFunc_BreakHitResult_HitItem: int32, CallFunc_BreakHitResult_FaceIndex: int32, CallFunc_BreakHitResult_TraceStart: FVector, CallFunc_BreakHitResult_TraceEnd: FVector | void |
-| calcBounceDir | incVel: FVector, impactNormal: FVector, exitDir: FVector, CallFunc_Dot_VectorVector_ReturnValue: float, CallFunc_Multiply_FloatFloat_ReturnValue: float, CallFunc_Multiply_VectorFloat_ReturnValue: FVector, CallFunc_Subtract_VectorVector_ReturnValue: FVector | void |
+| EmpStart | duration: float, CallFunc_HasAuthority_ReturnValue: bool | bool |
+| bulletsCanDmg? | helper: bool | bool |
+| CanBePenetrated? | inputDmg: float | float |
 | TaserAll | none | void |
 | LaserLength | none | void |
 
@@ -3912,9 +3607,9 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
+| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool | bool |
+| bulletsCanDmg? | helper: bool | bool |
+| CanBePenetrated? | inputDmg: float | float |
 | UserConstructionScript | CallFunc_K2_AttachToComponent_ReturnValue: bool | void |
 | RandomTeleport | none | void |
 | TeleportMulti | prevLoc: FVector | void |
@@ -3976,13 +3671,9 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| isSus | isSus?: bool, isSusEasy?: bool, CallFunc_Not_PreBool_ReturnValue: bool | void |
-| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool, dead: bool, CallFunc_LessEqual_FloatFloat_ReturnValue: bool, CallFunc_HasAuthority_ReturnValue: bool, CallFunc_GetGameTimeSinceCreation_ReturnValue: float, CallFunc_Subtract_FloatFloat_ReturnValue: float, CallFunc_LessEqual_FloatFloat_ReturnValue_1: bool, CallFunc_Subtract_FloatFloat_ReturnValue_1: float | void |
-| bulletsCanDmg? | helper: bool, blockdmg?: bool | void |
-| CanBePenetrated? | inputDmg: float, can?: bool, damagePercent: float | void |
-| OnRep_hiddenInside? | CallFunc_SpawnSoundAttached_ReturnValue: UAudioComponent*, CallFunc_NotEqual_BoolBool_ReturnValue: bool | void |
-| OnRep_frozenMovementSpeed | CallFunc_SelectFloat_ReturnValue: float, CallFunc_SelectFloat_ReturnValue_1: float, CallFunc_MakeRotator_ReturnValue: FRotator | void |
-| hasLosTo | otherAct: AActor*, los: bool, K2Node_MakeArray_Array: TArray, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_K2_GetActorLocation_ReturnValue_1: FVector, CallFunc_Add_VectorVector_ReturnValue: FVector, CallFunc_Add_VectorVector_ReturnValue_1: FVector, CallFunc_LineTraceSingle_OutHit: FHitResult, CallFunc_LineTraceSingle_ReturnValue: bool, K2Node_MakeArray_Array_1: TArray, CallFunc_K2_GetActorLocation_ReturnValue_2: FVector, CallFunc_K2_GetActorLocation_ReturnValue_3: FVector, CallFunc_Add_VectorVector_ReturnValue_2: FVector, K2Node_MakeArray_Array_2: TArray, CallFunc_LineTraceSingle_OutHit_1: FHitResult, CallFunc_LineTraceSingle_ReturnValue_1: bool, CallFunc_K2_GetActorLocation_ReturnValue_4: FVector, CallFunc_K2_GetActorLocation_ReturnValue_5: FVector, CallFunc_LineTraceSingle_OutHit_2: FHitResult, CallFunc_LineTraceSingle_ReturnValue_2: bool | void |
+| isSus | CallFunc_Not_PreBool_ReturnValue: bool | bool |
+| bulletsCanDmg? | helper: bool | bool |
+| CanBePenetrated? | inputDmg: float | float |
 | UserConstructionScript | CallFunc_K2_AttachToComponent_ReturnValue: bool, CallFunc_K2_AttachToComponent_ReturnValue_1: bool | void |
 | StartNearbyChecks | none | void |
 | CheckNearbyTick | none | void |
@@ -4022,13 +3713,11 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| InteractAltSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_K2_GetActorLocation_ReturnValue_1: FVector, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_BreakVector_X: float, CallFunc_BreakVector_Y: float, CallFunc_BreakVector_Z: float, CallFunc_MakeVector_ReturnValue: FVector, CallFunc_Normal_ReturnValue: FVector, CallFunc_Multiply_VectorFloat_ReturnValue: FVector | void |
-| TimerAlt | timer: float, retry: bool | void |
-| GetAltInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_K2_GetActorLocation_ReturnValue: FVector, CallFunc_K2_GetActorLocation_ReturnValue_1: FVector, CallFunc_Subtract_VectorVector_ReturnValue: FVector, CallFunc_BreakVector_X: float, CallFunc_BreakVector_Y: float, CallFunc_BreakVector_Z: float, CallFunc_MakeVector_ReturnValue: FVector, CallFunc_Normal_ReturnValue: FVector | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText | void |
+| TimerAlt | none | bool |
+| GetAltInteractName | PlayerChar: APlayerChar_C* | FText |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| ignoreDistanceChecks | none | bool |
+| GetInteractName | PlayerChar: APlayerChar_C* | FText |
 | StartPushInDir | dir: FVector | void |
 
 ---
@@ -4051,16 +3740,12 @@ Access these through wrapped actors in Lua, e.g. `playerActor.Health` or `player
 ### Functions
 | Name | Parameters | Returns |
 |------|------------|---------|
-| GetInteractName | PlayerChar: APlayerChar_C*, Name: FString, canInteract?: bool, transName: FText, deniedName: FText, CallFunc_GetDisplayName_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_getHeistGS_gs: AHeistGS_C*, CallFunc_getHeistGS_gs_1: AHeistGS_C* | void |
-| InteractSV | PlayerChar: APlayerChar_C*, true: bool, CallFunc_GetDisplayName_ReturnValue: FString, CallFunc_getHeistGS_gs: AHeistGS_C*, CallFunc_Concat_StrStr_ReturnValue: FString | void |
-| InteractTimer | playerchar: APlayerChar_C*, timer: float, retry: bool | void |
-| ignoreDistanceChecks | ignore?: bool | void |
-| GetModMeshComponent | ComponentName: FString, Object: UActorComponent*, CallFunc_Map_Find_Value: USceneComponent*, CallFunc_Map_Find_ReturnValue: bool | void |
-| GetLocalVar | Key: FString, Value: FString, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_int_Array_Index_Variable: int32, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Array_Get_Item: FF_SavedVar__pf523916617, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_EqualEqual_StrStr_ReturnValue: bool | void |
-| SetLocalVar | Key: FString, Value: FString, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_int_Array_Index_Variable: int32, K2Node_MakeStruct_F_SavedVar: FF_SavedVar__pf523916617, CallFunc_Array_Add_ReturnValue: int32, K2Node_MakeStruct_F_SavedVar_1: FF_SavedVar__pf523916617, CallFunc_Array_Get_Item: FF_SavedVar__pf523916617, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_EqualEqual_StrStr_ReturnValue: bool | void |
-| GetReplicatedVar | Key: FString, Value: FString, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_int_Array_Index_Variable: int32, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Array_Get_Item: FF_SavedVar__pf523916617, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_EqualEqual_StrStr_ReturnValue: bool | void |
-| SetReplicatedVar | Key: FString, Value: FString, Temp_int_Loop_Counter_Variable: int32, CallFunc_Add_IntInt_ReturnValue: int32, Temp_int_Array_Index_Variable: int32, K2Node_MakeStruct_F_SavedVar: FF_SavedVar__pf523916617, CallFunc_Array_Add_ReturnValue: int32, K2Node_MakeStruct_F_SavedVar_1: FF_SavedVar__pf523916617, CallFunc_Array_Get_Item: FF_SavedVar__pf523916617, CallFunc_Array_Length_ReturnValue: int32, CallFunc_Less_IntInt_ReturnValue: bool, CallFunc_EqualEqual_StrStr_ReturnValue: bool | void |
-| GetLuaFileName | FileName: FString | void |
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_GetDisplayName_ReturnValue: FString, CallFunc_Concat_StrStr_ReturnValue: FString, CallFunc_getHeistGS_gs: AHeistGS_C*, CallFunc_getHeistGS_gs_1: AHeistGS_C* | FText |
+| InteractSV | PlayerChar: APlayerChar_C*, CallFunc_GetDisplayName_ReturnValue: FString, CallFunc_getHeistGS_gs: AHeistGS_C*, CallFunc_Concat_StrStr_ReturnValue: FString | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| ignoreDistanceChecks | none | bool |
+| GetModMeshComponent | ComponentName: FString, CallFunc_Map_Find_Value: USceneComponent*, CallFunc_Map_Find_ReturnValue: bool | UActorComponent* |
+| GetLuaFileName | none | FString |
 | CheckStartScript | none | void |
 | AddModMeshComponent | ComponentName: FString, MeshFileName: FString, TextureFileName: FString | void |
 | LuaTick | none | void |
