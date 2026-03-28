@@ -406,7 +406,7 @@ end
 
 ```lua
 -- By class name
-local doors = GetAllActorsOfClass("BP_VaultDoor")
+local doors = GetAllActorsOfClass("SafeDoor")
 
 -- By tag
 -- Tags can be added to Lua Objects in the level editor, or modified by LUA scripts at runtime using:
@@ -419,14 +419,18 @@ if ActorHasTag(targetActor, "AssassinTarget") then
     LogMessage("This actor is an AssassinTarget!")
 end
 
--- All player characters
-local players = GetPlayerChars()
-
--- All controlled pawns (including drones)
+-- All controlled pawns (whatever the PlayerControllers are currently controlling, usually it's a PlayerChar, but it can also be a drone or horse)
 local pawns = GetAllControlledPawns()
 
+-- The Player's player character, no matter what he currently controls
+local pc = GetPlayerController()
+local playerChar = pc.PlayerChar
+
+-- All playerChars
+local players = GetAllActorsOfClass("PlayerChar")
+
 -- Closest actor of a class to a location
-local closest = GetClosestActor("BP_VaultDoor", {X=100, Y=200, Z=0})
+local closest = GetClosestActor("SafeDoor", {X=100, Y=200, Z=0})
 ```
 
 ### Accessing Game Framework
@@ -449,7 +453,8 @@ Use `LogMessage` to print to the game's output log:
 
 ```lua
 LogMessage("Hello from Lua!")
-LogMessage("Health: " .. tostring(player.Health))
+LogMessage("Health: " .. tostring(player.HP))
+LogMessage("Steam Name: " .. tostring(player.PlayersName))
 LogMessage("Actor: " .. GetActorName(targetActor))
 ```
 
