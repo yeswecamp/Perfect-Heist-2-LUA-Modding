@@ -392,16 +392,6 @@ playerActor:SetActorLocation({X=100, Y=200, Z=300}, false, nil, true)
 mesh:SetRelativeRotation({Pitch=0, Yaw=90, Roll=0})
 ```
 
-### K2 Function Fallback
-
-Some Unreal Engine functions have a `K2_` prefix internally. You don't need to worry about this — if a function isn't found, the system automatically tries the `K2_` prefixed version. Just use the clean name:
-
-```lua
--- These both work:
-playerActor:SetActorLocation({X=0, Y=0, Z=0}, false, nil, true)
-playerActor:SetActorRotation({Pitch=0, Yaw=90, Roll=0})
-```
-
 ### Void Functions Return Nil
 
 Functions that return nothing in Blueprint will return `nil` in Lua. This is normal:
