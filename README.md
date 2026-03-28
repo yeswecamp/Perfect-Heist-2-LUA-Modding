@@ -410,9 +410,9 @@ local doors = GetAllActorsOfClass("BP_VaultDoor")
 
 -- By tag
 -- Tags can be added to Lua Objects in the level editor, or modifed by LUA scripts at runtime using:
--- AddActorTag(targetActor, "Healed") and RemoveActorTag(targetActor, "Healed")
-local alarms = GetAllActorsWithTag("AlarmPanel")
-local alarm = GetActorWithTag("AlarmPanel")
+-- AddActorTag(targetActor, "AssassinTarget") and RemoveActorTag(targetActor, "AssassinTarget")
+local targets = GetAllActorsWithTag("AssassinTarget")
+local target = GetActorWithTag("AssassinTarget")
 
 -- Check if an actor has a specific tag
 if ActorHasTag(targetActor, "Interactable") then
