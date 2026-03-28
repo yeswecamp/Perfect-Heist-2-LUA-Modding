@@ -196,27 +196,48 @@ List of Clothing Rows: `Customer_Hoodie_Red, Customer_Jacket_Green, Customer_Hoo
 ```lua
 LogMessage("Loaded Assassin.lua")
 
--- Client: Ability key pressed
 ListenToEvent("AbilityKeyPressed_OnClient", function(playerActor)
     if playerActor.CustomClassString == "Assassin" then
-        playerActor:StartAbilityCooldown(30.0)
+        LogMessage("CLIENT: Assassin cloaking!")
+
+        playerActor:StartAbilityCooldown(6.0)
+
+        -- AbilitySV is called on the client player, but the function executes on the server who can then handle the logic and replication to all other clients
         playerActor:AbilitySV()
-        PlaySound(playerActor, "Woosh.wav", 0.8)
+
+        -- Play a sound locally only for this player, so he knows he activated his ability
+		PlaySound(playerActor, "Woosh.mp3", 0.8)
+
+		-- Show a message at the top center of the player screens for 5 seconds
+		ShowUIText("InvisibilityNotification", "Invisible!", 0.5, 0.2, 5.0)	
     end
 end)
 
--- Server: Ability execution
 ListenToEvent("AbilitySV", function(playerActor)
     if playerActor.CustomClassString == "Assassin" then
-        playerActor.Mesh:SetVisibility(false)
+        LogMessage("SERVER: Assassin cloaking!")
 
-        -- Timers require an Actor to run on, like the GameState or, in this case, the playerActor that called AbilitySV
+        -- Setting the .Mesh of the playerActor to hidden. We don't want to set the whole player character hidden, since this logic is getting overwritten by the game code.
+        -- Certain functions like SetHiddenIngame automatically propagate to all clients if called on the server.
+        -- If you need to execute code on ALL clients instead of just the server for an ability, you can call AbilityALL() on the server, and it will execute on all clients
+        playerActor.Mesh:SetHiddenIngame(true)
+
+        -- Setting his FP_Arms (the first person viewmodel) to hidden as well, so the player who used the ability can see something happen on his screen for additional feedback
+		playerActor.FP_Arms:SetHiddenIngame(true)
+
+        -- Setting the .preventShooting variable of the player character class to true, so he can't fire while invisible
+		playerActor.preventShooting=true
+
+        -- Starting a timer on the playerActor object so he will call LUA back in 5 seconds with the "AssassinUncloak" function
         SetTimer(5.0, "AssassinUncloak", playerActor)
     end
 end)
 
 ListenToEvent("AssassinUncloak", function(playerActor)
-    playerActor.Mesh:SetVisibility(true)
+    playerActor.Mesh:SetHiddenIngame(false)
+	playerActor.FP_Arms:SetHiddenIngame(false)
+	playerActor.preventShooting=false
+    LogMessage("SERVER: Assassin visible again!")
 end)
 ```
 
