@@ -592,6 +592,594 @@ A variable that is marked with `(Replicated)` will automatically propagate its v
 
 ---
 
+# Components
+
+Access components through their parent actor, e.g. `playerActor.WeaponComponent.CurrentWeaponID`
+
+## WeaponComponent (Component)
+
+### Variables
+| Name | Type |
+|------|------|
+| CurrentWeaponID | uint8 (Replicated) |
+| shootingCl? | Bool |
+| shootingSV | Bool |
+| FP_Weapon | Object |
+| FP_Mag | Object |
+| FP_Slider | Object |
+| FP_Barrel | Object |
+| FP_Arms | Object |
+| FP_Scope | Object |
+| MuzzleEnd | Object |
+| MuzzleFlashLight | Object |
+| adsCl? | Bool |
+| TP_Weapon | Object |
+| Tp_MuzzleEnd | Object |
+| PlayerChar | Object |
+| Mesh | Object |
+| Camera | Object |
+| Tp_MuzzleFlashLight | Object |
+| reloadingCl? | Bool |
+| CurrentAmmo | Array |
+| ReserveAmmo | Array |
+| EquippedWeapons | Array |
+| reloadingSV? | Bool (Replicated) |
+| currentRecoilMulti | Float |
+| recentlyFired? | Bool |
+| HookCableAct | Object |
+| EquippedSkins | Array (Replicated) |
+| HookTargetLoc | FVector |
+| GrappleHitPoint | Object (Replicated) |
+| LastHookVel | FVector |
+| Hud_Character | Object |
+| NoDecalClasses | Array |
+| BloodClasses | Array |
+| pullingOutWep? | Bool |
+| needstoPullOutWep? | Bool |
+| LastEquippedSlot | uint8 |
+| CurrentInacc | Float |
+| CurrentInaccMovPart | Float |
+| CurrentSlot | uint8 |
+| isBoxing? | Bool |
+| SelectedScopes | Array |
+| SprintRecoveryTimer | FTimerHandle |
+| CurrentWepRow | FWeaponTypesStructs__pf3747386746 |
+| adsButtonDown? | Bool |
+| FpShootAnimMont | Object |
+| FinishFracReloadTimer | FTimerHandle |
+| reloadingAnimPlaying? | Bool |
+| inspecting? | Bool |
+| FP_Hammer | Object |
+| heat | Float |
+| extendedMags? | Bool |
+| WepSwaps | TMap |
+| AmmoWidget | Object |
+| NextAmmoType | Int |
+| CurrentAmmoType | Int (Replicated) |
+| boxhit? | Bool |
+| lastEquippedWep | uint8 |
+| recentlyHooked? | Bool |
+| lastSwappedToSlot | uint8 |
+| remainingHookJumps | Int |
+| LocalRadiation | Float |
+| BarrelScene | Object |
+| MeleeHitTimer | FTimerHandle |
+| adsMelee? | Bool (Replicated) |
+| skipNextAnimRefresh | Bool |
+| crosshairHint | FText |
+| inputBuffersSinceLastInput? | Int |
+| SwarmDronePreview | Object |
+
+### Functions
+| Name | Parameters | Returns |
+|------|------------|---------|
+| PlayFireAnimHUD | CallFunc_GetAllActorsOfClass_OutActors: TArray, CallFunc_IsValid_ReturnValue: bool, CallFunc_Array_Get_Item: AHUD_Character_C* | void |
+| UpdateFpWeaponModel | skipPullout?: bool | void |
+| EquipWeaponFromSlotSV | SlotID: uint8 | void |
+| StartShootingSV | none | void |
+| StopShootingSV | none | void |
+| ShootKeyClicked | bufferedInput?: bool | void |
+| ShootKeyUnclicked | none | void |
+| Shoot_TickCl | none | void |
+| FireBulletCl | Randomness: float | void |
+| Shoot_TickClStart | none | void |
+| FireBulletClTP | Randomness: float | void |
+| Shoot_TickClTP | none | void |
+| Shoot_TickClStartTP | none | void |
+| FireRocketSV | StartLoc: FVector, Rot: FRotator | void |
+| FireRocketCl | TargetLoc: FVector, Rot: FRotator | void |
+| HitShotSV | Target: FVector, HitActor: AActor* | void |
+| PlayShotFpFX | none | void |
+| SpawnBulletClTP | TargetLoc: FVector | void |
+| InitComponents | none | void |
+| ADS_Enable | none | void |
+| ADS_Disable | force: bool | void |
+| UpdateFOV | none | void |
+| StartReloadCl | evenIfMagFull?: bool, fromFractionReload?: bool | void |
+| InitStartingAmmo | none | void |
+| ReloadSuccessfull | none | void |
+| ReloadCancelled | none | void |
+| StartReloadSV | none | void |
+| StopReloadSV | none | void |
+| UpdateMagVis | none | void |
+| HandleShotFP | TargetLoc: FVector, hit?: bool, hitAct: AActor* | void |
+| ShotTpFX | none | void |
+| RemoveRecoilTick | none | void |
+| RecentlyFiredShot | none | void |
+| FireHookCl | Loc: FVector, hitAct: AActor* | void |
+| FireHookSV | Loc: FVector | void |
+| UpdateHook | none | void |
+| DestroyHook | reason: FString | void |
+| JumpWhileHooked | none | void |
+| DestroyHookSV | none | void |
+| JumpAfterhookSV | none | void |
+| ReloadAnimTP | none | void |
+| FireGrenadeSV | rot: FRotator | void |
+| FireGrenadeCl | TargetLoc: FVector | void |
+| FireHeavyGrenadeSV | rot: FRotator, loc: FVector | void |
+| FireHeavyGrenadeCl | TargetLoc: FVector | void |
+| FireTeargasSV | rot: FRotator, loc: FVector | void |
+| FireTeargasCl | TargetLoc: FVector | void |
+| GainReserveAmmoForAllWeps | none | void |
+| EquipWeaponFromSlotCl | SlotID: uint8, neverSwap?: bool | void |
+| HitShotSv2 | local: FVector, HitActor: AActor* | void |
+| CheckBoxingSV | none | void |
+| CheckBoxingFP | none | void |
+| StartBoxingBool | none | void |
+| StopBoxingFP | none | void |
+| ForceStopSprintingTemporarily | none | void |
+| CanSprintAgainAfterShot | none | void |
+| FinishFracReloadingAnim | none | void |
+| RocketAll | Rot: FRotator, StartLoc: FVector | void |
+| HitShotPen | local: FVector, HitActor: AActor*, dmg: float, penact: AActor* | void |
+| FireDecoyGrenadeSV | rot: FRotator, loc: FVector | void |
+| FireDecoyGrenadeCl | TargetLoc: FVector | void |
+| SetSkinSv | WepID: uint8, SkinID: uint8 | void |
+| ResetCl | none | void |
+| AddWepToLastSlot | WeaponID: uint8 | void |
+| AddWepToSlotSV | slot: uint8, WeaponID: uint8 | void |
+| StartInspecting | none | void |
+| StopInspecting | none | void |
+| HeatTick | none | void |
+| LoadSkins | none | void |
+| SetSkinsArraySV | skins: TArray | void |
+| FireTaserCl | none | void |
+| SpawnTaserCl | target: FVector, hit: AActor* | void |
+| SpawnTaserSV | target: FVector, hit: AActor* | void |
+| SpawnTaserAll | target: FVector | void |
+| StartShootingAll | none | void |
+| StopShootingAll | none | void |
+| StickySv | rot: FRotator, loc: FVector | void |
+| StickyCl | TargetLoc: FVector | void |
+| ExplodeStickySV | none | void |
+| ExplodeStickyCl | none | void |
+| DisplayJammedSticky | none | void |
+| GainExtendedAmmoForAllWeps | none | void |
+| InitWepSwaps | none | void |
+| AiSusGunshot | none | void |
+| StartPulloutWepCD | none | void |
+| HideAmmoMenu | none | void |
+| DisplayAmmoMenu | none | void |
+| SetAmmoTypeCl | ammoType: int32 | void |
+| ResetSV | none | void |
+| SetAmmoTypeSV | ammoType: int32 | void |
+| SpawnMolotovPart | loc: FVector | void |
+| ShieldHitAll | none | void |
+| FireFlashgrenadeCl | TargetLoc: FVector | void |
+| FireFlashgrenadeSV | rot: FRotator | void |
+| FireRopeGrenadeSV | rot: FRotator, loc: FVector | void |
+| FireRopeGrenadeCl | TargetLoc: FVector | void |
+| StartRepEquippedSkins | none | void |
+| FireSyringeCl | TargetLoc: FVector | void |
+| FireSyringeSV | rot: FRotator | void |
+| GeigerTick | none | void |
+| GeigerSound | none | void |
+| FireChronoCl | TargetLoc: FVector | void |
+| FireChronoSV | rot: FRotator, loc: FVector | void |
+| StartMeleeAttackCl | none | void |
+| MeleeAttackSV | none | void |
+| MeleeAttackALL | none | void |
+| PlayImpactSoundAll | loc: FVector, Sound: USoundBase* | void |
+| MeleeHitSv | hitAct: AActor*, loc: FVector | void |
+| MeleeHitCheck | none | void |
+| CancelMeleeHit | none | void |
+| OnAdsMeleeUpdate | none | void |
+| UpdateAdsMeleeSV | adsMelee: bool | void |
+| DestroyWallSV | destrWall: AActor* | void |
+| PlayWallImpactSound | loc: FVector | void |
+| PlayGlassBreakSoundSV | loc: FVector | void |
+| UpdateEquippedWeaponsSV | EquippedWeapons: TArray | void |
+| AttachFxAll | worldLoc: FVector, fx: UParticleSystem* | void |
+| SetCrosshairHint | text: FText, secs: float | void |
+| RemoveAdsMelee | none | void |
+| ForceStopSprintCL | none | void |
+| MeleeBlockHeat | none | void |
+| SyringeHitSV | hitChar: AActor*, LocWorld: FVector, Rotation: FRotator | void |
+| SetSyringeDecal | loc: FVector, Rotation: FRotator | void |
+| FireSyringeAll | rot: FRotator | void |
+| BufferShootInput | none | void |
+| FireShirtCannonCL | TargetLoc: FVector | void |
+| FireShirtCannonSV | rot: FRotator, loc: FVector | void |
+| SwarmRemoteTick | none | void |
+| SwarmRemoteClicked | none | void |
+
+---
+
+## ActionComponent (Component)
+
+### Variables
+| Name | Type |
+|------|------|
+| PlayerChar | Object |
+| DeadBodyMesh | Object (Replicated) |
+| DeadBodyMat | Object (Replicated) |
+| inCCTV? | Bool |
+| CCTVs | Array |
+| currentCamID | Int |
+| CurrentCCTV | Object |
+| placingCam? | Bool |
+| CurrentPlacementClass | Object |
+| CurrentPlacAct | Object |
+| SpyWidget | Object |
+| SpyClothesMeshes | Array |
+| SpyClothesMats | Array |
+| inThermal? | Bool |
+| placementRotateRoll? | Bool |
+| inNinjaBox? | Bool (Replicated) |
+| moneyAmount | Int (Replicated) |
+| hasBombBag? | Bool (Replicated) |
+| placingDrill? | Bool |
+| DrillTarget | Object |
+| placedC4 | Object (Replicated) |
+| AbilityCdTimer | FTimerHandle |
+| LookingAtPlayer | Object |
+| LookingAtPlayerTimer | FTimerHandle |
+| DeadBodyDeathInfoSV | FDeathInfo__pf1458230002 |
+| Drone | Object (Replicated) |
+| CCTV_HUD | Object |
+| placedCount? | Int (Replicated) |
+| PlacementLimitClasses | Array |
+| PrevSlot | uint8 |
+| throwingGrenade? | Bool (Replicated) |
+| DeadBodyPlayerChar | Object (Replicated) |
+| healing? | Bool (Replicated) |
+| recentlyHeartMonitored? | Bool (Replicated) |
+| passiveUses | Int (Replicated) |
+| RobberClothWidget | Object |
+| scoutSpeed? | Bool (Replicated) |
+| buggy | Object (Replicated) |
+| PlacedTeargas | Object (Replicated) |
+| TwinBodyDouble | Object (Replicated) |
+| oldTwinLoc | FTransform |
+| destroyedEnemyVehiclesSV | Int |
+| placingVault? | Bool |
+| horse | Object (Replicated) |
+| placedBarriers | Int |
+| OldLoc | FVector |
+| ninjaBoxDist | Float |
+| poisoned? | Bool (Replicated) |
+| heartbeatMonitorTime | FDateTime (Replicated) |
+| bonusPlacements | Int (Replicated) |
+| moneyBagShouldBeActive? | Bool |
+| abilityExtraUses | Int |
+| reinforceableSMs | Array |
+| SM_InteractTime | Float |
+| recentSusAction | Bool |
+| deadBodyBot | Object (Replicated) |
+| whistle? | Bool (Replicated) |
+| cantAbility? | Bool |
+| VisionDartShooter | Object |
+| VisionDartTimer | FTimerHandle |
+| ArmsDealerWidget | Object |
+| lastCCTV | Object |
+| usingRiotShield? | Bool (Replicated) |
+| ebox | Object |
+| lastcctvworking | Bool |
+| cctvalert | Bool |
+| hasDrillBag? | Bool (Replicated) |
+| fishyThisRound? | Bool (Replicated) |
+| bonusThisRound? | Bool |
+| abilityStolen? | Bool (Replicated) |
+| passiveScoreThisRound | Int (Replicated) |
+| secondAbilityReady? | Bool (Replicated) |
+| currentAbilityCount | Int |
+| confused? | Bool (Replicated) |
+| players | Array |
+| PilotDrone | Object (Replicated) |
+| abilityUpgrades | Int (Replicated) |
+| recentlyIce | Bool |
+| tiny? | Bool (Replicated) |
+| hasReviveKit? | Bool (Replicated) |
+| RechargeTimer | FTimerHandle |
+| cameraWarned? | Bool |
+| recentlySpotted? | Bool |
+| spottedThisRound? | Bool (Replicated) |
+| passiveRecharge | Float (Replicated) |
+| tpBeforeAbility? | Bool |
+| ragdolling? | TEnumAsByte<RagdollStatus> |
+| RagdollStateSV | Bool (Replicated) |
+| MLM_Count | Int (Replicated) |
+| experimentalSerum? | Bool (Replicated) |
+| bleeding | Int (Replicated) |
+| bagThrowTarget | Object |
+| dog | Object (Replicated) |
+| revivesThisRound | Int |
+| lastIceOwner | Object |
+| dogKillsThisRound | Int |
+| recentlyStickyJumped | Bool |
+| BuildOptionsMenu | Object |
+| CurrentPieMenu | Object |
+| abilityKey | FKey |
+| radiation | Float (Replicated) |
+| hasCrown | Bool |
+| royalProtected? | Bool (Replicated) |
+| KarlHealTimer | FTimerHandle |
+| stealMulti | Float (Replicated) |
+| hasRumBag? | Bool (Replicated) |
+| abilityReadySV | Bool (Replicated) |
+| interactedWithPlayers | Array (Replicated) |
+| swarmDrones | Array (Replicated) |
+| selectedSwarmDrone | Object |
+| deadBodyReported? | Bool |
+
+### Functions
+| Name | Parameters | Returns |
+|------|------------|---------|
+| reverseForLoop | currentIndex: int32, reverse: bool, indexMax: int32, CallFunc_Multiply_IntInt_ReturnValue: int32, CallFunc_Add_IntInt_ReturnValue: int32 | int32 |
+| getCurrentMlmReward | CallFunc_Greater_IntInt_ReturnValue: bool, CallFunc_Greater_IntInt_ReturnValue_1: bool, CallFunc_SelectInt_ReturnValue: int32, CallFunc_SelectInt_ReturnValue_1: int32 | int32 |
+| canCarryBodies? | none | bool |
+| InitComponents | none | void |
+| DropKeyReleased | tinyForce?: bool | void |
+| DropDeadBodySV | none | void |
+| CameraKeyPressed | none | void |
+| LeftMousePressed | none | void |
+| RightMousePressed | none | void |
+| ChangeCam | incr?: bool | void |
+| CheckCctvStillValid | destroyedCCTV: ACCTV_C* | void |
+| TellSvUsingCam | usingThisCCTV: ACCTV_C* | void |
+| ForceOutCCTV | none | void |
+| AbilityKeyPressed | key: FKey | void |
+| ToggleCamPlacement | none | void |
+| PlacementTick | none | void |
+| Placement_LeftClicked | none | void |
+| PlaceOnSV | Class: UClass*, Trans: FTransform | void |
+| ToggleSpyMenu | none | void |
+| AbilityKeyReleased | none | void |
+| HideSpyMenu | none | void |
+| NewClothesCl | NewID: int32 | void |
+| NewClothesSV | NewID: int32 | void |
+| ToggleThermalVis | none | void |
+| ToggleMotionDetectorPlacement | none | void |
+| RotateKeyClicked | none | void |
+| EquippedWeapon | none | void |
+| StartPlacements | none | void |
+| ToggleNinjaBox | none | void |
+| UnequipWep | none | void |
+| NinjaBoxSV | active?: bool | void |
+| SpyBoxTick | none | void |
+| DropMoneyBagSV | throwVel: FVector | void |
+| ToggleBarrierPlacement | none | void |
+| DropBombBagSV | throwVel: FVector | void |
+| ThrowRescueSignal | none | void |
+| ThrowRescueSignalSV | none | void |
+| ToggleDrillPlacement | none | void |
+| DrillPlacementTick | none | void |
+| PlaceDrillSV | Target: AActor* | void |
+| ToggleRemoteC4 | none | void |
+| ExplodeC4 | none | void |
+| ToggleSupplyDropPlacement | none | void |
+| ResetCl | none | void |
+| ForceOutThermalVision | none | void |
+| ResetSV | none | void |
+| ForceOutNinjaBox | none | void |
+| StartAbilityCD | Time: float | void |
+| AbilityCdFinished | none | void |
+| StopDrillPlacement | none | void |
+| LookingAtPlayerTick | none | void |
+| DisplayDisguisedWidget | none | void |
+| HandleDisguiseTrace | Object: UObject* | void |
+| ActivateFootprintSonar | none | void |
+| StartDroneFlying | none | void |
+| StartDroneSV | none | void |
+| AddDroneCD | none | void |
+| ToggleScreenPlacement | none | void |
+| RightMouseUnpressed | none | void |
+| ThrowGrenade | type: UClass* | void |
+| SpawnGrenadeSV | grenadeClass: UClass*, loc: FVector, forward: FRotator | void |
+| StartThrowGrenade | none | void |
+| GrenadeThrowAnimTP | none | void |
+| StartHealing | none | void |
+| SetHealingSV | none | void |
+| HealTick | none | void |
+| ToggleVestBagPlacement | none | void |
+| StartPassiveHpReg | none | void |
+| HpReg | none | void |
+| ToggleRobberClothesWidget | none | void |
+| RemoveRobberClothWidget | none | void |
+| UseControllerYawSV | use?: bool | void |
+| QueuePlacementLimitCheck | none | void |
+| ChangedClassSV | none | void |
+| CameraChangeKey | incr?: bool | void |
+| DropDeadBodyCl | force?: bool | void |
+| DropMoneyBagCl | force: bool, power: float | void |
+| DropBombBagCl | force: bool, power: float | void |
+| StartScoutSpeedCl | forced?: bool, secs: float, SprintSpeed: float | void |
+| StartScoutSpeedSV | secs: float | void |
+| StartBuggyDrive | none | void |
+| AddBuggyCD | none | void |
+| StartBuggySV | none | void |
+| StartMadBombPlacement | none | void |
+| StartDoxxingCl | none | void |
+| DoxxingSV | none | void |
+| GotDoxxed | none | void |
+| ToggleTeargasPlacement | none | void |
+| ExplodeTeargasSV | none | void |
+| ToggleTwin | none | void |
+| TwinTick | none | void |
+| ToggleTwinSV | none | void |
+| RoundStartSV | none | void |
+| StartHornetDroneFlying | none | void |
+| StartHornetDroneSV | none | void |
+| StartRouterPlacement | none | void |
+| C4ExplodedCl | none | void |
+| ToggleVaultPlacement | none | void |
+| VaultPlacementTick | none | void |
+| StopVaultPlacement | none | void |
+| ToggleTommySupplyPlacement | none | void |
+| CallHorse | none | void |
+| CallHorseSV | none | void |
+| PostCharSelecCL | none | void |
+| StartFireLadderPlacement | none | void |
+| PlaceWallSV | inside?: bool, wall: ADestrWall_C* | void |
+| ToggleAmmoBoxPlacement | none | void |
+| ReviveNearbyCL | none | void |
+| GotPoisonedSV | none | void |
+| StopPoisonedSV | none | void |
+| PoisonDmg | none | void |
+| ToggleRemoteTurretPlacement | none | void |
+| SetAbilityCdCl | Time: float | void |
+| ToggleBarrellPlacement | none | void |
+| UpdateClassCl | none | void |
+| InteractTickExtensionsLeSm | smact: ASM_ActFast_C* | void |
+| InteractExtensionSmStatic | sm: AStaticMeshActor* | void |
+| InteractFinishedExtensionSmSV | sm: AStaticMeshActor*, hitLoc: FVector | void |
+| SetFishyAction | none | void |
+| RefreshNinjaBox | none | void |
+| LoadMoneyInHeliSV | heli: AActor* | void |
+| StartEMP | none | void |
+| StartEmpSV | none | void |
+| StartEmpAll | none | void |
+| StartCantCheck | none | void |
+| CantTick | none | void |
+| ToggleFakeMoneyPlacement | none | void |
+| CancelAbiltyCdCl | none | void |
+| GotVisionDarted | shooter: APlayerChar_C* | void |
+| VisionDartPinged | none | void |
+| StartMaskTick | none | void |
+| MaskTick | none | void |
+| InteractTickSmStatic | sm: AStaticMeshActor* | void |
+| InteractFinishedSmLE | sm_trans: FTransform, worldLoc: FVector | void |
+| InteractExtensionSmLe | sm: ASM_ActFast_C* | void |
+| ToggleArmsDealerMenu | none | void |
+| RemoveArmsDealerMenu | none | void |
+| WeaponPurchaseCl | purchaseID: int32 | void |
+| SpawnArmsDealerDropSV | purchaseid: int32 | void |
+| StartCctvRT | none | void |
+| CctvRtTick | none | void |
+| ToggleShield | none | void |
+| EquipShieldSV | equip: bool | void |
+| RemoveShield | none | void |
+| AlertVigil | cctv: ACCTV_C* | void |
+| DropDrillSV | none | void |
+| DropDrillCl | force: bool | void |
+| SetDrillPlacement | placingDrill?: bool | void |
+| SetRandomClothesSV | none | void |
+| FishyTick | none | void |
+| ToggleWirePlacement | none | void |
+| AbilityFishyCl | none | void |
+| AbilityFishySV | none | void |
+| FishyActionSV | none | void |
+| GiveExtraPlacementCl | none | void |
+| MoneyPrinterPlacement | none | void |
+| UnequippedWeapon | none | void |
+| ReviveTeamSV | none | void |
+| StartChairmanReviveTick | none | void |
+| ChairmanReviveTick | none | void |
+| CopGadgetRadar | none | void |
+| CallBackup | none | void |
+| CallBackupSV | none | void |
+| CallBackupAll | none | void |
+| ToggleJokerPoison | none | void |
+| SetJokerPoisonSV | none | void |
+| StartConfused | none | void |
+| JokerAll | none | void |
+| actdelay | act: AActor* | void |
+| gadgetin | Outact: AActor*, Delay: float | void |
+| AbilityMaskCdTick | none | void |
+| ShieldBubblePlacement | none | void |
+| StartAmmoRegen | none | void |
+| AmmoRegenTick | none | void |
+| StartPilotDroneSV | none | void |
+| StartPlaneFlying | none | void |
+| VIP_Intel | none | void |
+| VipIntelSV | none | void |
+| ThrowMedSignal | none | void |
+| ThrowMedSignalSV | none | void |
+| RecentlyOnIce | iceOwner: APlayerChar_C* | void |
+| ToggleShrinkCl | none | void |
+| StartShrink | none | void |
+| ShrinkTick | none | void |
+| SetCharNewScale | A: float | void |
+| StartGrow | none | void |
+| GrowTick | none | void |
+| ForceShrinkSV | shrink: bool | void |
+| ResetShrinkSV | none | void |
+| SetShrinkSV | tiny?: bool | void |
+| HandleNewShrink | none | void |
+| TellClToStartScoutSpeed | secs: float, SprintSpeed: float | void |
+| ToggleWaterPlacement | none | void |
+| SetCharNewScaleAll | A: float | void |
+| DropClothesBagSV | throwVel: FVector | void |
+| DropClothesBagCl | force: bool, Power: float | void |
+| ToggleTrampolinePlacement | none | void |
+| CheckAbilityRecharge | none | void |
+| RechargeDone | none | void |
+| CancelRecharge | none | void |
+| StartSpyDroneSV | none | void |
+| WarnCamera | none | void |
+| NotifyCctvWarn | cctv: ACCTV_C* | void |
+| RecentlySpotted | none | void |
+| ActorAbilityPressed | forceOff: bool | void |
+| RagdollTick | none | void |
+| RagdollSV | ragdoll: bool | void |
+| StopRagdollALL | none | void |
+| ActivateExperimentalSerumCl | none | void |
+| ActivateExperimentalSerumSV | none | void |
+| DropKeyPress | none | void |
+| CallDog | none | void |
+| CallDogSV | newFollowOwner: bool | void |
+| SetRecentStickyJump | none | void |
+| ToggleBuildOptionsMenu | none | void |
+| RemoveBuildOptionsMenu | none | void |
+| ChairmanAbilityPressed | none | void |
+| PieMenuAbilityKeyReleased | none | void |
+| StartPieMenu | radialOptions: TArray | void |
+| StartPlacementGeneric | newPlacementClass: UClass* | void |
+| SlowDownTimeSV | CustomTimeDilation: float | void |
+| SlowDownTimeALL | CustomTimeDilation: float | void |
+| StartRoyalProtectNearby | none | void |
+| StartRoyalProtect | none | void |
+| StartRoyalProtectNearbySV | none | void |
+| StartKarlMarxAbility | none | void |
+| KarlHealTick | none | void |
+| SetStealMulti | newMulti: float, duration: float | void |
+| DropRumBagSV | throwVel: FVector | void |
+| DropRumBagCl | force: bool, Power: float | void |
+| NotifyAbilityReadySV | abilityReadySV: bool | void |
+| RemoveAllScentsOfThisPlayer | none | void |
+| StartRechargeTimer | Time: float | void |
+| DropMoneyBagSvLimited | throwVel: FVector, onlyDropThis: int32 | void |
+| StartElectricField | none | void |
+| StartElectricFieldSV | none | void |
+| StartElectricFieldALL | none | void |
+| ToggleCanvasPlacement | none | void |
+| IncrementReviveAchievment | none | void |
+| UpdateOfficerBarrierCollisions | none | void |
+| ReviveNearbySV_Selected | spawners: TArray | void |
+| PressedSwarmAbility | none | void |
+| StartSwarmDroneFlyingSV | drone: ASwarmDrone_Base_C* | void |
+| SpawnSwarmDrones | none | void |
+| SwitchSwarmDroneCl | increment: bool, possessNewDrone: bool | void |
+| ForceSwarmDroneMoveTo | drone: ASwarmDrone_Base_C*, loc: FVector | void |
+| GymBuddyWallSprintTick | none | void |
+| StartSwarmPlacement | none | void |
+| AdsClicked | none | void |
+| ReduceCooldownByX_Client | reductionSecs: float, minRemaining: float | void |
+| CustomClassAbilityKeyPressed | none | void |
+
+---
+
+
 ## DestrWindowBig
 **Inheritance:** `DestrWindowBig → Actor`
 
