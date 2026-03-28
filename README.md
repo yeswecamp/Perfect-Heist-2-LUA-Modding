@@ -122,7 +122,7 @@ end)
 
 ### Actor Scripts
 
-Scripts associated with a **BP_LuaActor** - a customizable in-world actor. Each BP_LuaActor has a `LuaFileName` property that links it to its script. Actor scripts define spawning behavior, interactions, and visual setup.
+Scripts associated with a **BP_LuaActor** - a customizable in-world actor. Each BP_LuaActor has a `LuaFileName` property that links it to its script. Actor scripts define initialization, visual setup, interactions, and they can receive any event specified in [Hooks.md](Hooks.md).
 
 ```lua
 LogMessage("Loaded MyActor.lua")
