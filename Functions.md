@@ -514,7 +514,7 @@ Those functions can be found in [Reflection.md](Reflection.md) as well, but are 
 
 ### gs:SpawnModLuaActor(fileName, location, rotation, scale, tag)
 
-Spawns a BP_LuaActor with the specified Lua script and properties. **Server only.**
+Spawns a BP_LuaActor with the specified Lua script and properties. If called on the server, the actor will be replicated to all other clients. Moving the actor with SetActorLocation() will also propagate the update to the clients with some basic interpolation.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
