@@ -508,7 +508,7 @@ end
 
 ---
 
-HeistGS Functions
+## HeistGS Functions
 
 Those functions can be found in [Reflection.md](Reflection.md) as well, but are pretty important, so they will be listed here as well:
 
