@@ -550,21 +550,26 @@ local gs = GetGameState()
 gs:LuaDestroyActor("HealthStation.lua", {X=500, Y=0, Z=0}, {Pitch=0, Yaw=0, Roll=0}, {X=1, Y=1, Z=1}, "HealStation")
 ```
 
-### gs:LuaSpawnFX(fxName, location, scale)
+### gs:LuaSpawnFX(fxName, location, scale, tag)
 
 Spawns a particle effect locally on the current machine.
+
+List of available FX Names: `Fire, Money, Poison, SmokeCloud, Smoke, Snow, Explosion_Up, Fire_Embers, Explosion_Round, Water_Fountain, Explosion_Debris, Confusion, Disguise_Smoke, HP_Regeneration, Teargas`
+
+Some of those only exist for a few seconds, like `Explosion_Round`. Others exist until the round end or until calling gs:LuaDestroyAllParticlesWithTag(tag), like `Water_Fountain`.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | fxName | String | Name of the particle effect |
 | location | Vector | World location `{X=0, Y=0, Z=0}` |
 | scale | Vector | Scale of the effect `{X=1, Y=1, Z=1}` |
+| tag | String | Optional Tag to destroy the particle later again |
 ```lua
 local gs = GetGameState()
 gs:LuaSpawnFX("Explosion", {X=100, Y=200, Z=0}, {X=1, Y=1, Z=1})
 ```
 
-### gs:LuaSpawnFX_ALL(fxName, location, scale)
+### gs:LuaSpawnFX_ALL(fxName, location, scale, tag)
 
 Spawns a particle effect on all clients. **Call from server.**
 
@@ -573,14 +578,15 @@ Spawns a particle effect on all clients. **Call from server.**
 | fxName | String | Name of the particle effect |
 | location | Vector | World location `{X=0, Y=0, Z=0}` |
 | scale | Vector | Scale of the effect `{X=1, Y=1, Z=1}` |
+| tag | String | Optional Tag to destroy the particle later again |
 ```lua
 local gs = GetGameState()
 gs:LuaSpawnFX_ALL("Explosion", {X=100, Y=200, Z=0}, {X=2, Y=2, Z=2})
 ```
 
-### gs:LuaSpawnFX_Attached(fxName, location, scale, target)
+### gs:LuaSpawnFX_Attached(fxName, location, scale, target, tag)
 
-Spawns a particle effect locally on the current machine.
+Spawns a particle effect attached to target locally on the current machine.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -588,15 +594,16 @@ Spawns a particle effect locally on the current machine.
 | location | Vector | World location `{X=0, Y=0, Z=0}` |
 | scale | Vector | Scale of the effect `{X=1, Y=1, Z=1}` |
 | target | Object | Actor to which this particle will be attached, it will then move with the actor |
+| tag | String | Optional Tag to destroy the particle later again |
 ```lua
 local pawn = GetPlayerPawn()
 local gs = GetGameState()
 gs:LuaSpawnFX_Attached("Explosion", {X=100, Y=200, Z=0}, {X=1, Y=1, Z=1}, pawn)
 ```
 
-### gs:LuaSpawnFX_Attached_ALL(fxName, location, scale, target)
+### gs:LuaSpawnFX_Attached_ALL(fxName, location, scale, target, tag)
 
-Spawns a particle effect attached to on all clients. **Call from server.**
+Spawns a particle effect attached to target on all clients. **Call from server.**
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -604,10 +611,22 @@ Spawns a particle effect attached to on all clients. **Call from server.**
 | location | Vector | World location `{X=0, Y=0, Z=0}` |
 | scale | Vector | Scale of the effect `{X=1, Y=1, Z=1}` |
 | target | Object | Actor to which this particle will be attached, it will then move with the actor |
+| tag | String | Optional Tag to destroy the particle later again |
 ```lua
 local pawn = GetPlayerPawn()
 local gs = GetGameState()
 gs:LuaSpawnFX_Attached_ALL("Explosion", {X=100, Y=200, Z=0}, {X=2, Y=2, Z=2}, pawn)
 ```
 
+### gs:LuaDestroyAllParticlesWithTagL(tag)
+
+Destroys all spawned particle effects with the specified tag.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| Tag | String | Tag of the particle effect |
+```lua
+local gs = GetGameState()
+gs:LuaDestroyAllParticlesWithTagL("WeatherFX")
+```
 
