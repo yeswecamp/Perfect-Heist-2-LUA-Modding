@@ -469,7 +469,7 @@ LogMessage("Steam Name: " .. tostring(player.PlayersName))
 LogMessage("Actor: " .. GetActorName(targetActor))
 ```
 
-Check the logs at: `%APPDATA%/Local/PerfectHeist2/Saved/Logs/PerfectHeist2.log`.
+Enable `Show Lua Logs in Chat` in the game settings UI or check the logs at: `%APPDATA%/Local/PerfectHeist2/Saved/Logs/PerfectHeist2.log`. 
 
 Or use on-screen HUD messages:
 
