@@ -101,6 +101,12 @@ end)
 
 > **Important:** Use **colon syntax** (`:`) when calling functions on actors. Dot syntax (`.`) is for reading variables.
 
+
+### 5. Testing Modpacks
+
+Make sure you currently have a custom map loaded inside the Level Editor. Then, inside the selected Modpack UI, make sure to check "Include With Map". Then just hit playtest, and all scripts inside the modpack should be running, including custom classes. To test custom actors, place a "LUA Object" level editor object on your map, and make sure to enter a valid filename, like `TestScript.lua`.
+
+
 ---
 
 ## Script Types
