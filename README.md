@@ -190,7 +190,7 @@ end)
 
 ### Custom Class Scripts
 
-Custom classes require **two files** with the same name: a `.json` for display data and a `.lua` for ability logic.
+Custom classes require **two files** with the same name: a `.json` for basic class data and a `.lua` for ability logic.
 
 List of Weapon IDs: `1=Rifle, 2=SMG, 3=Auto Sniper, 4=Pistol, 5=Rocket Launcher, 6=Shotgun, 7=Grappling Hook, 8=Silenced Pistol, 9=Smoke Launcher, 10=Grenade Launcher, 11=Teargas Launcher, 12=Automatic Pistol, 13=Sniper Rifle, 14=Decoy Launcher, 15=Carbine, 16=Bullpup MP, 17=Tommy Gun, 18=Taser, 19=Sticky Launcher, 20=Heavy Pistol, 21=Modified Pistol, 22=Silenced Rifle, 23=Flash Launcher, 24=Rope Launcher, 25=Syringe Gun, 26=Slug Shotgun, 27=Geiger Counter, 28=Chrono-Nade Launcher, 29=Sceptre, 30=Dagger, 31=Hammer, 32=Sickle, 33=Bottle, 34=Bottle, 35=Gladius, 36=T-Shirt Cannon, 37=Drone Remote, 38=Wrench`
 
