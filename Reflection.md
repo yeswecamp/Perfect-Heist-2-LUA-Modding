@@ -108,8 +108,12 @@ A variable that is marked with `(Replicated)` will automatically propagate its v
 | RemoveAllLuaWidgets | none | void |
 | LoadLuaMeshes | sourceFiles: TArray | void |
 | LoadLuaTextures | sourceFiles: TArray | void |
-| SpawnModLuaActor | LuaFileName: FString, Location: FVector, Rotation: FRotator, Scale: FVector, Tag: FStringt | void |
+| SpawnModLuaActor | LuaFileName: FString, Location: FVector, Rotation: FRotator, Scale: FVector, Tag: FString | void |
 | LuaDestroyActor | Target: Object | void |
+| LuaSpawnFX | FxName: FString, Location: FVector, Scale: FVector | void |
+| LuaSpawnFX_ALL | FxName: FString, Location: FVector, Scale: FVector | void |
+| LuaSpawnFX_Attached | FxName: FString, Location: FVector, Scale: FVector, Target: Object | void |
+| LuaSpawnFX_Attached_ALL | FxName: FString, Location: FVector, Scale: FVector, Target: Object | void |
 | TeamMessage | Message: FString, TeamID: uint8, char: APlayerChar_C* | void |
 | AllMessage | String: FString, TeamID: uint8 (0=FromServer, 1=FromRobber, 2=FromCop), char: APlayerChar_C* | void |
 | StartRoundTimerSV | none | void |
