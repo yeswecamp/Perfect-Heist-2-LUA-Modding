@@ -505,3 +505,109 @@ for i, actor in ipairs(swept) do
     LogMessage("Swept hit: " .. GetActorName(actor))
 end
 ```
+
+---
+
+HeistGS Functions
+
+Those functions can be found in [Reflection.md](Reflection.md) as well, but are pretty important, so they will be listed here as well:
+
+### gs:SpawnModLuaActor(fileName, location, rotation, scale, tag)
+
+Spawns a BP_LuaActor with the specified Lua script and properties. **Server only.**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| fileName | String | The Lua script filename (e.g. `"HealthStation.lua"`) |
+| location | Vector | Spawn location `{X=0, Y=0, Z=0}` |
+| rotation | Rotator | Spawn rotation `{Pitch=0, Yaw=0, Roll=0}` |
+| scale | Vector | Spawn scale `{X=1, Y=1, Z=1}` |
+| tag | String | Actor tag to assign (empty string for none) |
+```lua
+local gs = GetGameState()
+gs:SpawnModLuaActor("HealthStation.lua", {X=500, Y=0, Z=0}, {Pitch=0, Yaw=0, Roll=0}, {X=1, Y=1, Z=1}, "HealStation")
+```
+
+Or use the convenience wrapper:
+```lua
+SpawnLuaActor("HealthStation.lua", {X=500, Y=0, Z=0})
+SpawnLuaActor("HealthStation.lua", {X=0, Y=0, Z=0}, nil, {X=2, Y=2, Z=2}, "BigStation")
+```
+
+### gs:LuaDestroyActor(fileName, location, rotation, scale, tag)
+
+Destroys a BP_LuaActor matching the given properties. **Server only.**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| fileName | String | The Lua script filename to match |
+| location | Vector | Location to match |
+| rotation | Rotator | Rotation to match |
+| scale | Vector | Scale to match |
+| tag | String | Tag to match |
+```lua
+local gs = GetGameState()
+gs:LuaDestroyActor("HealthStation.lua", {X=500, Y=0, Z=0}, {Pitch=0, Yaw=0, Roll=0}, {X=1, Y=1, Z=1}, "HealStation")
+```
+
+### gs:LuaSpawnFX(fxName, location, scale)
+
+Spawns a particle effect locally on the current machine.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| fxName | String | Name of the particle effect |
+| location | Vector | World location `{X=0, Y=0, Z=0}` |
+| scale | Vector | Scale of the effect `{X=1, Y=1, Z=1}` |
+```lua
+local gs = GetGameState()
+gs:LuaSpawnFX("Explosion", {X=100, Y=200, Z=0}, {X=1, Y=1, Z=1})
+```
+
+### gs:LuaSpawnFX_ALL(fxName, location, scale)
+
+Spawns a particle effect on all clients. **Call from server.**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| fxName | String | Name of the particle effect |
+| location | Vector | World location `{X=0, Y=0, Z=0}` |
+| scale | Vector | Scale of the effect `{X=1, Y=1, Z=1}` |
+```lua
+local gs = GetGameState()
+gs:LuaSpawnFX_ALL("Explosion", {X=100, Y=200, Z=0}, {X=2, Y=2, Z=2})
+```
+
+### gs:LuaSpawnFX_Attached(fxName, location, scale, target)
+
+Spawns a particle effect locally on the current machine.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| fxName | String | Name of the particle effect |
+| location | Vector | World location `{X=0, Y=0, Z=0}` |
+| scale | Vector | Scale of the effect `{X=1, Y=1, Z=1}` |
+| target | Object | Actor to which this particle will be attached, it will then move with the actor |
+```lua
+local pawn = GetPlayerPawn()
+local gs = GetGameState()
+gs:LuaSpawnFX_Attached("Explosion", {X=100, Y=200, Z=0}, {X=1, Y=1, Z=1}, pawn)
+```
+
+### gs:LuaSpawnFX_Attached_ALL(fxName, location, scale, target)
+
+Spawns a particle effect attached to on all clients. **Call from server.**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| fxName | String | Name of the particle effect |
+| location | Vector | World location `{X=0, Y=0, Z=0}` |
+| scale | Vector | Scale of the effect `{X=1, Y=1, Z=1}` |
+| target | Object | Actor to which this particle will be attached, it will then move with the actor |
+```lua
+local pawn = GetPlayerPawn()
+local gs = GetGameState()
+gs:LuaSpawnFX_Attached_ALL("Explosion", {X=100, Y=200, Z=0}, {X=2, Y=2, Z=2}, pawn)
+```
+
+
