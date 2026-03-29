@@ -536,7 +536,7 @@ SpawnLuaActor("HealthStation.lua", {X=0, Y=0, Z=0}, nil, {X=2, Y=2, Z=2}, "BigSt
 
 ### gs:LuaDestroyActor(fileName, location, rotation, scale, tag)
 
-Destroys a BP_LuaActor matching the given properties. **Server only.**
+Destroys a BP_LuaActor matching the given properties. If called on the server, the actor will be destroyed on all clients as well, similarly to how they got updated after spawning the actor through SpawnModLuaActor().
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
