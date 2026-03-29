@@ -206,20 +206,40 @@ List of Clothing Rows: `Customer_Hoodie_Red, Customer_Jacket_Green, Customer_Hoo
     "AbilityDescription": "Turn invisible for 5 seconds.",
     "AbilityIcon": "AssassinAbility.png",
     "AbilityCooldown": 30.0,
-    "PassiveName": "Silent Steps",
-    "PassiveDescription": "Footsteps make no sound.",
-    "PassiveIcon": "SilentStepsIcon.png",
+    "PassiveName": "HP Regeneration",
+    "PassiveDescription": "Generates 1 HP every second.",
+    "PassiveIcon": "HpRegenerationIcon.png",
     "PrimaryWeapon": 1,
     "SecondaryWeapon": 2,
     "ClassCategory": 0
 }
 ```
 
-`AssassinAbility.png` and `SilentStepsIcon.png` need to exist in the Modpacks /Assets/ folder.
+`AssassinAbility.png` and `HpRegenerationIcon.png` need to exist in the Modpacks `/Assets/` folder.
 
 **Assassin.lua:**
 ```lua
 LogMessage("Loaded Assassin.lua")
+
+-- PASSIVE: Start HP regeneration when the round starts
+ListenToEvent("RoundStarted", function()
+    local players = GetPlayerChars()
+    for i, player in ipairs(players) do
+        if player.CustomClassString == "Assassin" then
+            SetTimer(1.0, "AssassinPassiveHeal", player)
+            LogMessage("Assassin passive started for " .. GetActorName(player))
+        end
+    end
+end)
+
+-- PASSIVE: Heal 1 HP every second, repeat
+ListenToEvent("AssassinPassiveHeal", function(playerActor)
+    if playerActor.HP < 100 then
+        playerActor.HP = playerActor.HP + 1
+    end
+    -- Repeat the timer to create a loop
+    SetTimer(1.0, "AssassinPassiveHeal", playerActor)
+end)
 
 ListenToEvent("AbilityKeyPressed_OnClient", function(playerActor)
     if playerActor.CustomClassString == "Assassin" then
