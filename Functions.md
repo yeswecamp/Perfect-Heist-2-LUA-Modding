@@ -534,20 +534,17 @@ SpawnLuaActor("HealthStation.lua", {X=500, Y=0, Z=0})
 SpawnLuaActor("HealthStation.lua", {X=0, Y=0, Z=0}, nil, {X=2, Y=2, Z=2}, "BigStation")
 ```
 
-### gs:LuaDestroyActor(fileName, location, rotation, scale, tag)
+### gs:LuaDestroyActor(target)
 
-Destroys a BP_LuaActor matching the given properties. If called on the server, the actor will be destroyed on all clients as well, similarly to how they got updated after spawning the actor through SpawnModLuaActor().
+Destroys a BP_LuaActor. If called on the server, the actor will be destroyed on all clients as well, similarly to how they got updated after spawning the actor through SpawnModLuaActor().
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| fileName | String | The Lua script filename to match |
-| location | Vector | Location to match |
-| rotation | Rotator | Rotation to match |
-| scale | Vector | Scale to match |
-| tag | String | Tag to match |
+| target | Object | The Lua actor to desotry |
 ```lua
+local station = GetActorWithTag("HealthStation1")
 local gs = GetGameState()
-gs:LuaDestroyActor("HealthStation.lua", {X=500, Y=0, Z=0}, {Pitch=0, Yaw=0, Roll=0}, {X=1, Y=1, Z=1}, "HealStation")
+gs:LuaDestroyActor(station)
 ```
 
 ### gs:LuaSpawnFX(fxName, location, scale, tag)
