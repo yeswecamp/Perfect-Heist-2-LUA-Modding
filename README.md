@@ -108,7 +108,7 @@ Make sure you currently have a custom map loaded inside the Level Editor. Then, 
 
 ### 5. Uploading Modpacks
 
-Once you are finished working on your modpack, you can click on the `Upload to Steam` button, and a new Steam Workshop file will be created for your Modpack, using your specified Modpack Name in the `%APPDATA%\Local\PerfectHeist2\Saved\Modpacks\YourModpackName\name.txt`. When the upload is finished, the Steam Workshop page will open automatically. New Steam Workshop Modpacks are set to `Private` by default; make sure to update them to `Public` on their Steam Workshop page. Uploading a modpack with an existing Steam Workshop page will update that Workshop Object instead.
+Once you are finished working on your modpack, you can click on the `Upload to Steam` button, and a new Steam Workshop file will be created for your Modpack, using your specified Modpack Name in the `%APPDATA%\Local\PerfectHeist2\Saved\Modpacks\YourModpackName\name.txt`. When the upload is finished, the Steam Workshop page will open automatically. Uploading a modpack with an existing Steam Workshop page will update that Workshop Object instead.
 
 If you chose to include a modpack in your custom map by toggling `Include With Map`, the modpack will be automatically uploaded with your map when you upload the map to the Steam Workshop.
 
