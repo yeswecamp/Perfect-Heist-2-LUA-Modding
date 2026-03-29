@@ -16,7 +16,7 @@ This repo provides guides and references for creating custom scripts, actors, an
 
 ## Quick Overview
 
-Perfect Heist 2 mods are written in **Lua** and organized into **Modpacks**. A modpack is a folder containing scripts and assets that add new gameplay, actors, and classes to the game. 
+Perfect Heist 2 mods are written in **Lua** and organized into **Modpacks**. A modpack is a folder containing scripts and assets that can add custom game logic, new objects with different functions and moving parts, as well as new robber and cop classes to the game.
 
 Modpacks can be uploaded to the Steam Workshop and added to your game session through the `Host Game` menu or through the `[ModpackOverride] ModpackList = AbsoluteModpackPath1, AbsoluteModpackPath2` server config setting. Modpacks can also be included in player-created custom maps, ensuring they always run with the map. All scripts are loaded when the team selection begins, and are destroyed after the Round-End UI.
 
