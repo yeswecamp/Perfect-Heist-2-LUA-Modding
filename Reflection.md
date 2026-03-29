@@ -122,7 +122,6 @@ A variable that is marked with `(Replicated)` will automatically propagate its v
 | SpawnMapSV | FullFilePath: FString | void |
 | LoadMapFromFolder | FullFilePath: FString | void |
 | AddLoadingScreenAll | none | void |
-| UndeleteActor | actor: AActor* | void |
 | EinsteinTimeDelayer | none | void |
 | UpdateCrowns | none | void |
 | ClearCustomTextureCache | none | void |
