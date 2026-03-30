@@ -478,6 +478,68 @@ gm:RoundWon_GM(true, 0)
 
 ---
 
+## Actor Components
+
+### Adding Components
+
+You can add any number of Unreal Engine `ActorComponent` components to your custom actors like this:
+
+```lua
+local sphere = AddComponent(targetActor, "SphereComponent", "CollisionSphere")
+local pointLight = AddComponent(targetActor, "PointLightComponent", "Glow")
+```
+
+You can find your spawned components again in different functions by searching for their tag, like `CollisionSphere`:
+
+```lua
+local sphere = GetComponentByClass(targetActor, "CollisionSphere")
+```
+
+### Visible Meshes
+
+Mesh Components are required for players to see your custom actors. They take in a `.fbx` and a `.png` file from your `/Assets/` folder and can be moved, rotated, and scaled relative to your actor.
+
+```lua
+local mesh = AddMeshComponent(targetActor, "Base", "MyMesh.fbx", "MyTexture.png")
+mesh:SetRelativeLocation({X=0, Y=0, Z=0})
+mesh:SetRelativeRotation({Pitch=0, Yaw=0, Roll=0})
+mesh:SetRelativeScale3D({X=1, Y=1, Z=1})
+```
+
+### Collision Shapes
+
+Collision Shape Components include `SphereComponent`, `BoxComponent`, and `CapsuleComponent`. They can be used to give your objects invisible and highly efficient collision shapes.
+
+```lua
+local sphere = AddComponent(targetActor, "SphereComponent", "Collision")
+sphere:SetSphereRadius(50)
+sphere:SetCollisionResponseToChannel("Pawn", 2)         -- Block Characters from moving into it. Use 0 to set the channel to "Ignore" which will no longer block characters
+sphere:SetCollisionResponseToChannel("Visibility", 2)   -- Block the visiblity channel, used for bullet collision or finding the closest interaction object. 
+```
+
+Every actor has a `RootComponent`. If you select a Collision Shape as the `RootComponent` for your actor, you can toggle Physics on, and your actor will roll like a ball if you selected the `SphereComponent`, for example.
+
+```lua
+SetRootComponent(targetActor, sphere)
+sphere:SetSimulatePhysics(true)
+sphere:AddForce({X=500, Y=0, Z=100}) -- this needs to be repeated multiple times per second if you want the sphere to continously roll foward
+```
+
+### Lights
+
+Light Components include `PointLightComponent`, `SpotLightComponent`, and `RectLightComponent`. They are dynamic lights that can be configured when spawning them, or at any point during the round to change their intensity, range, or color. The `AttenuationRadius` is the setting that affects performance; keep it as low as possible.
+
+```lua
+local light = AddComponent(targetActor, "PointLightComponent", "Glow")
+light:SetRelativeLocation({X=0, Y=0, Z=200})
+light:SetIntensity(50000)
+light:SetAttenuationRadius(1000)
+light:SetLightColor({R=0, G=255, B=0, A=255})
+```
+
+
+---
+
 ## Debugging
 
 Use `LogMessage` to print to the game's output log:
@@ -498,3 +560,5 @@ ShowUIText("DebugLog", "Actor: " .. GetActorName(targetActor), 0.5, 0.1, 3.0)
 ShowUIText("DebugLog", "Health: " .. tostring(player.HP), 0.5, 0.15, 3.0)
 ShowUIText("DebugLog", "Steam Name: " .. tostring(player.PlayersName), 0.5, 0.2, 3.0)
 ```
+
+
