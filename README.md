@@ -201,7 +201,7 @@ List of Clothing Rows: `Customer_Hoodie_Red, Customer_Jacket_Green, Customer_Hoo
 {
     "IsRobber": true,
     "DisplayName": "Assassin",
-    "ClothingRowName": "Robber_Suit_Black",
+    "ClothingRowName": "Robber_Hoodie_Red,
     "AbilityName": "Cloak",
     "AbilityDescription": "Turn invisible for 5 seconds.",
     "AbilityIcon": "AssassinAbility.png",
