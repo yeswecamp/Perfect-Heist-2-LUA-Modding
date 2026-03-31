@@ -591,6 +591,47 @@ AttachActorToComponent(backpack, playerActor.Mesh, "spine_03",
 
 ---
 
+## Useful Player Functions
+
+### StartPieMenu(playerActor, options)
+
+Spawn a pie menu (like Arms Dealers' selection menu) on the client this script is executed on. 
+Needs the player that called it, and an options table consisting of any number of {`String name`, `String Description`, `String Icon`} elements.
+`String Icon` needs to be the name of a .png file inside the modpacks `/Assets/` folder.
+
+
+
+```lua
+-- Open a pie menu on the client
+ListenToEvent("AbilityKeyPressed_OnClient", function(playerActor)
+	if playerActor.CustomClassString == "Assassin" then
+        StartPieMenu(playerActor, {
+            {Name = "Wall",    Description = "Build a wall",    Icon = "WallIcon.png"},
+            {Name = "Floor",   Description = "Build a floor",   Icon = "FloorIcon.png"},
+            {Name = "Turret",  Description = "Place a turret",  Icon = "TurretIcon.png"},
+            {Name = "Heal",    Description = "Heal nearby",     Icon = "HpRegenerationIcon.png"}
+        })
+    end
+end)
+
+-- Handle the selection
+ListenToEvent("PieMenuSelected", function(playerActor, selectedIndex)
+    if playerActor.CustomClassString == "Assassin" then
+        if selectedIndex == 1 then
+            LogMessage("Building a wall!")
+        elseif selectedIndex == 2 then
+            LogMessage("Building a floor!")
+        elseif selectedIndex == 3 then
+            LogMessage("Placing a turret!")
+        elseif selectedIndex == 4 then
+            LogMessage("Healing nearby!")
+        end
+    end
+end)
+```
+
+---
+
 ## HeistGS Functions
 
 Those functions can be found in [Reflection.md](Reflection.md) as well, but are pretty important, so they will be listed here as well:
