@@ -239,7 +239,7 @@ ListenToEvent("AbilityKeyPressed_OnClient", function(playerActor)
     end
 end)
 
-ListenToEvent("PieMenuSelected", function(playerActor, selectedIndex)
+ListenToEvent("PieMenuSelected_OnClient", function(playerActor, selectedIndex)
     if playerActor.CustomClassString == "Assassin" then
         if selectedIndex == 1 then
             LogMessage("Building a wall!")
