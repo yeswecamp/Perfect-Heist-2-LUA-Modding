@@ -218,6 +218,42 @@ ListenToEvent("AbilityALL", function(playerActor)
 end)
 ```
 
+### PieMenuSelected
+
+Notifies the script that the player has selected on of the pie menu options.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| playerActor | Actor | The player that spawned the pie menu |
+| selectedIndex | Int | The selected Index of the Pie Menu (First Entry = Index 0) |
+
+```lua
+ListenToEvent("AbilityKeyPressed_OnClient", function(playerActor)
+	if playerActor.CustomClassString == "Assassin" then
+        StartPieMenu(playerActor, {
+            {Name = "Wall",    Description = "Build a wall",    Icon = "WallIcon.png"},
+            {Name = "Floor",   Description = "Build a floor",   Icon = "FloorIcon.png"},
+            {Name = "Turret",  Description = "Place a turret",  Icon = "TurretIcon.png"},
+            {Name = "Heal",    Description = "Heal nearby",     Icon = "HpRegenerationIcon.png"}
+        })
+    end
+end)
+
+ListenToEvent("PieMenuSelected", function(playerActor, selectedIndex)
+    if playerActor.CustomClassString == "Assassin" then
+        if selectedIndex == 1 then
+            LogMessage("Building a wall!")
+        elseif selectedIndex == 2 then
+            LogMessage("Building a floor!")
+        elseif selectedIndex == 3 then
+            LogMessage("Placing a turret!")
+        elseif selectedIndex == 4 then
+            LogMessage("Healing nearby!")
+        end
+    end
+end)
+```
+
 ---
 
 ## Damage Events
