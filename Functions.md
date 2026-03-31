@@ -599,8 +599,6 @@ Spawn a pie menu (like Arms Dealers' selection menu) on the client this script i
 Needs the player that called it, and an options table consisting of any number of {`String name`, `String Description`, `String Icon`} elements.
 `String Icon` needs to be the name of a .png file inside the modpacks `/Assets/` folder.
 
-
-
 ```lua
 -- Open a pie menu on the client
 ListenToEvent("AbilityKeyPressed_OnClient", function(playerActor)
@@ -614,7 +612,8 @@ ListenToEvent("AbilityKeyPressed_OnClient", function(playerActor)
     end
 end)
 
--- Handle the selection
+-- Handle the selection. Since the whole Pie Menu UI logic happens on the client,
+-- we need to listen to PieMenuSelected_OnClient instead of the server version PieMenuSelected
 ListenToEvent("PieMenuSelected_OnClient", function(playerActor, selectedIndex)
     if playerActor.CustomClassString == "Assassin" then
         if selectedIndex == 1 then
