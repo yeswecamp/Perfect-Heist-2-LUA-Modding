@@ -477,32 +477,50 @@ end
 
 ### LineMultiTrace(startLocation, endLocation)
 
-Traces a line between two points and returns all actors hit.
+Traces a line between two points and returns a table of hit results.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | startLocation | Table | Start point `{X=0, Y=0, Z=0}` |
 | endLocation | Table | End point `{X=1000, Y=0, Z=0}` |
+
+Each hit result contains:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| Actor | Actor | The actor that was hit |
+| Location | Table | World location of the hit `{X, Y, Z}` |
+| Normal | Table | Surface normal at the hit point `{X, Y, Z}` |
+| Component | Component | The specific component that was hit (can be nil) |
+| Distance | Float | Distance from start to the hit point |
 ```lua
 local hits = LineMultiTrace({X=0, Y=0, Z=100}, {X=1000, Y=0, Z=100})
-for i, actor in ipairs(hits) do
-    LogMessage("Hit: " .. GetActorName(actor))
+for i, hit in ipairs(hits) do
+    LogMessage("Hit: " .. GetActorName(hit.Actor))
+    LogMessage("  At: " .. hit.Location.X .. ", " .. hit.Location.Y .. ", " .. hit.Location.Z)
+    LogMessage("  Normal: " .. hit.Normal.X .. ", " .. hit.Normal.Y .. ", " .. hit.Normal.Z)
+    LogMessage("  Distance: " .. hit.Distance)
 end
 ```
 
 ### SphereMultiTrace(startLocation, endLocation, radius)
 
-Traces a sphere (thick line) between two points and returns all actors hit.
+Traces a sphere (thick line) between two points and returns a table of hit results.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | startLocation | Table | Start point `{X=0, Y=0, Z=0}` |
 | endLocation | Table | End point `{X=1000, Y=0, Z=0}` |
 | radius | Float | Radius of the sphere trace |
+
+Returns the same hit result fields as `LineMultiTrace`.
 ```lua
-local swept = SphereMultiTrace({X=0, Y=0, Z=100}, {X=1000, Y=0, Z=100}, 50)
-for i, actor in ipairs(swept) do
-    LogMessage("Swept hit: " .. GetActorName(actor))
+local hits = SphereMultiTrace({X=0, Y=0, Z=100}, {X=1000, Y=0, Z=100}, 50)
+for i, hit in ipairs(hits) do
+    LogMessage("Hit: " .. GetActorName(hit.Actor) .. " at distance " .. hit.Distance)
+    if hit.Component then
+        hit.Component:SetVisibility(false)
+    end
 end
 ```
 
