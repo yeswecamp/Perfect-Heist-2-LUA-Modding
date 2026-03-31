@@ -546,6 +546,8 @@ end
 
 ---
 
+## Useful Actor Functions
+
 ### SpawnActorDuplicate(source, location, rotation, scale, tag)
 
 Spawns an actor with the same properties as the source actor.
@@ -561,6 +563,30 @@ local copy2 = SpawnActorDuplicate(original,
     {X=2, Y=2, Z=2},
     "HealthStation2"
 )
+```
+
+### AttachActorToComponent(sourceComponent, targetActor, SlotName, offsetLocation, offsetRotation)
+
+Attach a targetActor to the sourceComponent of another targetActor, making it move and rotate with that targetActor.
+
+List of all Character.Mesh bone names: `Root, Pelvis, spine_01, spine_02, spine_03, neck_01, head, eyes, eyebrows, Jaw, clavicle_l, UpperArm_L, lowerarm_l, Hand_L, thumb_01_l, thumb_02_l, thumb_03_l, indexFinger_01_l, indexFinger_02_l, indexFinger_03_l, indexFinger_04_l, finger_01_l, finger_02_l, finger_03_l, finger_04_l, index_01_l, index_02_l, index_03_l, middle_01_l, middle_02_l, middle_03_l, ring_01_l, ring_02_l, ring_03_l, pinky_01_l, pinky_02_l, pinky_03_l, lowerarm_twist_01_l, upperarm_twist_01_l, clavicle_r, UpperArm_R, lowerarm_r, Hand_R, thumb_01_r, thumb_02_r, thumb_03_r, indexFinger_01_r, indexFinger_02_r, indexFinger_03_r, indexFinger_04_r, finger_01_r, finger_02_r, finger_03_r, finger_04_r, index_01_r, index_02_r, index_03_r, middle_01_r, middle_02_r, middle_03_r, ring_01_r, ring_02_r, ring_03_r, pinky_01_r, pinky_02_r, pinky_03_r, lowerarm_twist_01_r, upperarm_twist_01_r, Thigh_R, calf_r, Foot_R, ball_r, toes_r, calf_twist_01_r, thigh_twist_01_r, Thigh_L, calf_l, Foot_L, ball_l, toes_l, calf_twist_01_l, thigh_twist_01_l`
+
+
+```lua
+-- Attach at socket with no offset
+AttachActorToComponent(weapon, playerActor.Mesh, "hand_r")
+
+-- Attach to a component without a specific socket
+local light = SpawnActor("BP_LuaActor", {X=0, Y=0, Z=0})
+AttachActorToComponent(light, playerActor.Mesh, "")
+
+-- Attach with position offset
+AttachActorToComponent(hat, playerActor.Mesh, "head", {X=0, Y=0, Z=10})
+
+-- Attach with position and rotation offset
+AttachActorToComponent(backpack, playerActor.Mesh, "spine_03", 
+    {X=-20, Y=0, Z=0}, 
+    {Pitch=0, Yaw=180, Roll=0})
 ```
 
 ---
