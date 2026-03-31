@@ -379,6 +379,9 @@ ShowUIText("AmmoCount", "Ammo: 12", 0.9, 0.9, 0)
 
 -- Update existing element (same identifier)
 ShowUIText("AmmoCount", "Ammo: 11", 0.9, 0.9, 0)
+
+-- Using FontSize 24 and Custom Color {R=1, G=0, B=0, A=1} for large red text
+ShowUIText("Warning", "Low HP!", 0.5, 0.3, 5.0, 24, {R=1, G=0, B=0, A=1})
 ```
 
 ---
