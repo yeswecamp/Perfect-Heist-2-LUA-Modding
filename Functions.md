@@ -475,14 +475,15 @@ for i, actor in ipairs(inBox) do
 end
 ```
 
-### LineMultiTrace(startLocation, endLocation)
+### LineMultiTrace(startLocation, endLocation, ignoreActors)
 
-Traces a line between two points and returns a table of hit results.
+Traces a line between two points and returns a table of hit results. Debug lines are drawn in the editor automatically (green = no hits, red = hit).
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | startLocation | Table | Start point `{X=0, Y=0, Z=0}` |
 | endLocation | Table | End point `{X=1000, Y=0, Z=0}` |
+| ignoreActors | Table | Optional. Array of actors to ignore `{playerActor, otherActor}` |
 
 Each hit result contains:
 
@@ -494,7 +495,15 @@ Each hit result contains:
 | Component | Component | The specific component that was hit (can be nil) |
 | Distance | Float | Distance from start to the hit point |
 ```lua
+-- Basic trace
 local hits = LineMultiTrace({X=0, Y=0, Z=100}, {X=1000, Y=0, Z=100})
+
+-- Trace ignoring the player who fired it
+local hits = LineMultiTrace(startLoc, endLoc, {playerActor})
+
+-- Trace ignoring multiple actors
+local hits = LineMultiTrace(startLoc, endLoc, {playerActor, someOtherActor})
+
 for i, hit in ipairs(hits) do
     LogMessage("Hit: " .. GetActorName(hit.Actor))
     LogMessage("  At: " .. hit.Location.X .. ", " .. hit.Location.Y .. ", " .. hit.Location.Z)
@@ -503,19 +512,20 @@ for i, hit in ipairs(hits) do
 end
 ```
 
-### SphereMultiTrace(startLocation, endLocation, radius)
+### SphereMultiTrace(startLocation, endLocation, radius, ignoreActors)
 
-Traces a sphere (thick line) between two points and returns a table of hit results.
+Traces a sphere (thick line) between two points and returns a table of hit results. Debug spheres are drawn in the editor automatically.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | startLocation | Table | Start point `{X=0, Y=0, Z=0}` |
 | endLocation | Table | End point `{X=1000, Y=0, Z=0}` |
 | radius | Float | Radius of the sphere trace |
+| ignoreActors | Table | Optional. Array of actors to ignore `{playerActor}` |
 
 Returns the same hit result fields as `LineMultiTrace`.
 ```lua
-local hits = SphereMultiTrace({X=0, Y=0, Z=100}, {X=1000, Y=0, Z=100}, 50)
+local hits = SphereMultiTrace(startLoc, endLoc, 50, {playerActor})
 for i, hit in ipairs(hits) do
     LogMessage("Hit: " .. GetActorName(hit.Actor) .. " at distance " .. hit.Distance)
     if hit.Component then
