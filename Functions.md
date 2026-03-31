@@ -546,6 +546,25 @@ end
 
 ---
 
+### SpawnActorDuplicate(source, location, rotation, scale, tag)
+
+Spawns an actor with the same properties as the source actor.
+
+```lua
+local original = GetActorWithTag("HealthStation1")
+local copy = SpawnActorDuplicate(original, {X=500, Y=0, Z=0})
+
+-- Duplicate with custom transform and tag
+local copy2 = SpawnActorDuplicate(original,
+    {X=1000, Y=0, Z=0},
+    {Pitch=0, Yaw=90, Roll=0},
+    {X=2, Y=2, Z=2},
+    "HealthStation2"
+)
+```
+
+---
+
 ## HeistGS Functions
 
 Those functions can be found in [Reflection.md](Reflection.md) as well, but are pretty important, so they will be listed here as well:
