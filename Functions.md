@@ -260,7 +260,7 @@ Supported formats: `.wav`, `.mp3`
 
 ## UI
 
-### ShowUIText(identifier, text, x, y, displayTime)
+### ShowUIText(identifier, text, x, y, displayTime, fontSize, color)
 
 Shows or updates a text element on the player's screen.
 
@@ -271,16 +271,26 @@ Shows or updates a text element on the player's screen.
 | x | Float | Horizontal position, 0.0 (left) to 1.0 (right). Optional, defaults to 0.5 |
 | y | Float | Vertical position, 0.0 (top) to 1.0 (bottom). Optional, defaults to 0.5 |
 | displayTime | Float | Seconds before auto-removal. 0 = stays forever. Optional, defaults to 0 |
-
+| fontSize | Int | Font size in points. Optional, defaults to 16 |
+| color | Table | Text color `{R, G, B, A}` with values from 0.0 to 1.0. Optional, defaults to white |
 ```lua
--- Temporary message
+-- Basic temporary message
 ShowUIText("Alert", "Alarm triggered!", 0.5, 0.1, 3.0)
 
 -- Persistent HUD element
 ShowUIText("Score", "Score: 0", 0.9, 0.05, 0)
 
--- Update it later
+-- Update existing element (same identifier)
 ShowUIText("Score", "Score: 500", 0.9, 0.05, 0)
+
+-- Large red warning
+ShowUIText("Warning", "Low HP!", 0.5, 0.3, 5.0, 32, {R=1, G=0, B=0, A=1})
+
+-- Green notification with transparency
+ShowUIText("Heal", "+25 HP", 0.5, 0.4, 2.0, 24, {R=0, G=1, B=0, A=0.8})
+
+-- Yellow alert
+ShowUIText("Alert", "Alarm triggered!", 0.5, 0.1, 3.0, 18, {R=1, G=1, B=0, A=1})
 ```
 
 ---
