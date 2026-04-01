@@ -254,6 +254,31 @@ ListenToEvent("PieMenuSelected_OnClient", function(playerActor, selectedIndex)
 end)
 ```
 
+### PlayerEnabledFirstPerson
+
+Fires on the local client that changed its player view mode to first-person. Gets called when the player spawns to set up visibility.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| playerActor | Actor | The player changing his view mode |
+
+### PlayerEnabledThirdPerson
+
+Fires on the local client that changed its player view mode to third-person.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| playerActor | Actor | The player changing his view mode |
+
+```lua
+ListenToEvent("PlayerEnabledFirstPerson_OnClient", function(playerActor)
+    LogMessage("Our local player switched to first-person!")
+end)
+ListenToEvent("PlayerEnabledThirdPerson_OnClient", function(playerActor)
+    LogMessage("Our local player switched to third-person!")
+end)
+```
+
 ---
 
 ## Damage Events
