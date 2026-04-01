@@ -593,11 +593,15 @@ AttachActorToComponent(backpack, playerActor.Mesh, "spine_03",
 
 ## Useful Player Functions
 
-### StartPieMenu(playerActor, options)
+### StartPieMenu(playerActor, options, ignoreKeyRelease)
 
 Spawn a pie menu (like Arms Dealers' selection menu) on the client this script is executed on. 
 Needs the player that called it, and an options table consisting of any number of {`String name`, `String Description`, `String Icon`} elements.
 `String Icon` needs to be the name of a .png file inside the modpacks `/Assets/` folder.
+
+Since this is usually used for abilities, the pie menu is closed when the player lets go of his AbilityKey (default "X"), and `PieMenuSelected` is called.
+To prevent this, set the optional third input to true: `StartPieMenu(playerActor, options, ignoreKeyRelease)`
+This will keep the pie menu open until the player confirms his selection with left-click, or until the round ends.
 
 ```lua
 -- Open a pie menu on the client
