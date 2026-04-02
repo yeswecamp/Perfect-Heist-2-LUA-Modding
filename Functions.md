@@ -441,14 +441,6 @@ local name = GetFileName("E:/Mods/MyMod/Scripts/Test.lua")
 -- Returns: "Test.lua"
 ```
 
-### Unwrap(actor)
-
-Extracts the raw UObject from a wrapped actor. You generally don't need this unless you're doing advanced work.
-
-```lua
-local raw = Unwrap(wrappedActor)
-```
-
 --- 
 
 ## Physics Queries
