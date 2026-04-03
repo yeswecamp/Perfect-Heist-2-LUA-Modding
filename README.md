@@ -527,8 +527,8 @@ Collision Shape Components include `SphereComponent`, `BoxComponent`, and `Capsu
 ```lua
 local sphere = AddComponent(targetActor, "SphereComponent", "Collision")
 sphere:SetSphereRadius(50)
-sphere:SetCollisionResponseToChannel("Pawn", 2)         -- Block Characters from moving into it. Use 0 to set the channel to "Ignore" which will no longer block characters
-sphere:SetCollisionResponseToChannel("Visibility", 2)   -- Block the visiblity channel, used for bullet collision or finding the closest interaction object. 
+sphere:SetCollisionResponseToChannel(CollisionChannel.Pawn, CollisionResponse.Block) -- Block Characters from moving into it. Use CollisionResponse.Ignore to stop blocking characters
+sphere:SetCollisionResponseToChannel(CollisionChannel.Visibility, CollisionResponse.Ignore) -- Ignore the visibility channel, meaning bullets can fly through it, and it doesn't get hit by the interaction traces. Set to CollisionResponse.Block if you want players to interact with hit and bullets to hit it
 ```
 
 Every actor has a `RootComponent`. If you select a Collision Shape as the `RootComponent` for your actor, you can toggle Physics on, and your actor will roll like a ball if you selected the `SphereComponent`, for example.
