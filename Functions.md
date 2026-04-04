@@ -746,3 +746,69 @@ local gs = GetGameState()
 gs:LuaDestroyAllParticlesWithTagL("WeatherFX")
 ```
 
+### gs:LuaDestroyAllParticlesWithTagL(tag)
+
+Destroys all spawned particle effects with the specified tag.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| tag | String | Tag of the particle effect |
+
+local gs = GetGameState()
+gs:LuaDestroyAllParticlesWithTagL("WeatherFX")
+
+---
+
+### gs:UpdateRoundTimerSV(seconds)
+
+Updates the server round timer to the specified amount of seconds.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| seconds | Float | The new time for the round timer in seconds |
+
+local gs = GetGameState()
+gs:UpdateRoundTimerSV(120.0)
+
+---
+
+### gs:SpawnLuaPingSV(fileName, location, owner)
+
+Spawns an in-world ping visible for all players. If owner is set to a Player Character, the ping will only be visible to their team.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| fileName | String | The filename of the ping image (e.g., "ping_icon.png"), needs to exist in /Assets/ folder |
+| location | Vector | The world coordinates where the ping will be spawned |
+| owner | Actor | (Optional) The owner of the ping. Restricts visibility to this actor's team if set to a PlayerChar |
+
+local gs = GetGameState()
+local pingPos = Vector(1500, 200, 50)
+
+-- Spawn a global ping visible to everyone
+gs:SpawnLuaPingSV("objective_ping.png", pingPos)
+
+-- Spawn a team-specific ping
+local myPlayer = GetPlayer()
+gs:SpawnLuaPingSV("defend_ping.png", pingPos, myPlayer)
+
+---
+
+### gs:ShowLuaImage(identifier, fileName, screenX, screenY, displayTime, sizeX, sizeY)
+
+Displays an image on the local player's HUD, similar to ShowUIText.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| identifier | String | A unique identifier string for the image element |
+| fileName | String | The filename of the image to display (e.g., "warning.png"), needs to be included in the /Assets/ folder |
+| screenX | Float | The relative X coordinate position on the screen (between 0 and 1) |
+| screenY | Float | The relative Y coordinate position on the screen (between 0 and 1) |
+| displayTime | Float | Duration in seconds the image should remain visible |
+| sizeX | Integer | The width of the image in pixels |
+| sizeY | Integer | The height of the image in pixels |
+
+local gs = GetGameState()
+-- Displays a 128x128 heist logo at coordinates (960, 200) for 5 seconds
+gs:ShowLuaImage("HeistStartLogo", "heist_logo.png", 960.0, 200.0, 5.0, 128, 128)
+
