@@ -811,6 +811,6 @@ Displays an image on the local player's HUD, similar to ShowUIText.
 | sizeY | Integer | The height of the image in pixels |
 ```lua
 local gs = GetGameState()
--- Displays a 128x128 heist logo at coordinates (960, 200) for 5 seconds
-gs:ShowLuaImage("HeistStartLogo", "heist_logo.png", 960.0, 200.0, 5.0, 128, 128)
+-- Displays a 128x128 heist logo at the middle of the screen (0.5, 0.5) for 5 seconds
+gs:ShowLuaImage("HeistStartLogo", "heist_logo.png", 0.5, 0.5, 5.0, 128, 128)
 ```
