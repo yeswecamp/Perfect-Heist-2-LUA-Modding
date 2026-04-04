@@ -753,10 +753,10 @@ Destroys all spawned particle effects with the specified tag.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | tag | String | Tag of the particle effect |
-
+```lua
 local gs = GetGameState()
 gs:LuaDestroyAllParticlesWithTagL("WeatherFX")
-
+```
 ---
 
 ### gs:UpdateRoundTimerSV(seconds)
@@ -766,9 +766,10 @@ Updates the server round timer to the specified amount of seconds.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | seconds | Float | The new time for the round timer in seconds |
-
+```lua
 local gs = GetGameState()
 gs:UpdateRoundTimerSV(120.0)
+```
 
 ---
 
@@ -781,7 +782,7 @@ Spawns an in-world ping visible for all players. If owner is set to a Player Cha
 | fileName | String | The filename of the ping image (e.g., "ping_icon.png"), needs to exist in /Assets/ folder |
 | location | Vector | The world coordinates where the ping will be spawned |
 | owner | Actor | (Optional) The owner of the ping. Restricts visibility to this actor's team if set to a PlayerChar |
-
+```lua
 local gs = GetGameState()
 local pingPos = Vector(1500, 200, 50)
 
@@ -791,6 +792,7 @@ gs:SpawnLuaPingSV("objective_ping.png", pingPos)
 -- Spawn a team-specific ping
 local myPlayer = GetPlayer()
 gs:SpawnLuaPingSV("defend_ping.png", pingPos, myPlayer)
+```
 
 ---
 
@@ -807,8 +809,8 @@ Displays an image on the local player's HUD, similar to ShowUIText.
 | displayTime | Float | Duration in seconds the image should remain visible |
 | sizeX | Integer | The width of the image in pixels |
 | sizeY | Integer | The height of the image in pixels |
-
+```lua
 local gs = GetGameState()
 -- Displays a 128x128 heist logo at coordinates (960, 200) for 5 seconds
 gs:ShowLuaImage("HeistStartLogo", "heist_logo.png", 960.0, 200.0, 5.0, 128, 128)
-
+```
