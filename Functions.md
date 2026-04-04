@@ -798,7 +798,7 @@ gs:SpawnLuaPingSV("defend_ping.png", pingPos, myPlayer)
 
 ### gs:ShowLuaImage(identifier, fileName, screenX, screenY, displayTime, sizeX, sizeY)
 
-Displays an image on the local player's HUD, similar to ShowUIText.
+Displays an image on the local player's HUD, similar to ShowUIText. Calling this again with the same `String identifier` will update the existing widget instead of spawning a new one.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
