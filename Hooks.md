@@ -519,6 +519,26 @@ local player = GetPlayerPawn()
 gs:AllMessage("Hello from Lua!", 0, player)
 ```
 
+### TeamMessage
+
+Fires when a team-only chat message is received. This event can run on servers, or on clients if specified with `ListenToEvent("AllMessage_OnClient",`.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| message | String | The chat message text |
+| teamID | Int | The team ID of the sender (0=FromServer, 1=FromRobber, 2=FromCop) |
+| playerActor | Actor | The player who sent the message |
+```lua
+ListenToEvent("TeamMessage", function(message, teamID, playerActor)
+    LogMessage("Team Message from " .. GetActorName(playerActor) .. ": " .. message)
+
+    -- Custom chat commands
+    if message == "!heal" then
+        playerActor.Health = 100
+    end
+end)
+```
+
 ---
 
 ## Custom Timer Events
