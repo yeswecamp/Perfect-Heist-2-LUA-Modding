@@ -295,6 +295,17 @@ ShowUIText("Alert", "Alarm triggered!", 0.5, 0.1, 3.0, 18, {R=1, G=1, B=0, A=1})
 
 ---
 
+## Server Config
+
+You can use GetConfigVar(section, name) and SetConfigVar(section, name, value) to set config values on a server. This should only be used if your script should permanently change server configs, or save information in those config files that needs to persist over multiple rounds and maps. This feature only works on the server host, or dedicated server it's loaded on, and will never work on clients. List of all server config values can be found here: `https://steamcommunity.com/app/1521580/discussions/0/3278065723211268407/`
+
+```lua
+bool bInfiniteCopRespawns = GetConfigVar(Advanced, infiniteCopRespawns)
+SetConfigVar(Advanced, infiniteCopRespawns, false)
+```
+
+---
+
 ## Mesh Components
 
 ### AddMeshComponent(actor, componentName, meshFile, textureFile)
