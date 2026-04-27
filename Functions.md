@@ -623,13 +623,13 @@ end)
 -- we need to listen to PieMenuSelected_OnClient instead of the server version PieMenuSelected
 ListenToEvent("PieMenuSelected_OnClient", function(playerActor, selectedIndex)
     if playerActor.CustomClassString == "Assassin" then
-        if selectedIndex == 1 then
+        if selectedIndex == 0 then
             LogMessage("Building a wall!")
-        elseif selectedIndex == 2 then
+        elseif selectedIndex == 1 then
             LogMessage("Building a floor!")
-        elseif selectedIndex == 3 then
+        elseif selectedIndex == 2 then
             LogMessage("Placing a turret!")
-        elseif selectedIndex == 4 then
+        elseif selectedIndex == 3 then
             LogMessage("Healing nearby!")
         end
     end
