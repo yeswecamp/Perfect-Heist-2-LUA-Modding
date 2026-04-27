@@ -52,10 +52,19 @@ In the in-game **Level Editor**, locate the Modpack Window in the bottom left an
 
 ### 2. Create a Script
 
-Choose a category and create a new script. The game generates boilerplate code for you. Click **Edit File** icon to edit the `.lua` file in your preferred text editor (Notepad, VS Code, etc.).
+Choose a category (like `Scripts`) and create a new script. The game generates boilerplate code for you. Click **Edit File** icon to edit the `.lua` file in your preferred text editor (Notepad, VS Code, etc.).
+
+Script Categories:
+
+`Scripts:` basic script useful for basic logic like changing the class of a player, or changing the round victory conditions
+`Actors:` can be placed inside level editor maps, or spawned by other scripts. Modpack Actors exist in the world, can have display meshes, and can be interacted with
+`Classes:` define a completely new robber or cop class, with their own abilities, skins, and weapons
+
+`Assets:` doesn't contain any logic; instead, it is a folder where `.mp3`, `.png`, and `.fbx` files live that are referenced by other scripts inside the modpack
 
 ### 3. The Event System
 
+After opening your newly created `.lua` file in your favorite text editor, you will see some basic, pregenerated code.
 All mod logic is driven by **events**. You register a function to run when a specific event fires:
 
 ```lua
@@ -80,7 +89,7 @@ end)
 
 ### 4. Working with Actors
 
-Actors (players, objects, doors, etc.) are passed to your event callbacks. You can read their variables and call their functions:
+Unreal Engine Actors (players, objects, doors, etc.) are passed to your event callbacks. You can read their variables and call their functions:
 
 ```lua
 ListenToEvent("ActorSpawned", function(targetActor)
