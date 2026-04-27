@@ -57,7 +57,9 @@ Choose a category (like `Scripts`) and create a new script. The game generates b
 Script Categories:
 
 `Scripts:` basic script useful for basic logic like changing the class of a player, or changing the round victory conditions
+
 `Actors:` can be placed inside level editor maps, or spawned by other scripts. Modpack Actors exist in the world, can have display meshes, and can be interacted with
+
 `Classes:` define a completely new robber or cop class, with their own abilities, skins, and weapons
 
 `Assets:` doesn't contain any logic; instead, it is a folder where `.mp3`, `.png`, and `.fbx` files live that are referenced by other scripts inside the modpack
