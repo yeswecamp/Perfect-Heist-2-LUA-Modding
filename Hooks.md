@@ -460,9 +460,24 @@ end)
 
 ---
 
+### PlayerPreInteractSV
+
+Fires on the **server** before a player interacts ("E") with any actor in the world (not just BP_LuaActors).
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| targetActor | Actor | The actor that was interacted with |
+| playerActor | Actor | The player who interacted |
+```lua
+ListenToEvent("PlayerPreInteractSV, function(targetActor, playerActor)
+    local className = GetActorClassName(targetActor)
+    LogMessage(GetActorName(playerActor) .. " interacted with " .. className)
+end)
+```
+
 ### PlayerInteractedSV
 
-Fires on the **server** when a player interacts ("E") with any actor in the world (not just BP_LuaActors).
+Fires on the **server** after a player interacts ("E") with any actor in the world (not just BP_LuaActors).
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
