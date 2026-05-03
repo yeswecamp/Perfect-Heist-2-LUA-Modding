@@ -189,7 +189,8 @@ ListenToEvent("InteractSV", function(targetActor, playerActor)
 end)
 ```
 
-For AltInteractions (default key: `F`), similar functions and variables are available: `InteractAltSV`, `GetInteractAltName`, and `GetInteractionAltTimer` events and `bCanInteractAlt`, `InteractionAltString`, and `InteractionAltTimmer` variables.
+For AltInteractions (default key: `F`), you can use those similar events: `InteractAltSV`, `GetInteractAltName`, and `GetInteractionAltTimer`.
+And those similar variables: `bCanInteractAlt`, `InteractionAltString`, and `InteractionAltTimmer`.
 
 ### Custom Class Scripts
 
