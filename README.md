@@ -189,6 +189,8 @@ ListenToEvent("InteractSV", function(targetActor, playerActor)
 end)
 ```
 
+For AltInteractions (default key: `F`), similar functions and variables are available: `InteractAltSV`, `GetInteractAltName`, and `GetInteractionAltTimer` events and `bCanInteractAlt`, `InteractionAltString`, and `InteractionAltTimmer` variables.
+
 ### Custom Class Scripts
 
 Custom classes require **two files** with the same name: a `.json` for basic class data and a `.lua` for ability logic.
