@@ -469,7 +469,7 @@ Fires on the **server** before a player interacts ("E") with any actor in the wo
 | targetActor | Actor | The actor that was interacted with |
 | playerActor | Actor | The player who interacted |
 ```lua
-ListenToEvent("PlayerPreInteractSV, function(targetActor, playerActor)
+ListenToEvent("PlayerPreInteractSV", function(targetActor, playerActor)
     local className = GetActorClassName(targetActor)
     LogMessage(GetActorName(playerActor) .. " interacted with " .. className)
 end)
@@ -502,6 +502,36 @@ Fires on the **server** when a player uses the alternate ("F") interaction on an
 ListenToEvent("PlayerAltInteractedSV", function(targetActor, playerActor)
     local className = GetActorClassName(targetActor)
     LogMessage(GetActorName(playerActor) .. " alt-interacted with " .. className)
+end)
+```
+
+### PlayerAiPreInteractSV
+
+Fires on the **server** before a BOT Robber or BOT Cop interacts with any actor in the world (not just BP_LuaActors).
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| targetActor | Actor | The actor that was interacted with |
+| playerActor | Actor | The player who interacted |
+```lua
+ListenToEvent("PlayerAiPreInteractSV", function(targetActor, playerActor)
+    local className = GetActorClassName(targetActor)
+    LogMessage(GetActorName(playerActor) .. " interacted with " .. className)
+end)
+```
+
+### PlayerAiInteractedSV
+
+Fires on the **server** after a BOT Robber or BOT Cop interacts with any actor in the world (not just BP_LuaActors).
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| targetActor | Actor | The actor that was interacted with |
+| playerActor | Actor | The player who interacted |
+```lua
+ListenToEvent("PlayerAiInteractedSV", function(targetActor, playerActor)
+    local className = GetActorClassName(targetActor)
+    LogMessage(GetActorName(playerActor) .. " interacted with " .. className)
 end)
 ```
 
