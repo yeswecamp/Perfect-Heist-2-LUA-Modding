@@ -552,6 +552,30 @@ light:SetAttenuationRadius(1000)
 light:SetLightColor({R=0, G=255, B=0, A=255})
 ```
 
+---
+
+## Network Replication
+
+If you need to send specific data like strings or floats *from the local client player* to the server, you can use `SendServerRPC` from the local client's `PlayerChar`.
+You can also call `SendServerMulticast` to send data *from the server* to all clients.
+
+```LUA
+playerActor:SendServerRPC("MyEvent", "data1", "data2", "data3")
+playerActor:SendMulticastRPC("MyEvent", "data1", "data2", "data3")
+
+ListenToEvent("MyEvent", function(playerActor, d1, d2, d3) ... end)         -- server-side
+ListenToEvent("MyEvent_OnClient", function(playerActor, d1, d2, d3) ... end) -- client-side
+```
+
+If you need to pass along Actor references instead of just basic data, you can use these similar functions:
+
+```LUA
+playerActor:SendServerRPCWithActors("MyEvent2", "data1", "data2", targetActor, nil)
+playerActor:SendMulticastRPCWithActors("MyEvent2", "data1", "data2", targetActor, nil)
+
+ListenToEvent("MyEvent2", function(playerActor, d1, d2, actor1, actor2) ... end)
+ListenToEvent("MyEvent2_OnClient", function(playerActor, d1, d2, actor1, actor2) ... end)
+```
 
 ---
 
