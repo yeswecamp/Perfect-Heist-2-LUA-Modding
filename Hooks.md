@@ -586,6 +586,23 @@ end)
 
 ---
 
+## Input Events
+
+Fires when a player presses a key locally. Available input keys: `JumpKey`, `InteractKey`, `AltInteractKey`, `AbilityKey`, `CrouchKey`, `ShootKey`, `AdsKey`, `DropKey`
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| PlayerChar | Actor | The local PlayerChar that pressed the key |
+| HeistPC | Actor | The local HeistPC that pressed the key  |
+
+```lua
+ListenToEvent("JumpKeyPressed_OnClient", function(PlayerChar, HeistPC)
+    LogMessage("Local Player pressed his Jump Key ")
+end)
+```
+
+---
+
 ## Custom Timer Events
 
 Timer events are created by the modder using `SetTimer`. The event name is whatever string you pass.
