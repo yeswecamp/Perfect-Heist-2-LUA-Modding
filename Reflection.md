@@ -2664,6 +2664,31 @@ Access components through their parent actor, e.g. `playerActor.WeaponComponent.
 
 ---
 
+## IgniteablePlant
+**Inheritance:** `IgniteablePlant → Actor`
+
+### Variables
+| Name | Type |
+|------|------|
+| StaticMesh | Object |
+| DefaultSceneRoot | Object |
+| foamed | Bool (Replicated) |
+| burning | Bool (Replicated) |
+
+### Functions
+| Name | Parameters | Returns |
+|------|------------|---------|
+| GetInteractName | PlayerChar: APlayerChar_C*, CallFunc_EqualEqual_ByteByte_ReturnValue: bool, CallFunc_Not_PreBool_ReturnValue: bool, CallFunc_BooleanAND_ReturnValue: bool | FText |
+| ignoreDistanceChecks | none | bool |
+| InteractTimer | playerchar: APlayerChar_C* | bool |
+| DealDmg | Damage: float, Source: AActor*, LocLocal: FVector, LocWorld: FVector, DmgType: TEnumAsByte<DamageType>, dontKill?: bool | bool |
+| bulletsCanDmg? | helper: bool | bool |
+| CanBePenetrated? | inputDmg: float | float |
+| Ignite | none | void |
+
+
+---
+
 ## StickyGrenade
 **Inheritance:** `StickyGrenade → Actor`
 
